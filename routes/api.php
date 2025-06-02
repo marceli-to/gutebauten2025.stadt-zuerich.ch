@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\VoteController;
+use App\Http\Controllers\Api\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,6 @@ use App\Http\Controllers\Api\VoteController;
 
 Route::middleware('auth:sanctum')->group(function () {
   Route::get('/votes', [VoteController::class, 'get']);
+  Route::get('/comments', [CommentController::class, 'get']);
+  Route::delete('/comments/{id}', [CommentController::class, 'destroy']);
 });

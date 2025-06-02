@@ -23,4 +23,9 @@ class Comment extends Model
     return $query->where('published', true);
   }
 
+  public function scopeDrafts($query)
+  {
+    return $query->where('published', false);
+  }
+
 }
