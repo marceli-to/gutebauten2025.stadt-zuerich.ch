@@ -4,7 +4,7 @@
 <div class="flex w-full">
 
   <div class="hidden md:block w-1/2 overflow-hidden relative">
-    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-10 z-20"></div>
+    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-20 z-20"></div>
     <img src="/media/dashboard/splash-@php echo rand(1,13) @endphp.jpg" width="1125" height="1500" alt="" class="block w-full h-full absolute top-0 left-0 object-cover">
   </div>
 
@@ -45,9 +45,11 @@
             data-error="{{ $errors->has('password') ? 'true' : null }}"
             required />
 
-          <x-auth.primary-button>
-            {{ __('Login') }}
-          </x-auth.primary-button>
+          <div>
+            <x-auth.primary-button>
+              {{ __('Login') }}
+            </x-auth.primary-button>
+          </div>
 
         </form>
       
