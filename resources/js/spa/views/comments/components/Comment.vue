@@ -1,5 +1,5 @@
 <template>
-  <div class="border-t border-black py-8 flex justify-between items-start">
+  <div class="border-t border-black last-of-type:border-b py-8 flex justify-between items-start">
     <div>
       <div>{{ comment.comment.length > 75 ? comment.comment.slice(0, 75) + '...' : comment.comment }}</div>
       <div class="mt-4 text-[#777] text-sm">
@@ -38,7 +38,6 @@
         <IconRestore />
       </button>
     </div>
-
     <CommentEdit
       :comment="selectedComment"
       :isOpen="isEditing"

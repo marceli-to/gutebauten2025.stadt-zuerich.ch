@@ -37,11 +37,14 @@ const votes = ref([]);
 let isLoading = ref(true);
 
 onMounted(async () => {
-  try {
-    votes.value = await getVotes();
-    isLoading.value = false;
-  } catch (error) {
-    console.error(error);
+  if (isLoading.value) {
+    try {
+      votes.value = await getVotes();
+    } catch (error) {
+      console.error(error);
+    } finally {
+      isLoading.value = false;
+    }
   }
 });
 
