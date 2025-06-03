@@ -1,14 +1,14 @@
 <?php
 namespace App\Actions\Comment;
+
 use App\Models\Comment;
 
-class Delete
+class Toggle
 {
   public function execute(Comment $comment): Comment
   {
-    $comment->published = false;
+    $comment->published = !$comment->published;
     $comment->save();
-    $comment->delete();
     return $comment;
   }
 }

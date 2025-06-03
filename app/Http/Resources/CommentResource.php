@@ -9,9 +9,11 @@ class CommentResource extends JsonResource
   {
     return [
       'id' => $this->id,
-      'date' => \Carbon\Carbon::parse($this->created_at)->format('d.m.Y – H:i'),
+      'date' => $this->created_at->toIso8601String(),
       'comment' => $this->comment,
       'building' => $this->building->title,
+      'published' => $this->published,
+      'deleted_at' => $this->deleted_at,
     ];
   }
 }

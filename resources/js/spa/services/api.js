@@ -18,9 +18,19 @@ export const deleteComment = async (id) => {
 
 // hide comment
 export const toggleComment = async (id) => {
-  const response = await api.put(`/comments/${id}`);
+  const response = await api.put(`/comments/toggle/${id}`);
   return response.data;
 };
 
-  
+// update comment
+export const updateComment = async (id, comment) => {
+  const response = await api.put(`/comments/update/${id}`, comment);
+  return response.data;
+};
+
+// restore comment
+export const restoreComment = async (id) => {
+  const response = await api.put(`/comments/restore/${id}`);
+  return response.data;
+}; 
 

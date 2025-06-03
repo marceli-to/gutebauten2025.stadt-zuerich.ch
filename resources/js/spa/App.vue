@@ -4,7 +4,7 @@
       <div class="max-w-[240px] bg-lumora">
         <Navigation />
       </div>
-      <div class="w-full py-16 px-24">
+      <div class="w-full py-16 px-16">
         <router-view v-slot="{ Component }">
           <component :is="Component" :key="route.fullPath" ref="pageComponent" />
         </router-view>

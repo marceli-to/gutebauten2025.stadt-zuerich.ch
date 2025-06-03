@@ -20,5 +20,8 @@ use App\Http\Controllers\Api\CommentController;
 Route::middleware('auth:sanctum')->group(function () {
   Route::get('/votes', [VoteController::class, 'get']);
   Route::get('/comments', [CommentController::class, 'get']);
-  Route::delete('/comments/{id}', [CommentController::class, 'destroy']);
+  Route::put('/comments/update/{comment}', [CommentController::class, 'update']);
+  Route::put('/comments/restore/{id}', [CommentController::class, 'restore']);
+  Route::put('/comments/toggle/{comment}', [CommentController::class, 'toggle']);
+  Route::delete('/comments/{comment}', [CommentController::class, 'destroy']);
 });

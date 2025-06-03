@@ -3,7 +3,7 @@
     Kommentare
   </h1>
   <template v-if="!isLoading">
-    <div class="max-w-3xl mt-52 text-sm">
+    <div class="max-w-3xl mt-38 text-sm">
       <div class="flex gap-x-32">
         <button
           v-for="(label, key) in tabs"
@@ -18,12 +18,16 @@
           {{ label }}
         </button>
       </div>
-      <div class="mt-48">
+      <div class="mt-32">
         <div v-if="activeTab === 'drafts'">
           <CommentCard
             v-for="comment in comments.drafts"
             :key="comment.id"
             :comment="comment"
+            :can="['toggle', 'edit', 'delete']"
+            @edited="editComment($event)"
+            @deleted="deleteComment($event)"
+            @toggled="toggleComment($event)"
             v-if="comments.drafts.length > 0"
           />
           <p class="pt-8" v-else>
@@ -35,6 +39,10 @@
             v-for="comment in comments.published"
             :key="comment.id"
             :comment="comment"
+            :can="['toggle', 'edit', 'delete']"
+            @edited="editComment($event)"
+            @deleted="deleteComment($event)"
+            @toggled="toggleComment($event)"
             v-if="comments.published.length > 0"
           />
           <p class="pt-8" v-else>
@@ -46,6 +54,8 @@
             v-for="comment in comments.deleted"
             :key="comment.id"
             :comment="comment" 
+            :can="['restore']"
+            @restored="restoreComment($event)"
             v-if="comments.deleted.length > 0"
           />
           <p class="pt-8" v-else>
@@ -84,4 +94,56 @@ onMounted(async () => {
     console.error(error);
   }
 });
+
+const editComment = (updatedComment) => {
+  // Remove from all tabs
+  for (const tab of ['drafts', 'published', 'deleted']) {
+    comments.value[tab] = comments.value[tab].filter(c => c.id !== updatedComment.id);
+  }
+
+  // Determine correct tab
+  const newTab = updatedComment.published ? 'published' : 'drafts';
+
+  // Add and sort
+  comments.value[newTab].push(updatedComment);
+  comments.value[newTab].sort((a, b) => new Date(b.date) - new Date(a.date));
+};
+
+const toggleComment = (updatedComment) => {
+  // Remove from all tabs just to be safe
+  for (const tab of ['drafts', 'published', 'deleted']) {
+    comments.value[tab] = comments.value[tab].filter(c => c.id !== updatedComment.id);
+  }
+
+  // Add to the correct tab
+  const newTab = updatedComment.published ? 'published' : 'drafts';
+  comments.value[newTab].push(updatedComment);
+  comments.value[newTab].sort((a, b) => new Date(b.date) - new Date(a.date));
+};
+
+const deleteComment = (updatedComment) => {
+  // Remove from all tabs
+  for (const tab of ['drafts', 'published', 'deleted']) {
+    comments.value[tab] = comments.value[tab].filter(c => c.id !== updatedComment.id);
+  }
+
+  // Check if the comment is soft-deleted
+  if (updatedComment.deleted_at) {
+    comments.value.deleted.push(updatedComment);
+    comments.value.deleted.sort((a, b) => new Date(b.date) - new Date(a.date));
+  }
+};
+
+const restoreComment = (updatedComment) => {
+  // Remove from all tabs just to be safe
+  for (const tab of ['drafts', 'published', 'deleted']) {
+    comments.value[tab] = comments.value[tab].filter(c => c.id !== updatedComment.id);
+  }
+
+  // Add to the correct tab
+  const newTab = updatedComment.published ? 'published' : 'drafts';
+  comments.value[newTab].push(updatedComment);
+  comments.value[newTab].sort((a, b) => new Date(b.date) - new Date(a.date));
+};
+
 </script>
