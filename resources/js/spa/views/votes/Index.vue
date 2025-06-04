@@ -29,7 +29,6 @@
 import { ref, onMounted, computed } from 'vue';
 import { getVotes } from '@/services/api';
 import { usePageTitle } from '@/composables/usePageTitle';
-
 const { setTitle } = usePageTitle();
 setTitle('Stimmen');
 

@@ -1,7 +1,7 @@
 import { ref, watch } from 'vue';
 
 const title = ref('');
-const DEFAULT_SUFFIX = 'Guten Bauten Stadt Zürich';
+const DEFAULT_SUFFIX = 'Auszeichnung für gute Bauten der Stadt Zürich 2021–2024';
 const SEPARATOR = ' • ';
 
 export function usePageTitle() {

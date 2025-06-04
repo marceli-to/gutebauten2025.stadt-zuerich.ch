@@ -1,5 +1,9 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\MapController;
+use App\Http\Controllers\InfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,15 +16,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * Auth Routes
+ */
+require __DIR__.'/auth.php';
 
-Route::view('/', 'home')->name('page.home');
+/**
+ * Frontend Routes
+ */
+
+Route::get('/', [HomeController::class, 'index'])->name('page.home');
+Route::get('/{slug}', [ProjectController::class, 'index'])->name('page.project');
+Route::get('/info', [InfoController::class, 'index'])->name('page.info');
+Route::get('/karte', [MapController::class, 'index'])->name('page.map');
+
+
+/**
+ * Backend Routes
+ */
 
 Route::get('/dashboard/{any?}', function () {
-  return view('dashboard');
+  return view('pages.dashboard');
 })->where('any', '.*')->middleware(['auth', 'verified'])->name('page.dashboard');
 
 Route::get('/error/{any?}', function () {
-  return view('dashboard');
+  return view('pages.dashboard');
 })->where('any', '.*')->middleware(['auth', 'verified'])->name('page.dashboard');
-
-require __DIR__.'/auth.php';

@@ -69,6 +69,10 @@ import { ref, computed, onMounted, watch } from 'vue';
 import { getComments } from '@/services/api';
 import CommentCard from './components/Comment.vue';
 
+import { usePageTitle } from '@/composables/usePageTitle';
+const { setTitle } = usePageTitle();
+setTitle('Kommentare');
+
 const tabs = {
   drafts: 'Neue Kommentare',
   published: 'Veröffentlichte Kommentare',

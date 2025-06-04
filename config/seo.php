@@ -11,7 +11,7 @@ return [
   |
   */
 
-  'title' => 'Win a Gärtner • Spross',
+  'title' => env('APP_NAME', 'Auszeichnung für gute Bauten der Stadt Zürich 2021–2024'),
 
   /*
   |--------------------------------------------------------------------------
@@ -22,6 +22,6 @@ return [
   |
   */
 
-  'description' => 'Our Englisch ist vielleicht not the strongest. Aber in the garden ist Spross the boss!',   
+  'description' => env('APP_DESCRIPTION', 'Auszeichnung für gute Bauten der Stadt Zürich 2021–2024'),   
 
 ];

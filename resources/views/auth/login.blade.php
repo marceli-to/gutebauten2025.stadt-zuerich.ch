@@ -1,7 +1,7 @@
-<x-layout.guest class="flex justify-center min-h-screen bg-lumora">
+@extends('layout.guest')
+@section('seo_title', 'Login')
 @section('content')
-
-<div class="flex w-full">
+<div class="flex justify-center min-h-screen bg-lumora">
 
   <div class="hidden md:block w-1/2 overflow-hidden relative">
     <div class="absolute top-0 left-0 w-full h-full bg-black opacity-20 z-20"></div>
@@ -56,5 +56,6 @@
       </x-auth.wrapper>
     </div>
   </div>
+</div>
 @endsection
-</x-layout.guest>
+

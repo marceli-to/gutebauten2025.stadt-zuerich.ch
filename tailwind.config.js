@@ -38,7 +38,7 @@ export default {
         'xs': '0.75rem',  // 12px
         'sm': '0.875rem', // 14px
         'md': '1rem',     // 16px
-        'lg': '2.25rem', // 36px
+        'lg': '2.25rem',  // 36px
       },
     },
 

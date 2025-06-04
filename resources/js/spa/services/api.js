@@ -1,10 +1,12 @@
 import api from '@/services/axios'
 
+// votes
 export const getVotes = async () => {
   const response = await api.get(`/votes`);
   return response.data;
 };
 
+// comments
 export const getComments = async () => {
   const response = await api.get(`/comments`);
   return response.data;

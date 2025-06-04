@@ -4,4 +4,4 @@
 @endauth
 </body>
 </html>
-<!-- made with ❤ by marceli.to -->
+<!-- made with ❤ by everyedition.ch & nostudio.ch & marceli.to -->
