@@ -9,7 +9,6 @@
     <div class="flex gap-x-8">
 
       <button  
-        title="Verbergen"
         class="hover:text-gray-400 transition-colors"
         :title="comment.published ? 'Verbergen' : 'Veröffentlichen'"
         @click="toggle(comment.id)"
