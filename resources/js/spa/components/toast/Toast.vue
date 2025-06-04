@@ -1,7 +1,7 @@
 <template>
   <div 
     v-if="toasts.length" 
-    class="fixed z-[9999] text-sm w-auto max-w-[360px] text-white top-16 right-16 cursor-pointer">
+    class="fixed z-[9999] text-xs w-auto max-w-[360px] text-white top-16 right-16 cursor-pointer">
     <a 
       href="javascript:;" 
       :class="[

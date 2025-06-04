@@ -1,8 +1,8 @@
 <template>
-  <h1 class="text-2xl leading-[1.25]">
+  <h1 class="text-lg leading-[1.25]">
     Dashboard
   </h1>
-  <div class="max-w-xl mt-24 text-md space-y-4">
+  <div class="max-w-xl mt-24 space-y-4">
     <p>Willkommen auf Ihrem Dashboard.</p>
     <p>
       Wenn Sie Unterstützung benötigen, können Sie mir gerne eine E-Mail an 

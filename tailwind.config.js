@@ -18,6 +18,19 @@ export default {
         'xs': '440px',
       },
 
+      maxWidth: {
+        'container': '100rem', // 1600px
+      },
+
+      borderWidth: {
+        '3': '3px',
+      },
+
+      strokeWidth: {
+        '3': '3px',
+        '4': '4px',
+      },
+
       colors: {
         'lumora': '#FFFF00',
       },
@@ -35,10 +48,15 @@ export default {
       },
 
       fontSize: {
-        'xs': '0.75rem',  // 12px
-        'sm': '0.875rem', // 14px
-        'md': '1rem',     // 16px
-        'lg': '2.25rem',  // 36px
+        'xxs': '0.875rem',  // 14px
+        'xs': '1rem',       // 16px
+        'sm': ['1.25rem', { lineHeight: '1.25' }],     // 20px/25px
+        'md': '1.5625rem',  // 25px
+        'lg': ['1.875rem', { lineHeight: '1.333' }],   // 30px/40px
+        'xl': ['2.1875rem', { lineHeight: '1.15' }],   // 35px
+        '2xl': '2.5rem',    // 40px
+        '3xl': '2.8125rem', // 45px
+        '4xl': '3.75rem',   // 60px
       },
     },
 

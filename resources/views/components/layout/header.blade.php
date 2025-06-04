@@ -1,5 +1,10 @@
-<header>
-  <x-layout.inner>
-
+<header class="bg-lumora min-h-96 md:min-h-60 xl:min-h-72 pb-5 md:pb-0 flex items-end md:items-center border-b-3 xl:border-b-4 border-black">
+  <x-layout.inner class="flex justify-between items-center">
+    {{ $slot }}
+    <a 
+      href="{{ route('page.home') }}"
+      title="Zurück zur Startseite">
+      <x-icons.cross class="w-25 xl:w-34 h-auto stroke-3 xl:stroke-4" />
+    </a>
   </x-layout.inner>
 </header>

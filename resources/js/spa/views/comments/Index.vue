@@ -1,10 +1,10 @@
 <template>
-  <h1 class="text-2xl leading-[1.25]">
+  <h1 class="text-lg leading-[1.25]">
     Kommentare
   </h1>
 
   <template v-if="!isLoading">
-    <div class="max-w-3xl mt-38 text-sm">
+    <div class="max-w-3xl mt-38 text-xs">
       <!-- Tabs -->
       <div class="flex gap-x-32">
         <button

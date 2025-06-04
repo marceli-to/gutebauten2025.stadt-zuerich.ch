@@ -1,9 +1,9 @@
 <template>
-  <h1 class="text-2xl leading-[1.25]">
+  <h1 class="text-lg leading-[1.25]">
     Stimmen
   </h1>
   <template v-if="!isLoading">
-    <div class="max-w-3xl mt-48 text-sm">
+    <div class="max-w-3xl mt-48">
       <table class="w-full">
         <tbody class="divide-y divide-black">
           <tr v-for="(vote, index) in votes" :key="index">

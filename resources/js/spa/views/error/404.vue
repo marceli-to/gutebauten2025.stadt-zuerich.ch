@@ -1,7 +1,7 @@
 <template>
   <Message>
     <template #message>
-      <h1 class="text-2xl leading-[1.25] mb-32">
+      <h1 class="text-lg leading-[1.25] mb-32">
         404 – Seite nicht gefunden
       </h1>
     </template>

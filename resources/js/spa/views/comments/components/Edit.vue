@@ -3,16 +3,16 @@
     v-if="isOpen" 
     class="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
     <div class="bg-white rounded-sm p-16 w-full max-w-xl shadow-xl">
-      <h2 class="text-xl mb-16">Kommentar bearbeiten</h2>
+      <h2 class="text-md mb-16">Kommentar bearbeiten</h2>
 
       <textarea
         v-model="editableComment.comment"
         rows="5"
-        class="appearance-none w-full text-md !ring-0 border-black focus:border-black p-8"
+        class="appearance-none w-full !ring-0 border-black focus:border-black p-8"
         maxlength="250"
       ></textarea>
 
-      <div class="mt-2 text-[#777] text-sm flex justify-between items-center">
+      <div class="mt-2 text-[#777] text-xs flex justify-between items-center">
         <div>{{ formatDate(editableComment.date) }} • {{ editableComment.building }}</div>
         <div>{{ editableComment.comment.length }}/250</div>
       </div>
@@ -20,12 +20,12 @@
       <div class="mt-16 flex justify-end gap-16">
         <button 
           @click="close" 
-          class="py-6 px-16 text-sm bg-gray-200 inline-block w-auto hover:bg-black/50 hover:text-white transition-colors duration-150 text-black">
+          class="py-6 px-16 text-xs bg-gray-200 inline-block w-auto hover:bg-black/50 hover:text-white transition-colors duration-150 text-black">
           Abbrechen
         </button>
         <button 
           @click="submit" 
-          class="py-6 px-16 text-sm bg-black inline-block w-auto hover:bg-black/50 hover:text-white transition-colors duration-150 text-white">
+          class="py-6 px-16 text-xs bg-black inline-block w-auto hover:bg-black/50 hover:text-white transition-colors duration-150 text-white">
           Speichern
         </button>
       </div>
