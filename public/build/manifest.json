@@ -17,6 +17,11 @@
     "isEntry": true,
     "src": "resources/js/app.js"
   },
+  "resources/js/map.js": {
+    "file": "assets/map-7b65b1f6.js",
+    "isEntry": true,
+    "src": "resources/js/map.js"
+  },
   "resources/js/spa.js": {
     "file": "assets/spa-fda6e762.js",
     "isEntry": true,
