@@ -10,10 +10,10 @@
 
 @section('content')
   <div id="map" class="w-full h-full object-cover absolute inset-0"></div>
-
-  {{-- <script>const _projects = @json($data);</script> --}}
+  <script>const _buildings = @json($data);</script>
+  {{-- @php dd($data); @endphp
   <script>
-    window._projects = [
+    window._buildings = [
       {
         title: "Zürich West Development",
         slug: "zurich-west",
@@ -39,6 +39,6 @@
         lng: 8.4763
       },
     ];
-  </script>
+  </script> --}}
   @vite('resources/js/map.js')
 @endsection

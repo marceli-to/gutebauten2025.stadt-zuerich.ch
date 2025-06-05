@@ -3,34 +3,13 @@ import 'leaflet/dist/leaflet.css';
 import proj4 from 'proj4';
 import 'proj4leaflet';
 
-const _projects = window._projects || []; // if you still define it in Blade
-
 (function () {
-  const mq = {
-    mobile: window.matchMedia('(max-width: 700px)'),
-    smallScreen: window.matchMedia('(min-width: 700px)'),
-    largeScreen: window.matchMedia('(min-width: 1024px)'),
-  };
+  // Zoom and fallback center
+  const zoomLevel = 3;
+  const centerLat = 47.37;
+  const centerLng = 8.53;
 
-  // Default zoom and center
-  let zoomLevel = 2;
-  let centerLat = 47.37;
-  let centerLng = 8.53;
-
-  if (mq.mobile.matches) {
-    zoomLevel = 1;
-    centerLat = 47.375237643601906;
-    centerLng = 8.53714336229832;
-  } else if (mq.largeScreen.matches) {
-    zoomLevel = 3;
-    centerLat = 47.38320885381473;
-    centerLng = 8.5457634705359;
-  } else if (mq.smallScreen.matches) {
-    zoomLevel = 2;
-    centerLat = 47.39210544462277;
-    centerLng = 8.548022401252375;
-  }
-
+  // LV95 / EPSG:2056 definition
   const lv95 = {
     epsg: 'EPSG:2056',
     def: '+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs',
@@ -44,14 +23,24 @@ const _projects = window._projects || []; // if you still define it in Blade
     origin: lv95.origin
   });
 
-  const sw = L.latLng(47.31772500499832, 8.451570615923625);
-  const ne = L.latLng(47.515225463667726, 8.645079458079913);
-  const bounds = L.latLngBounds(sw, ne);
+  // Original content bounds
+  const contentSW = L.latLng(47.359900, 8.474826);
+  const contentNE = L.latLng(47.412927, 8.593506);
+  const contentBounds = L.latLngBounds(contentSW, contentNE);
+
+  // Apply ~5km padding (0.045° latitude, 0.067° longitude)
+  const latPad = 0.045;
+  const lngPad = 0.067;
+
+  const paddedSW = L.latLng(47.359900 - latPad, 8.474826 - lngPad);
+  const paddedNE = L.latLng(47.412927 + latPad, 8.593506 + lngPad);
+  const paddedBounds = L.latLngBounds(paddedSW, paddedNE);
 
   const myMap = new L.Map('map', {
     tap: false,
     crs: crs,
-    maxBounds: bounds,
+    maxBounds: paddedBounds,           // allow room for popups
+    maxBoundsViscosity: 0.5,           // soft panning resistance
     minZoom: zoomLevel,
     maxZoom: 8,
   });
@@ -62,31 +51,46 @@ const _projects = window._projects || []; // if you still define it in Blade
     tileSize: 512
   }).addTo(myMap);
 
-  myMap.setView(L.latLng(centerLat, centerLng), zoomLevel);
+  // Zoom to actual content bounds, leave padded room for popups
+  myMap.fitBounds(contentBounds, {
+    padding: [40, 40],
+    maxZoom: zoomLevel
+  });
 
+  // Marker icons
   const marker = L.icon({
     iconUrl: '../img/marker.svg',
-    iconSize: [30, 44],
-    iconAnchor: [15, 35],
-    popupAnchor: [0, -44],
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -10],
   });
 
   const marker_active = L.icon({
     iconUrl: '../img/marker-active.svg',
-    iconSize: [30, 44],
-    iconAnchor: [15, 35],
-    popupAnchor: [0, -44],
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -20],
   });
 
-  const popupOpts = { minWidth: 240, maxWidth: 'auto', autoPanPadding: [30, 30] };
+  const popupOpts = {
+    minWidth: 260,
+    maxWidth: 260,
+    autoPan: true,
+    autoPanPadding: [40, 40]
+  };
+
   const popupTpl = `
-    <div class="leaflet-popup-content-body">
-      <a href="/%slug%" title="%title%">
-        <img width="300" height="225" src="../media/projects/%slug%/%img%.jpg" alt="%title%">
+    <div class="w-[260px] border-[3px] border-black font-sans">
+      <a href="/%slug%" title="%title%" class="block text-black leading-none">
+        <img 
+          src="../media/buildings/%slug%/map-%img%.jpg" 
+          alt="%title%" 
+          class="w-full h-auto block"
+        />
       </a>
-      <div class="leaflet-popup-content-body__text">
-        <a href="/%slug%" class="icon-arrow-up" title="%title%">
-          <h2><span>%title%</span></h2>
+      <div class="bg-lumora relative p-10">
+        <a href="/%slug%" title="%title%" class="no-underline text-black block">
+          <h2 class="text-sm !text-black">%title%</h2>
         </a>
       </div>
     </div>
@@ -94,14 +98,14 @@ const _projects = window._projects || []; // if you still define it in Blade
 
   const _markers = [];
 
-  if (typeof _projects !== 'undefined' && Array.isArray(_projects)) {
-    _projects.forEach((b) => {
+  if (typeof _buildings !== 'undefined' && Array.isArray(_buildings)) {
+    _buildings.forEach((b) => {
       let content = popupTpl;
       content = content.replaceAll('%title%', b.title);
       content = content.replace('%img%', b.slug);
       content = content.replaceAll('%slug%', b.slug);
 
-      const markerInstance = L.marker([b.lat, b.lng], { icon: marker })
+      const markerInstance = L.marker([b.lat, b.long], { icon: marker })
         .on('click', activeMarker)
         .addTo(myMap)
         .bindPopup(content, popupOpts);

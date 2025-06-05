@@ -16,3 +16,15 @@ p:not(:last-of-type) {
 .leaflet-control-container {
   @apply  hidden;
 }
+
+.leaflet-popup-content-wrapper {
+  @apply !bg-transparent text-black !shadow-none;
+}
+
+.leaflet-popup-tip-container {
+  @apply hidden;
+}
+
+.leaflet-popup-content {
+  @apply !m-0 !text-sm !leading-[1.2];
+}
