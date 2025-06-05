@@ -13,12 +13,10 @@
     <div id="map" class="w-full h-[600px]"></div>
   </x-layout.container>
 
-  @vite('resources/js/leaflet.js')
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.2/proj4.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.js"></script>
+
   {{-- <script>const _projects = @json($data);</script> --}}
   <script>
-    const _projects = [
+    window._projects = [
       {
         title: "Zürich West Development",
         slug: "zurich-west",
