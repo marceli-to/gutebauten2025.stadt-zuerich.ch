@@ -67,14 +67,14 @@ const _projects = window._projects || []; // if you still define it in Blade
   myMap.setView(L.latLng(centerLat, centerLng), zoomLevel);
 
   const marker = L.icon({
-    iconUrl: '/assets/img/icons/marker.svg',
+    iconUrl: '../img/marker.svg',
     iconSize: [30, 44],
     iconAnchor: [15, 35],
     popupAnchor: [0, -44],
   });
 
   const marker_active = L.icon({
-    iconUrl: '/assets/img/icons/marker-active.svg',
+    iconUrl: '../img/marker.svg',
     iconSize: [30, 44],
     iconAnchor: [15, 35],
     popupAnchor: [0, -44],
