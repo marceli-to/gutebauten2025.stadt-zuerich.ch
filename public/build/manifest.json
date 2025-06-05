@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-d115846d.css",
+    "file": "assets/app-7892d3b0.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -17,8 +17,13 @@
     "isEntry": true,
     "src": "resources/js/app.js"
   },
+  "resources/js/leaflet.js": {
+    "file": "assets/leaflet-77314d2a.js",
+    "isEntry": true,
+    "src": "resources/js/leaflet.js"
+  },
   "resources/js/map.js": {
-    "file": "assets/map-7b65b1f6.js",
+    "file": "assets/map-cd2584ce.js",
     "isEntry": true,
     "src": "resources/js/map.js"
   },
