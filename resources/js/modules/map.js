@@ -56,8 +56,6 @@ const _projects = window._projects || []; // if you still define it in Blade
     maxZoom: 8,
   });
 
-  console.log(crs.options.resolutions.length);
-
   L.tileLayer('https://www.ogd.stadt-zuerich.ch/mapproxy/wmts/1.0.0/Basiskarte_Zuerich_Raster_Grau/default/ktzh/{z}/{y}/{x}.png', {
     maxZoom: 8,
     minZoom: 1,

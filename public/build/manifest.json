@@ -12,7 +12,7 @@
     "src": "node_modules/leaflet/dist/images/marker-icon.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-d115846d.css",
+    "file": "assets/app-568eee0e.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -29,11 +29,6 @@
     "isEntry": true,
     "src": "resources/js/app.js"
   },
-  "resources/js/leaflet.js": {
-    "file": "assets/leaflet-77314d2a.js",
-    "isEntry": true,
-    "src": "resources/js/leaflet.js"
-  },
   "resources/js/map.css": {
     "file": "assets/map-93e82042.css",
     "src": "resources/js/map.css"
@@ -47,7 +42,7 @@
     "css": [
       "assets/map-93e82042.css"
     ],
-    "file": "assets/map-0fa0cf30.js",
+    "file": "assets/map-1a2d7f7d.js",
     "isEntry": true,
     "src": "resources/js/map.js"
   },
