@@ -19,7 +19,9 @@ export default {
       },
 
       maxWidth: {
-        'container': '100rem', // 1600px
+        'container': '100rem',  // 1600px
+        'text': '48rem',        // 768px
+        'text-wide': '68rem',   // 1088px
       },
 
       borderWidth: {
