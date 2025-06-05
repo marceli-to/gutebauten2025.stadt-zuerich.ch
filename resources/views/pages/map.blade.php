@@ -41,12 +41,6 @@
         lat: 47.3881,
         lng: 8.4763
       },
-      {
-        title: "Kreis 4 Cultural Hub",
-        slug: "kreis4-hub",
-        lat: 47.3765,
-        lng: 8.5278
-      }
     ];
   </script>
   @vite('resources/js/map.js')
