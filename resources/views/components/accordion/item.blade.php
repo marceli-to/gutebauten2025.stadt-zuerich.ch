@@ -25,7 +25,7 @@
   }"
   x-effect="open = selected === {{ $index }}; updateHeight()"
   class="relative w-full border-b-3 xl:border-b-4 border-black">
-  <x-layout.inner>
+  <x-layout.container>
     <button 
       type="button"
       id="{{ $buttonId }}"
@@ -39,10 +39,10 @@
         </x-headings.h2>
 
         <span :class="{ 'block': !open, 'hidden': open }">
-          <x-icons.chevron-down class="w-32 md:w-42 xl:w-56 h-auto shrink-0" />
+          <x-icons.chevron.down class="w-32 md:w-42 xl:w-56 h-auto shrink-0" />
         </span>
         <span :class="{ 'block': open, 'hidden': !open }">
-          <x-icons.chevron-up class="w-32 md:w-42 xl:w-56 h-auto shrink-0" />
+          <x-icons.chevron.up class="w-32 md:w-42 xl:w-56 h-auto shrink-0" />
         </span>
       </div>
     </button>
@@ -60,5 +60,5 @@
         {{ $slot }}
       </div>
     </div>
-  </x-layout.inner>
+  </x-layout.container>
 </div>

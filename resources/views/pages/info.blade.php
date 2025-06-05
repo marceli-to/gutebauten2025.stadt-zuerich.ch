@@ -10,7 +10,7 @@
 
 @section('content')
   <div class="bg-white border-b-3 xl:border-b-4 border-black">
-    <x-layout.inner class="py-30 lg:py-40 xl:py-70 flex flex-col gap-y-45 lg:gap-y-40">
+    <x-layout.container class="py-30 lg:py-40 xl:py-70 flex flex-col gap-y-45 lg:gap-y-40">
 
       <x-layout.article class="flex items-start gap-x-20 xl:gap-x-30">
         <div class="min-w-75 md:min-w-57 lg:min-w-69 xl:min-w-92 shrink-0 mt-5">
@@ -47,7 +47,7 @@
           <p>Mit Klick auf das Teilen-Symbol können Projekte über Social Media geteilt werden.</p>
         </div>
       </x-layout.article>
-    </x-layout.inner>
+    </x-layout.container>
   </div>
   <x-accordion.wrapper>
     

@@ -9,6 +9,6 @@
 @endsection
 
 @section('content')
-  <x-layout.inner>
-  </x-layout.inner>
+  <x-layout.container>
+  </x-layout.container>
 @endsection
