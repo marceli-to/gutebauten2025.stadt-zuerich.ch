@@ -9,10 +9,7 @@
 @endsection
 
 @section('content')
-  <x-layout.container>
-    <div id="map" class="w-full h-[600px]"></div>
-  </x-layout.container>
-
+  <div id="map" class="w-full h-full object-cover"></div>
 
   {{-- <script>const _projects = @json($data);</script> --}}
   <script>
