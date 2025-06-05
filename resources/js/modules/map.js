@@ -84,7 +84,7 @@ const _projects = window._projects || []; // if you still define it in Blade
   const popupTpl = `
     <div class="leaflet-popup-content-body">
       <a href="/%slug%" title="%title%">
-        <img width="300" height="225" src="/assets/media/%slug%/%img%-map.jpg" alt="%title%">
+        <img width="300" height="225" src="../media/%slug%/%img%-map.jpg" alt="%title%">
       </a>
       <div class="leaflet-popup-content-body__text">
         <a href="/%slug%" class="icon-arrow-up" title="%title%">
