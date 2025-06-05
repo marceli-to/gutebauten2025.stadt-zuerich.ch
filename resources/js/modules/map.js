@@ -74,7 +74,7 @@ const _projects = window._projects || []; // if you still define it in Blade
   });
 
   const marker_active = L.icon({
-    iconUrl: '../img/marker.svg',
+    iconUrl: '../img/marker-active.svg',
     iconSize: [30, 44],
     iconAnchor: [15, 35],
     popupAnchor: [0, -44],
