@@ -6,7 +6,7 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
   resolve: {
     alias: {
-      img: resolve('resources/media'),
+      img: resolve('resources/img'),
       fonts: resolve('resources/fonts'),
       vue: 'vue/dist/vue.esm-bundler.js',
       '@': resolve('resources/js/spa'),
