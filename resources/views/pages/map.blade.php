@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-  <div id="map" class="w-full h-full object-cover"></div>
+  <div id="map" class="w-full h-full object-cover absolute inset-0"></div>
 
   {{-- <script>const _projects = @json($data);</script> --}}
   <script>
