@@ -1,3 +1,10 @@
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import proj4 from 'proj4';
+import 'proj4leaflet';
+
+const _projects = window._projects || []; // if you still define it in Blade
+
 (function () {
   const mq = {
     mobile: window.matchMedia('(max-width: 700px)'),
