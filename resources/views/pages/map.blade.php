@@ -16,7 +16,7 @@
 
   {{-- <script>const _projects = @json($data);</script> --}}
   <script>
-    window._projects = [
+    const _projects = [
       {
         title: "Zürich West Development",
         slug: "zurich-west",
