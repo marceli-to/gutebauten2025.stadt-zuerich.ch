@@ -52,7 +52,7 @@
     x-ref="container"
     role="region"
     aria-labelledby="{{ $buttonId }}"
-    class="relative overflow-hidden transition-height duration-300 ease-in-out max-h-0"
+    class="relative overflow-hidden max-h-0"
     :class="{ 'bg-transparent': !open, 'bg-white': open }"
     style="max-height: 0px;">
     <x-layout.container>
