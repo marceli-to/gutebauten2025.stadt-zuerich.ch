@@ -49,8 +49,8 @@
       </x-layout.article>
     </x-layout.container>
   </div>
+
   <x-accordion.wrapper>
-    
     <x-accordion.item index="1" title="Über die Auszeichnung">
       <x-layout.article>
         <p>Gute Bauten und Freiräume prägen das Gesicht der Stadt. Sie haben in Zürich Tradition. Damit dies auch in Zukunft so bleibt, fördert die Stadt Zürich die Diskussion und zeichnet seit rund 80 Jahren regelmässig die besten Objekte und Anlagen aus.</p>
@@ -71,45 +71,54 @@
       <x-layout.article>
         <p>Für die Auszeichnung gute Bauten wird eine ganzheitliche Beurteilung von Bauwerken und Freiräumen vorgenommen und Beiträge ausgezeichnet, die einen aussergewöhnlichen Beitrag zu einer vielfältigen, durchmischten und nachhaltigen Stadt leisten.</p>
         <p>Die angewandten Kriterien bilden die Vielfalt des guten Bauens ab:</p>
-        <x-headings.h3>Städtebau – Einordnung in den räumlichen Kontext</x-headings.h3>
-        <p>Es wird ein herausragender Beitrag zur Qualität des räumlichen Kontextes und zur Identität eines Ortes geleistet.</p>
-        <x-headings.h3>Freiraum – Förderung von Aufenthalt, Begegnung und Grün</x-headings.h3>
-        <p>Räume, Plätze, Grünflächen und Siedlungsfreiräume bieten eine hohe Aufenthaltsqualität und Nutzungsvielfalt. Sie leisten einen herausragenden Beitrag zur Biodiversität und Klimaanpassung.</p>
-        <x-headings.h3>Architektur – Weiterentwicklung im Bestand</x-headings.h3>
-        <p>Das Objekt weist eine zukunftsweisende Weiterentwicklung der gebauten und unbebauten Umgebung auf und bietet Entfaltungsmöglichkeiten für die wachsende Bevölkerung. Wertvollem Bestand wird vorbildlich Sorge getragen.</p>
-        <x-headings.h3>Gesellschaft – Berücksichtigung sozialräumlicher Aspekte</x-headings.h3>
-        <p>Das Projekt bietet einen hohen Nutzwert, trägt zur Identifikation mit dem Lebensraum bei und fördert den sozialen Austausch, die soziale Vielfalt und Inklusion.</p>
-        <x-headings.h3>Ökonomie – Schaffung wirtschaftlicher Mehrwerte</x-headings.h3>
-        <p>Das Objekt zeichnet sich durch eine hohe Nutzungsflexibilität und Funktionalität aus. Lange Lebenszyklen und nachhaltige Bewirtschaftung schaffen einen Mehrwert.</p>
-        <x-headings.h3>Ökologie – Beitrag zu Klimaschutz, Klimaanpassung und Stadtnatur</x-headings.h3>
-        <p>Das Projekt zeugt von einem sorgfältigen und verantwortungsvollen Umgang mit Ressourcen, optimiert den Energieverbrauch und weist eine geringe Belastung der natürlichen Umwelt auf. Durch herausragende Innovationsleistung wird ein Beitrag zu Klima und Natur geleistet.</p>
+        <p>Städtebau – Einordnung in den räumlichen Kontext<br>Es wird ein herausragender Beitrag zur Qualität des räumlichen Kontextes und zur Identität eines Ortes geleistet.</p>
+        <p>Freiraum – Förderung von Aufenthalt, Begegnung und Grün<br>Räume, Plätze, Grünflächen und Siedlungsfreiräume bieten eine hohe Aufenthaltsqualität und Nutzungsvielfalt. Sie leisten einen herausragenden Beitrag zur Biodiversität und Klimaanpassung.</p>
+        <p>Architektur – Weiterentwicklung im Bestand<br>Das Objekt weist eine zukunftsweisende Weiterentwicklung der gebauten und unbebauten Umgebung auf und bietet Entfaltungsmöglichkeiten für die wachsende Bevölkerung. Wertvollem Bestand wird vorbildlich Sorge getragen.</p>
+        <p>Gesellschaft – Berücksichtigung sozialräumlicher Aspekte<br>Das Projekt bietet einen hohen Nutzwert, trägt zur Identifikation mit dem Lebensraum bei und fördert den sozialen Austausch, die soziale Vielfalt und Inklusion.</p>
+        <p>Ökonomie – Schaffung wirtschaftlicher Mehrwerte<br>Das Objekt zeichnet sich durch eine hohe Nutzungsflexibilität und Funktionalität aus. Lange Lebenszyklen und nachhaltige Bewirtschaftung schaffen einen Mehrwert.</p>
+        <p>Ökologie – Beitrag zu Klimaschutz, Klimaanpassung und Stadtnatur<br>Das Projekt zeugt von einem sorgfältigen und verantwortungsvollen Umgang mit Ressourcen, optimiert den Energieverbrauch und weist eine geringe Belastung der natürlichen Umwelt auf. Durch herausragende Innovationsleistung wird ein Beitrag zu Klima und Natur geleistet.</p>
       </x-layout.article>
     </x-accordion.item>
 
     <x-accordion.item index="4" title="Jury">
       <x-layout.article>
         <p>Die Jury setzt sich aus folgenden Expert*innen und stimmberechtigten Mitgliedern des Stadtrats und der Verwaltung zusammen:</p>
-        <ul>
-          <li>Marianne Baumgartner, Dipl. Arch. ETH SIA BSA</li>
-          <li>Philip Blum, lic. phil. UZH, MAS Real Estate Management HWZ, eidg. dipl. Immobilientreuhänder</li>
-          <li>Thomas Kissling, Architekt, MSc ETH Arch / SIA</li>
-          <li>Ascan Mergenthaler, Dipl. Ing. Universität Stuttgart SIA BSA ARB</li>
-          <li>Christian Schneider, Dipl. Natw. ETH / Energie-Ing. NDS / SIA</li>
-          <li>Christina Schumacher, lic. phil. Soziologin, DAS Raumplanung ETHZ</li>
-          <li>Volker Staab, Prof. Dipl. Arch. ETH</li>
-          <li>André Odermatt, Vorsteher Hochbaudepartement (Vorsitz)</li>
-          <li>Corine Mauch, Stadtpräsidentin</li>
-          <li>Simone Brander, Vorsteherin Tiefbau- und Entsorgungsdepartement</li>
-          <li>Katrin Gügler, Direktorin Amt für Städtebau</li>
-          <li>Christine Bräm, Direktorin Grün Stadt Zürich</li>
-          <li>Anna Schindler, Direktorin Stadtentwicklung Zürich</li>
-        </ul>
+        <p>
+          Marianne Baumgartner, Dipl. Arch. ETH SIA BSA<br>
+          Philip Blum, lic. phil. UZH, MAS Real Estate Management HWZ, eidg. dipl. Immobilientreuhänder<br>
+          Thomas Kissling, Architekt, MSc ETH Arch / SIA<br>
+          Ascan Mergenthaler, Dipl. Ing. Universität Stuttgart SIA BSA ARB<br>
+          Christian Schneider, Dipl. Natw. ETH / Energie-Ing. NDS / SIA<br>
+          Christina Schumacher, lic. phil. Soziologin, DAS Raumplanung ETHZ<br>
+          Volker Staab, Prof. Dipl. Arch. ETH 
+        </p>
+        <p>
+          André Odermatt, Vorsteher Hochbaudepartement (Vorsitz)<br>
+          Corine Mauch, Stadtpräsidentin<br>
+          Simone Brander, Vorsteherin Tiefbau- und Entsorgungsdepartement<br>
+          Katrin Gügler, Direktorin Amt für Städtebau<br>
+          Christine Bräm, Direktorin Grün Stadt Zürich<br>
+          Anna Schindler, Direktorin Stadtentwicklung Zürich 
+        </p>
       </x-layout.article>
     </x-accordion.item>
 
     <x-accordion.item index="5" title="Preisverleihung und Ausstellung">
       <x-layout.article>
         <p>Die Preisverleihung findet am 2. Oktober 2025 statt. Die ausgezeichneten Bauten werden zudem in einer Ausstellung im ZAZ BELLERIVE Zentrum Architektur Zürich vom 3. Oktober bis 9. November 2025 präsentiert.</p>
+      </x-layout.article>
+    </x-accordion.item>
+
+    <x-accordion.item index="6" title="Impressum">
+      <x-layout.article>
+        <p>
+          Gesamtredaktion: Amt für Städtebau<br>
+          Kontakt: afs-kommunikation@zuerich.ch<br>
+          Projekttexte: Judit Solt<br>
+          Gesamtkonzept: Vieceli & Cremers, viecelicremers.com, Zürich<br>
+          Gestaltung Webseite: Nadine Ochsner, nostudio.ch, Zürich in Zusammenarbeit mit Vieceli & Cremers<br>
+          Programmierung: Marcel Stadelmann, marceli.to, Zürich<br>
+          © 2025, bei den Autorinnen und Autoren
       </x-layout.article>
     </x-accordion.item>
 

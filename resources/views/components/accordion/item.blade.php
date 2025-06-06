@@ -25,40 +25,42 @@
   }"
   x-effect="open = selected === {{ $index }}; updateHeight()"
   class="relative w-full border-b-3 xl:border-b-4 border-black">
-  <x-layout.container>
-    <button 
-      type="button"
-      id="{{ $buttonId }}"
-      class="w-full block"
-      @click="toggle()"
-      :aria-expanded="open.toString()"
-      aria-controls="{{ $panelId }}">
-      <div class="w-full flex items-center justify-between py-10 md:py-15 xl:py-20">
-        <x-headings.h2 class="!leading-none">
-          {{ $title }}
-        </x-headings.h2>
+  <button 
+    type="button"
+    id="{{ $buttonId }}"
+    class="w-full block"
+    :class="{ 'bg-white': open, 'bg-lumora': !open }"
+    @click="toggle()"
+    :aria-expanded="open.toString()"
+    aria-controls="{{ $panelId }}">
+    <x-layout.container class="w-full flex items-center justify-between py-10 md:py-15 xl:py-20">
+      <x-headings.h2 class="!leading-none">
+        {{ $title }}
+      </x-headings.h2>
 
-        <span :class="{ 'block': !open, 'hidden': open }">
-          <x-icons.chevron.down class="w-32 md:w-42 xl:w-56 h-auto shrink-0" />
-        </span>
-        <span :class="{ 'block': open, 'hidden': !open }">
-          <x-icons.chevron.up class="w-32 md:w-42 xl:w-56 h-auto shrink-0" />
-        </span>
-      </div>
-    </button>
+      <span :class="{ 'block': !open, 'hidden': open }">
+        <x-icons.chevron.down class="w-32 md:w-42 xl:w-56 h-auto shrink-0" />
+      </span>
+      <span :class="{ 'block': open, 'hidden': !open }">
+        <x-icons.chevron.up class="w-32 md:w-42 xl:w-56 h-auto shrink-0" />
+      </span>
+    </x-layout.container>
+  </button>
 
-    <div 
-      id="{{ $panelId }}"
-      x-ref="container"
-      role="region"
-      aria-labelledby="{{ $buttonId }}"
-      class="relative overflow-hidden transition-height duration-300 ease-in-out max-h-0"
-      style="max-height: 0px;">
+  <div 
+    id="{{ $panelId }}"
+    x-ref="container"
+    role="region"
+    aria-labelledby="{{ $buttonId }}"
+    class="relative overflow-hidden transition-height duration-300 ease-in-out max-h-0"
+    :class="{ 'bg-transparent': !open, 'bg-white': open }"
+    style="max-height: 0px;">
+    <x-layout.container>
       <div 
-        class="w-full pb-25 transition-opacity duration-300 ease-in-out"
+        class="w-full pb-25 xl:pb-35 transition-opacity duration-300 ease-in-out"
         :class="{ 'opacity-100': open, 'opacity-0': !open }">
         {{ $slot }}
       </div>
-    </div>
-  </x-layout.container>
+    </x-layout.container>
+  </div>
 </div>

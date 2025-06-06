@@ -9,7 +9,5 @@
 @endsection
 
 @section('content')
-  <x-layout.container>
-    {{ $building->short_description }}
-  </x-layout.container>
+  @include('components.buildings.' . $building->slug, ['building' => $building])
 @endsection

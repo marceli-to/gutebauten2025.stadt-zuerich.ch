@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="aspect-[16/9]">
-  <div id="map" class="w-full h-full object-cover absolute inset-0 "></div>
+  <div id="map" class="w-full h-full object-cover absolute inset-0"></div>
 </div>
 <script>const _buildings = @json($data);</script>
 @vite('resources/js/map.js')

@@ -41,7 +41,7 @@ function init() {
   
   const bounds = {
     content: autoBounds,
-    padded: autoBounds.pad(0.6) // 60% padding in all directions for popup space
+    padded: autoBounds.pad(0.8) // 60% padding in all directions for popup space
   };
   /** // Auto bounds */
 
@@ -51,9 +51,11 @@ function init() {
     maxBounds: bounds.padded,
     maxBoundsViscosity: 0.5,
     maxZoom: 8,
+    // TODO: use 1 for mobile, 2 for desktop
+    minZoom: 2 // REMOVE if calculatedMinZoom is working
   });
 
-  /** Removed as it was not working properly */
+  /** IMPORTANT: Removed as it was not working properly, minZoom is set to 2 */
   // const calculatedMinZoom = map.getBoundsZoom(bounds.padded, true);
   // map.setMinZoom(calculatedMinZoom);
 
@@ -101,31 +103,34 @@ function init() {
   });
 
   const buildPopupHTML = (b) => `
-      <a 
-        href="/${b.slug}" 
-        title="${b.title}" 
-        class="w-full border-3 xl:border-4 border-black font-sans bg-lumora block text-black leading-none group">
-        <img 
-          src="/media/${b.slug}/map-${b.slug}.jpg" 
-          alt="${b.title}" 
-          width="260"
-          height="162"
-          class="w-full h-auto block aspect-[16/10] object-cover" />
-        <span class="block bg-lumora relative p-10 md:pb-50">
-          <h2 class="text-sm xl:text-md !text-black pr-14 md:pr-18">${b.title}</h2>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute size-14 md:size-18 right-10 bottom-10 xl:right-12 xl:bottom-12 group-hover:rotate-45 transition-all duration-200">
-            <path d="M17.5 12H15.5V3.41406L1.70703 17.207L0.292969 15.793L14.0859 2H5V0H17.5V12Z" fill="black"/>
-          </svg>
-        </span>
-      </a>`;
+    <a 
+      href="/${b.slug}" 
+      title="${b.title}" 
+      class="w-full border-3 xl:border-4 border-black font-sans bg-lumora block text-black leading-none group">
+      <img 
+        src="/media/${b.slug}/map-${b.slug}.jpg" 
+        alt="${b.title}" 
+        width="260"
+        height="162"
+        class="w-full h-auto block aspect-[16/10] object-cover" />
+      <span class="block bg-lumora relative p-10 md:pb-50">
+        <h2 class="text-sm xl:text-md !text-black pr-14 md:pr-18">${b.title}</h2>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute size-14 md:size-18 right-10 bottom-10 xl:right-12 xl:bottom-12 group-hover:rotate-45 transition-all duration-200">
+          <path d="M17.5 12H15.5V3.41406L1.70703 17.207L0.292969 15.793L14.0859 2H5V0H17.5V12Z" fill="black"/>
+        </svg>
+      </span>
+    </a>`;
 
   // ─── Marker Creation ───────────────────────────────────────────
   function addMarkers(buildings) {
+    markerList.length = 0;
+  
     buildings.forEach((b) => {
       const marker = L.marker([b.lat, b.long], { icon: markerIcons.default })
         .on('click', (e) => {
           resetMarkers();
           e.target.setIcon(markerIcons.active);
+  
           currentPopup = { marker: e.target, building: b };
           e.target.getPopup().on('remove', () => {
             resetMarkers();
@@ -134,10 +139,11 @@ function init() {
         })
         .addTo(map)
         .bindPopup(buildPopupHTML(b), getPopupOptions());
-
+  
+      marker._buildingSlug = b.slug; // Attach slug to marker
       markerList.push(marker);
     });
-
+  
     if (markerList.length) {
       const bounds = L.latLngBounds(markerList.map(m => m.getLatLng()));
       map.fitBounds(bounds, {
@@ -145,8 +151,19 @@ function init() {
         maxZoom: 8
       });
     }
+  
+    // ─── Activate Marker from URL Hash ─────────────────────────────
+    const hash = window.location.hash?.substring(1);
+    if (hash) {
+      const marker = markerList.find(m => m._buildingSlug === hash);
+      const building = buildings.find(b => b.slug === hash);
+      if (marker && building) {
+        resetMarkers();
+        marker.setIcon(markerIcons.active);
+      }
+    }
   }
-
+  
   function resetMarkers() {
     markerList.forEach((m) => m.setIcon(markerIcons.default));
   }
