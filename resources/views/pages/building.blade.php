@@ -1,6 +1,6 @@
 @extends('layout.guest')
 @section('seo_title', $building->title)
-@section('seo_description', '')
+@section('seo_description', $building->short_description)
 
 @section('header')
 <x-headings.h1>
@@ -10,5 +10,6 @@
 
 @section('content')
   <x-layout.container>
+    {{ $building->short_description }}
   </x-layout.container>
 @endsection

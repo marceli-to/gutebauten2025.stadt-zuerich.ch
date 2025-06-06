@@ -53,8 +53,9 @@ function init() {
     maxZoom: 8,
   });
 
-  const calculatedMinZoom = map.getBoundsZoom(bounds.padded, true);
-  map.setMinZoom(calculatedMinZoom);
+  /** Removed as it was not working properly */
+  // const calculatedMinZoom = map.getBoundsZoom(bounds.padded, true);
+  // map.setMinZoom(calculatedMinZoom);
 
   const mapTypes = {
     gray: 'Basiskarte_Zuerich_Raster_Grau',
