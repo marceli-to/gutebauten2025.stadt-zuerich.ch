@@ -9,6 +9,7 @@
 </x-buildings.container>
 
 <x-accordion.wrapper>
+
   <x-accordion.item index="1" title="Credits">
     <x-layout.article class="leading-[1.15]">
       <p>
@@ -45,7 +46,6 @@
 
   <x-accordion.item index="2" title="Kommentare">
     <x-layout.article>
-
     </x-layout.article>
   </x-accordion.item>
 
