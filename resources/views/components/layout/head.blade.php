@@ -21,4 +21,4 @@
 @vite('resources/css/app.css')
 @livewireStyles
 </head>
-<body class="antialiased font-sans bg-lumora text-sm md:text-md xl:text-lg text-black flex flex-col min-h-screen">
+<body class="antialiased font-sans @if (!request()->routeIs('page.dashboard')) bg-lumora @else bg-white @endif text-sm md:text-md xl:text-lg text-black flex flex-col min-h-screen">

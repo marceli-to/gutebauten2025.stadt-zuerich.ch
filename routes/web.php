@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\BuildingController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\InfoController;
 
@@ -28,7 +28,7 @@ require __DIR__.'/auth.php';
 Route::get('/', [HomeController::class, 'index'])->name('page.home');
 Route::get('/info-zum-voting', [InfoController::class, 'index'])->name('page.info');
 Route::get('/uebersichtskarte', [MapController::class, 'index'])->name('page.map');
-Route::get('/{slug}', [ProjectController::class, 'index'])->name('page.project');
+Route::get('/{building:slug}', [BuildingController::class, 'index'])->name('page.project');
 
 
 /**

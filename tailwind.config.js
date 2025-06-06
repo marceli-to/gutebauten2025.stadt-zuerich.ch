@@ -50,10 +50,11 @@ export default {
       },
 
       fontSize: {
+        'tiny': '0.75rem',  // 12px
         'xxs': '0.875rem',  // 14px
-        'xs': '1rem',       // 16px
+        'xs': ['1rem', { lineHeight: '1.25' }],       // 16px/20px
         'sm': ['1.25rem', { lineHeight: '1.25' }],     // 20px/25px
-        'md': '1.5625rem',  // 25px
+        'md': ['1.5625rem', { lineHeight: '1.2' }],    // 25px/30px
         'lg': ['1.875rem', { lineHeight: '1.333' }],   // 30px/40px
         'xl': ['2.1875rem', { lineHeight: '1.15' }],   // 35px
         '2xl': '2.5rem',    // 40px

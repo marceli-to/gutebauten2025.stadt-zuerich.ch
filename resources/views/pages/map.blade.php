@@ -9,36 +9,9 @@
 @endsection
 
 @section('content')
-  <div id="map" class="w-full h-full object-cover absolute inset-0"></div>
-  <script>const _buildings = @json($data);</script>
-  {{-- @php dd($data); @endphp
-  <script>
-    window._buildings = [
-      {
-        title: "Zürich West Development",
-        slug: "zurich-west",
-        lat: 47.3857,
-        lng: 8.5123
-      },
-      {
-        title: "Seefeld Renovation",
-        slug: "seefeld-renovation",
-        lat: 47.3559,
-        lng: 8.5611
-      },
-      {
-        title: "GreenTech Campus",
-        slug: "greentech-campus",
-        lat: 47.4022,
-        lng: 8.5487
-      },
-      {
-        title: "Altstetten Park Upgrade",
-        slug: "altstetten-park",
-        lat: 47.3881,
-        lng: 8.4763
-      },
-    ];
-  </script> --}}
-  @vite('resources/js/map.js')
+<div class="aspect-[16/9]">
+  <div id="map" class="w-full h-full object-cover absolute inset-0 "></div>
+</div>
+<script>const _buildings = @json($data);</script>
+@vite('resources/js/map.js')
 @endsection

@@ -8,6 +8,7 @@ class Building extends Model
     'slug',
     'title',
     'short_title',
+    'short_description',
     'lat',
     'long',
     'maps',

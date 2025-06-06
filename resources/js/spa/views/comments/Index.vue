@@ -19,7 +19,7 @@
             ]">
           {{ label }}
           </span>
-          <span class="rounded-full bg-black text-white w-auto min-w-20 h-16 px-4 py-2 text-xs leading-none inline-flex items-center justify-center"
+          <span class="rounded-full bg-black text-white w-auto min-w-20 h-16 px-4 py-2 text-tiny leading-none inline-flex items-center justify-center"
           v-if="key == 'drafts' && comments[key]?.length">
           {{ comments[key]?.length }}
           </span>

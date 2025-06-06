@@ -4,12 +4,25 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --header-height-sm: 6rem;  /* 96 px */
+}
+
 * {
   font-variant-ligatures: none;
 }
 
-p:not(:last-of-type) {
-  @apply mb-16;
+p:not(:last-child),
+ul:not(:last-child) {
+  @apply mb-20 xl:mb-30;
+}
+
+ul:not(nav ul) {
+  @apply list-disc list-outside pl-20 md:pl-25 xl:pl-30
+}
+
+ul li:not(nav ul li) {
+  @apply list-item;
 }
 
 /* Leaflet */
@@ -22,6 +35,10 @@ p:not(:last-of-type) {
 }
 
 .leaflet-popup-tip-container {
+  @apply hidden;
+}
+
+.leaflet-popup-close-button {
   @apply hidden;
 }
 
