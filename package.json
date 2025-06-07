@@ -23,6 +23,7 @@
         "vue-axios": "^3.4.1"
     },
     "dependencies": {
+        "@fingerprintjs/fingerprintjs": "^4.1.0",
         "@vitejs/plugin-vue": "^4.6.2",
         "alpinejs": "^3.13.0",
         "leaflet": "1.7.1",

@@ -2,6 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+// Dashboard
+use App\Http\Controllers\Api\Dashboard\VoteController as DashboardVoteController;
+use App\Http\Controllers\Api\Dashboard\CommentController as DashboardCommentController;
+
+// Frontend
 use App\Http\Controllers\Api\VoteController;
 use App\Http\Controllers\Api\CommentController;
 
@@ -16,12 +22,18 @@ use App\Http\Controllers\Api\CommentController;
 |
 */
 
-
+// Dashboard
 Route::middleware('auth:sanctum')->group(function () {
-  Route::get('/votes', [VoteController::class, 'get']);
-  Route::get('/comments', [CommentController::class, 'get']);
-  Route::put('/comments/update/{comment}', [CommentController::class, 'update']);
-  Route::put('/comments/restore/{id}', [CommentController::class, 'restore']);
-  Route::put('/comments/toggle/{comment}', [CommentController::class, 'toggle']);
-  Route::delete('/comments/{comment}', [CommentController::class, 'destroy']);
+  Route::get('/votes', [DashboardVoteController::class, 'get']);
+  Route::get('/comments', [DashboardCommentController::class, 'get']);
+  Route::put('/comments/update/{comment}', [DashboardCommentController::class, 'update']);
+  Route::put('/comments/restore/{id}', [DashboardCommentController::class, 'restore']);
+  Route::put('/comments/toggle/{comment}', [DashboardCommentController::class, 'toggle']);
+  Route::delete('/comments/{comment}', [DashboardCommentController::class, 'destroy']);
 });
+
+// Frontend
+Route::get('voter/check/{hash}/{slug}', [VoteController::class, 'check']);
+Route::post('vote', [VoteController::class, 'store']);
+Route::put('vote', [VoteController::class, 'remove']);
+Route::post('comment', [CommentController::class, 'store']);

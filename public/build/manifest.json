@@ -1,4 +1,7 @@
 {
+  "_axios-f70b25c2.js": {
+    "file": "assets/axios-f70b25c2.js"
+  },
   "node_modules/leaflet/dist/images/layers-2x.png": {
     "file": "assets/layers-2x-066daca8.png",
     "src": "node_modules/leaflet/dist/images/layers-2x.png"
@@ -29,6 +32,14 @@
     "isEntry": true,
     "src": "resources/js/app.js"
   },
+  "resources/js/interaction.js": {
+    "file": "assets/interaction-b9f031c7.js",
+    "imports": [
+      "_axios-f70b25c2.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/interaction.js"
+  },
   "resources/js/map.css": {
     "file": "assets/map-d54fe5b9.css",
     "src": "resources/js/map.css"
@@ -47,7 +58,10 @@
     "src": "resources/js/map.js"
   },
   "resources/js/spa.js": {
-    "file": "assets/spa-a31454de.js",
+    "file": "assets/spa-9b7d3521.js",
+    "imports": [
+      "_axios-f70b25c2.js"
+    ],
     "isEntry": true,
     "src": "resources/js/spa.js"
   }

@@ -2,6 +2,14 @@
   [Slideshow]
 </div>
 
+<x-interaction
+  id="{{ $building->id }}"
+  title="{{ $building->title }}"
+  slug="{{ $building->slug }}"
+  share_url="{{ route('page.building', $building->slug) }}"
+  has_vote="false"
+/>
+
 <x-buildings.container>
   <x-layout.article>
     <p>Wie wollen wir morgen arbeiten? Ein Neubau lotet aus, was in der Industrie- und Gewerbezone der Binz möglich ist. Die Ausnützung des Grundstücks unter Berücksichtigung der Bauvorschriften führt zu einem abgeschrägten Volumen mit Balkonen und begrünten Terrassen. Je nach Lage im Haus entstehen Räume in variierender Höhe und Fläche. Sie ermöglichen einzigartige Gewerbe- und Büroarbeitsplätze; überhohe Räume, die zwei Etagen verbinden, und ein Treppenweg entlang der Terrassen fördern den Austausch unter der Mieterschaft. Auch der Hof, die begrünten Terrassen und die Freitreppe zum Hof eignen sich als Begegnungs- und Aufenthaltsräume.</p>
