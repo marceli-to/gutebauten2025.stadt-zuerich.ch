@@ -1,17 +1,19 @@
-<div>
+<div class="aspect-[16/5] bg-blue-200 flex items-center justify-center">
   [Slideshow]
 </div>
 
-<x-interaction
-  id="{{ $building->id }}"
-  title="{{ $building->title }}"
-  slug="{{ $building->slug }}"
-  share_url="{{ route('page.building', $building->slug) }}"
-  has_vote="false"
-/>
+<div id="interaction-app">
+  <user-interaction
+    slug="{{ $building->slug }}"
+    title="{{ $building->title }}"
+    url="{{ route('page.building', $building->slug) }}"
+    :has_vote="@json((bool) $hasVote)"
+  ></user-interaction>
+</div>
 
 <x-buildings.container>
   <x-layout.article>
+    Vote: {{ $hasVote ? 'Ja' : 'Nein' }}
     <p>Wie wollen wir morgen arbeiten? Ein Neubau lotet aus, was in der Industrie- und Gewerbezone der Binz möglich ist. Die Ausnützung des Grundstücks unter Berücksichtigung der Bauvorschriften führt zu einem abgeschrägten Volumen mit Balkonen und begrünten Terrassen. Je nach Lage im Haus entstehen Räume in variierender Höhe und Fläche. Sie ermöglichen einzigartige Gewerbe- und Büroarbeitsplätze; überhohe Räume, die zwei Etagen verbinden, und ein Treppenweg entlang der Terrassen fördern den Austausch unter der Mieterschaft. Auch der Hof, die begrünten Terrassen und die Freitreppe zum Hof eignen sich als Begegnungs- und Aufenthaltsräume.</p>
   </x-layout.article>
 </x-buildings.container>

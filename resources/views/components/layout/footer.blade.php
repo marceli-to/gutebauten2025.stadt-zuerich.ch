@@ -50,6 +50,9 @@
   </x-layout.container>
 </footer>
 @vite('resources/js/app.js')
+@if (request()->routeIs('page.building'))
+@vite('resources/js/interaction.js')
+@endif
 @auth
 @vite('resources/js/spa.js')
 @endauth

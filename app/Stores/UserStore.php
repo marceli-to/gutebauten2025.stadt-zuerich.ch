@@ -65,4 +65,39 @@ class UserStore
     unset($store[$field]);
     $this->set($store);
   }
+
+  /**
+   * Check if user has voted for a building.
+   */
+  public function hasVote(int $buildingId): bool
+  {
+    $votes = $this->getAttribute('votes') ?? [];
+    return in_array($buildingId, $votes);
+  }
+
+  /**
+   * Add a building ID to the vote list.
+   */
+  public function addVote(int $buildingId): void
+  {
+    $votes = $this->getAttribute('votes') ?? [];
+
+    if (!in_array($buildingId, $votes)) {
+      $votes[] = $buildingId;
+      $this->setAttribute('votes', $votes);
+    }
+  }
+
+  /**
+   * Remove a building ID from the vote list.
+   */
+  public function removeVote(int $buildingId): void
+  {
+    $votes = $this->getAttribute('votes') ?? [];
+
+    if (($key = array_search($buildingId, $votes)) !== false) {
+      unset($votes[$key]);
+      $this->setAttribute('votes', array_values($votes));
+    }
+  }
 }

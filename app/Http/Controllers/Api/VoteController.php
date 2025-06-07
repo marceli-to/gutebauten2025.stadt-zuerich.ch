@@ -2,45 +2,29 @@
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\VoteRequest;
 use App\Actions\Vote\Check as CheckAction;
 use App\Actions\Vote\Store as StoreAction;
 use App\Actions\Vote\Remove as RemoveAction;
 
 class VoteController extends Controller
 {
-  public function check(Request $request, string $hash, string $slug)
+  public function check(VoteRequest $request)
   {
-    $request->merge([
-      'hash' => $hash,
-      'slug' => $slug,
-    ]);
-
-    $request->validate([
-      'hash' => 'required|string|size:32',
-      'slug' => 'required|exists:buildings,slug',
-    ]);
     return response()->json(
-      (new CheckAction())->execute($request)
+      app(CheckAction::class)->execute($request)
     );
   }
 
-  public function store(Request $request)
+  public function store(VoteRequest $request)
   {
-    $request->validate([
-      'hash' => 'required|string|size:32',
-      'slug' => 'required|exists:buildings,slug',
-    ]);
-    (new StoreAction())->execute($request);
+    app(StoreAction::class)->execute($request);
     return response()->json(['message' => 'Vote stored']);
   }
 
-  public function remove(Request $request)
+  public function remove(VoteRequest $request)
   {
-    $request->validate([
-      'hash' => 'required|string|size:32',
-      'slug' => 'required|exists:buildings,slug',
-    ]);
-    (new RemoveAction())->execute($request, $request->hash);
+    app(RemoveAction::class)->execute($request);
     return response()->json(['message' => 'Vote removed']);
   }
 }

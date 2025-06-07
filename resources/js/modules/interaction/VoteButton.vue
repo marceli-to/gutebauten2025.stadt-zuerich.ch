@@ -1,39 +1,62 @@
 <template>
-  <a href="#" @click.prevent="toggleVote" :class="['btn-vote', hasVoted ? 'has-vote' : '']">
-    {{ hasVoted ? 'Stimme entfernen' : 'Abstimmen' }}
+  <a
+    href="#"
+    @click.prevent="toggleVote"
+    :class="['btn-vote', has_voted ? 'has-vote' : '']"
+  >
+    {{ has_voted ? 'Stimme entfernen' : 'Abstimmen' }}
   </a>
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import { ref, watch } from 'vue'
 import axios from 'axios'
 
 const props = defineProps({
   slug: String,
-  hash: String
+  hash: String,
+  has_vote: Boolean,
 })
 
 const emit = defineEmits(['voted', 'unvoted'])
 
-const hasVoted = ref(false)
+const has_voted = ref(props.has_vote ?? false)
+const hasChecked = ref(false)
 
-watch(() => props.hash, checkVote)
+watch(
+  () => props.hash,
+  async (newHash) => {
+    if (!newHash || !props.slug) return
+    if (has_voted.value === true || hasChecked.value === true) return
 
-async function checkVote() {
-  if (!props.hash) return
-  const res = await axios.get(`/api/voter/check/${props.hash}/${props.slug}`)
-  hasVoted.value = res.data.has_vote
-}
+    try {
+      const res = await axios.post('/api/voter/check', {
+        hash: newHash,
+        slug: props.slug,
+      })
+      has_voted.value = res.data.has_vote
+      hasChecked.value = true
+    } catch (err) {
+      console.error('Vote check failed:', err)
+    }
+  }
+)
 
 async function toggleVote() {
-  if (hasVoted.value) {
-    await axios.put('/api/vote', { hash: props.hash, slug: props.slug })
-    hasVoted.value = false
-    emit('unvoted')
-  } else {
-    await axios.post('/api/vote', { hash: props.hash, slug: props.slug })
-    hasVoted.value = true
-    emit('voted')
+  if (!props.hash || !props.slug) return
+
+  try {
+    if (has_voted.value) {
+      await axios.put('/api/vote', { hash: props.hash, slug: props.slug })
+      has_voted.value = false
+      emit('unvoted')
+    } else {
+      await axios.post('/api/vote', { hash: props.hash, slug: props.slug })
+      has_voted.value = true
+      emit('voted')
+    }
+  } catch (e) {
+    console.error('Voting error:', e)
   }
 }
 </script>

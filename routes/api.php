@@ -33,7 +33,7 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 // Frontend
-Route::get('voter/check/{hash}/{slug}', [VoteController::class, 'check']);
+Route::post('voter/check', [VoteController::class, 'check']);
 Route::post('vote', [VoteController::class, 'store']);
 Route::put('vote', [VoteController::class, 'remove']);
 Route::post('comment', [CommentController::class, 'store']);
