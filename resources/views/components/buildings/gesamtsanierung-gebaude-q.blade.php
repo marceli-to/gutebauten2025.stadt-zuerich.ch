@@ -17,6 +17,7 @@
 
 <x-buildings.container>
   <x-layout.article>
+    <p>Auf dem Areal der ehemaligen SBB-Werkstätten in Altstetten soll sich eine nachhaltige Mischung aus urbaner Produktion, Gewerbe, Dienstleistungs- und Freizeitangebot etablieren – so das Ziel des Projekts Werkstadt Zürich. Das Gebäude Q bildet die erste Etappe dieser Transformation. Die Halle wurde denkmalpflegerisch saniert und mit Respekt für die historischen Qualitäten mit einfachen, rückbaubaren Einbauten versehen. Parallel zu den Planungen wurden in temporär verfügbaren Räumen Pioniernutzungen angeregt, die sich langfristig auf dem Areal etablieren und mitwachsen können. Dienstleistungsangebote im Erdgeschoss aktivieren auch die Aussenräume.</ 
   </x-layout.article>
 </x-buildings.container>
 
@@ -29,6 +30,31 @@
           href="{{ route('page.map') }}#{{ $building->slug }}">
           Übersichtskarte
         </a>
+      </p>
+      <p>
+        Adresse<br>
+        <a 
+          href="https://www.google.com/maps/place/Hohlstrasse+400" 
+          target="_blank"
+          rel="noopener noreferrer">
+          Hohlstrasse 400
+        </a>
+      </p>
+      <p>
+        Bauträgerschaft<br>
+        SBB Immobilien AG
+      </p>
+      <p>
+        Architektur<br>
+        baubüro in situ ag
+      </p>
+      <p>
+        Landschaftsarchitektur<br>
+        Studio Vulkan Landschaftsarchitektur GmbH
+      </p>
+      <p>
+        Fotografie<br>
+        Martin Zeller Studiozeller
       </p>
     </x-layout.article>
   </x-accordion.item>
