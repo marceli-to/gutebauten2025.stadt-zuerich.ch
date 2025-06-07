@@ -9,6 +9,7 @@ class Building extends Model
     'title',
     'short_title',
     'short_description',
+    'year',
     'lat',
     'long',
     'maps',
@@ -23,5 +24,4 @@ class Building extends Model
   {
     return $this->belongsToMany(Voter::class);
   }
-
 }

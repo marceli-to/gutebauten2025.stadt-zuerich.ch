@@ -1,8 +1,8 @@
 <x-slideshow.wrapper>
-  <x-slideshow.slide number="1" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="1280" height="600" />
-  <x-slideshow.slide number="2" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="1280" height="600" />
-  <x-slideshow.slide number="3" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="1280" height="600" />
-  <x-slideshow.slide number="4" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="1280" height="600" />
+  <x-slideshow.slide number="1" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="560" height="700" />
+  <x-slideshow.slide number="2" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="875" height="700" />
+  <x-slideshow.slide number="3" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="875" height="700" />
+  <x-slideshow.slide number="4" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="875" height="700" />
 </x-slideshow.wrapper>
 
 <div id="interaction-app">
