@@ -28,8 +28,8 @@ export default class ImageSlider {
     this.x = offset;
     gsap.set(this.track, { x: -this.x });
 
-    this.container.addEventListener('mouseenter', () => this.isPaused = true);
-    this.container.addEventListener('mouseleave', () => this.isPaused = false);
+    // this.container.addEventListener('mouseenter', () => this.isPaused = true);
+    // this.container.addEventListener('mouseleave', () => this.isPaused = false);
 
     requestAnimationFrame((t) => this.animate(t));
   }
