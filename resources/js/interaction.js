@@ -1,1 +1,1 @@
-import './modules/interaction/app.js';
+import './interaction/app.js';
