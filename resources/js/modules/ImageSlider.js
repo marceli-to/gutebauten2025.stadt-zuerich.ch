@@ -11,6 +11,7 @@ export default class ImageSlider {
     this.speed = this.container.clientWidth * 0.02;
     this.isTransitioning = false;
     this.lastTime = null;
+    this.isPaused = false;
   }
 
   init() {
@@ -18,12 +19,17 @@ export default class ImageSlider {
     this.measureSlides();
     this.setup();
     this.setupResizeHandler();
+    this.setupTouch();
+    this.setupAccessibility();
 
     this.actualIndex = this.originalSlides.length;
     const targetSlide = this.slides[this.actualIndex];
     const offset = targetSlide.offsetLeft;
     this.x = offset;
     gsap.set(this.track, { x: -this.x });
+
+    this.container.addEventListener('mouseenter', () => this.isPaused = true);
+    this.container.addEventListener('mouseleave', () => this.isPaused = false);
 
     requestAnimationFrame((t) => this.animate(t));
   }
@@ -58,6 +64,37 @@ export default class ImageSlider {
   setup() {
     this.container.querySelector('#nextBtn').addEventListener('click', () => this.next());
     this.container.querySelector('#prevBtn').addEventListener('click', () => this.prev());
+
+    this.container.setAttribute('tabindex', 0);
+    this.container.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') this.next();
+      if (e.key === 'ArrowLeft') this.prev();
+    });
+  }
+
+  setupTouch() {
+    let startX = 0;
+
+    this.container.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+
+    this.container.addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].clientX;
+      const dx = endX - startX;
+
+      if (Math.abs(dx) > 50) {
+        dx > 0 ? this.prev() : this.next();
+      }
+    });
+  }
+
+  setupAccessibility() {
+    this.track.setAttribute('aria-live', 'polite');
+    this.slides.forEach((slide, index) => {
+      slide.setAttribute('role', 'group');
+      slide.setAttribute('aria-label', `Slide ${index + 1}`);
+    });
   }
 
   next() {
@@ -170,7 +207,7 @@ export default class ImageSlider {
     const delta = timestamp - this.lastTime;
     this.lastTime = timestamp;
 
-    if (!this.isTransitioning) {
+    if (!this.isTransitioning && !this.isPaused) {
       this.x += (this.speed * delta / 1000);
       if (this.x >= this.sectionWidth * 2) this.x -= this.sectionWidth;
       if (this.x < 0) this.x += this.sectionWidth;
@@ -180,5 +217,13 @@ export default class ImageSlider {
     this.updateHighlight();
 
     requestAnimationFrame((t) => this.animate(t));
+  }
+
+  logState() {
+    console.log({
+      actualIndex: this.actualIndex,
+      x: this.x,
+      centeredIndex: this.getCurrentCenteredSlideIndex(),
+    });
   }
 }
