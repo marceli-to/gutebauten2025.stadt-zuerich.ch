@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VoteButton
+    <Vote
       :slug="slug"
       :hash="hash"
       :has_vote="has_vote"
@@ -9,17 +9,17 @@
     />
 
     <!-- 
-    <CommentForm :building-id="buildingId" />
-    <ShareLinks :share-url="url" :share-title="title" />
+    <Comment :building-id="buildingId" />
+    <Share :share-url="url" :share-title="title" />
     -->
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import VoteButton from './VoteButton.vue'
-import CommentForm from './CommentForm.vue'
-import ShareLinks from './ShareLinks.vue'
+import Vote from './components/Vote.vue'
+import Comment from './components/Comment.vue'
+import Share from './components/Share.vue'
 import FingerprintJS from '@fingerprintjs/fingerprintjs'
 
 const props = defineProps({

@@ -33,7 +33,7 @@
     "src": "resources/js/app.js"
   },
   "resources/js/interaction.js": {
-    "file": "assets/interaction-45e1df57.js",
+    "file": "assets/interaction-bf0fe148.js",
     "imports": [
       "_axios-f70b25c2.js"
     ],

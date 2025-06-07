@@ -1,10 +1,5 @@
 import { createApp } from 'vue'
-import UserInteraction from './UserInteraction.vue'
-
+import App from './App.vue'
 const app = createApp({})
-
-// Globally register component
-app.component('user-interaction', UserInteraction)
-
-// Mount to blade's DOM
+app.component('interaction', App)
 app.mount('#interaction-app')

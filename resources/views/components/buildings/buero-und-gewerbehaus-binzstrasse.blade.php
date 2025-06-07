@@ -3,12 +3,12 @@
 </div>
 
 <div id="interaction-app">
-  <user-interaction
+  <interaction
     slug="{{ $building->slug }}"
     title="{{ $building->title }}"
     url="{{ route('page.building', $building->slug) }}"
     :has_vote="@json((bool) $hasVote)"
-  ></user-interaction>
+  ></interaction>
 </div>
 
 <x-buildings.container>
