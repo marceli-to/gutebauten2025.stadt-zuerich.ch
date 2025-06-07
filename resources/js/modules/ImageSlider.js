@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 export default class ImageSlider {
   constructor(container) {
     this.container = container;
-    this.track = container.querySelector('#track');
+    this.track = container.querySelector('[data-slider-track]');
     this.originalSlides = [...this.track.children];
     this.slides = [];
     this.actualIndex = 0;

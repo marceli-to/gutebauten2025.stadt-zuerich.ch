@@ -6,7 +6,7 @@
   </button>
 
   <div class="w-full h-full">
-    <div id="track" class="flex h-full will-change-transform">
+    <div data-slider-track class="flex h-full will-change-transform">
       {{ $slot }}
     </div>
   </div>
