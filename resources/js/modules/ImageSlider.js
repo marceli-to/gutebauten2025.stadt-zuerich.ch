@@ -8,7 +8,7 @@ export default class ImageSlider {
     this.slides = [];
     this.actualIndex = 0;
     this.x = 0;
-    this.speed = this.container.clientWidth * 0.02;
+    this.speed = this.container.clientWidth * 0.04;
     this.isTransitioning = false;
     this.lastTime = null;
     this.isPaused = false;
