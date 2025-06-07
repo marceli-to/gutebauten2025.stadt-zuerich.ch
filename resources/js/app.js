@@ -6,5 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (container) {
     const slider = new ImageSlider(container);
     slider.init();
+    slider.logState();
   }
 });
