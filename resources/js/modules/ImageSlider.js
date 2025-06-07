@@ -12,6 +12,11 @@ export default class ImageSlider {
     this.isTransitioning = false;
     this.lastTime = null;
     this.isPaused = false;
+
+    // Resize control
+    this.isResizing = false;
+    this.resizeTimer = null;
+    this.lastContainerWidth = this.container.clientWidth;
   }
 
   init() {
@@ -27,9 +32,6 @@ export default class ImageSlider {
     const offset = targetSlide.offsetLeft;
     this.x = offset;
     gsap.set(this.track, { x: -this.x });
-
-    // this.container.addEventListener('mouseenter', () => this.isPaused = true);
-    // this.container.addEventListener('mouseleave', () => this.isPaused = false);
 
     requestAnimationFrame((t) => this.animate(t));
   }
@@ -51,13 +53,25 @@ export default class ImageSlider {
   }
 
   setupResizeHandler() {
-    let resizeTimeout;
     window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        this.measureSlides();
-        this.repositionToSlide(this.actualIndex);
-      }, 200);
+      if (!this.isResizing) {
+        this.isResizing = true;
+        this.isPaused = true;
+      }
+
+      clearTimeout(this.resizeTimer);
+      this.resizeTimer = setTimeout(() => {
+        const newWidth = this.container.clientWidth;
+
+        if (newWidth !== this.lastContainerWidth) {
+          this.measureSlides();
+          this.repositionToSlide(this.actualIndex);
+          this.lastContainerWidth = newWidth;
+        }
+
+        this.isResizing = false;
+        this.isPaused = false;
+      }, 300);
     });
   }
 
@@ -207,7 +221,7 @@ export default class ImageSlider {
     const delta = timestamp - this.lastTime;
     this.lastTime = timestamp;
 
-    if (!this.isTransitioning && !this.isPaused) {
+    if (!this.isTransitioning && !this.isPaused && !this.isResizing) {
       this.x += (this.speed * delta / 1000);
       if (this.x >= this.sectionWidth * 2) this.x -= this.sectionWidth;
       if (this.x < 0) this.x += this.sectionWidth;
