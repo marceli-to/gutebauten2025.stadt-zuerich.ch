@@ -1,8 +1,8 @@
 <div 
   class="relative w-full aspect-[16/12] md:aspect-[16/8] overflow-hidden"
   data-slider>
-  <button id="prevBtn" class="absolute top-1/2 -translate-y-1/2 left-2 z-10 text-2xl bg-white/10 text-white border-none px-4 py-2 cursor-pointer backdrop-blur">
-    &#8678;
+  <button id="prevBtn" class="absolute top-1/2 -translate-y-1/2 left-20 xl:left-30 z-10">
+    <x-icons.chevron.left />
   </button>
 
   <div class="w-full h-full">
@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <button id="nextBtn" class="absolute top-1/2 -translate-y-1/2 right-2 z-10 text-2xl bg-white/10 text-white border-none px-4 py-2 cursor-pointer backdrop-blur">
-    &#8680;
+  <button id="nextBtn" class="absolute top-1/2 -translate-y-1/2 right-20 xl:right-30 z-10">
+    <x-icons.chevron.right />
   </button>
 </div>
