@@ -24,11 +24,10 @@
 <x-accordion.wrapper>
 
   <x-accordion.item index="1" title="Credits">
-    <x-layout.article class="leading-[1.15]">
+    <x-layout.article class="building-description">
       <p>
         <a 
-          href="{{ route('page.map') }}#{{ $building->slug }}"
-          class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline">
+          href="{{ route('page.map') }}#{{ $building->slug }}">
           Übersichtskarte
         </a>
       </p>
@@ -37,8 +36,7 @@
         <a 
           href="https://www.google.com/maps/place/Binzstrasse+29" 
           target="_blank"
-          rel="noopener noreferrer"
-          class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline">
+          rel="noopener noreferrer">
           Binzstrasse 29
         </a>
       </p>

@@ -25,6 +25,16 @@ ul li:not(nav ul li) {
   @apply list-item;
 }
 
+/* Buildings */
+article.building-description {
+  @apply leading-[1.15];
+}
+
+article.building-description a {
+  @apply underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline;
+}
+  
+
 /* Leaflet */
 .leaflet-control-container {
   @apply  hidden;
