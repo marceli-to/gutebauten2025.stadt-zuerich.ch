@@ -28,7 +28,7 @@
   <button 
     type="button"
     id="{{ $buttonId }}"
-    class="w-full block"
+    class="w-full block transition-colors duration-500 ease-in-out"
     :class="{ 'bg-white': open, 'bg-lumora': !open }"
     @click="toggle()"
     :aria-expanded="open.toString()"
@@ -46,14 +46,13 @@
       </span>
     </x-layout.container>
   </button>
-
   <div 
     id="{{ $panelId }}"
     x-ref="container"
     role="region"
     aria-labelledby="{{ $buttonId }}"
-    class="relative overflow-hidden max-h-0"
-    :class="{ 'bg-transparent': !open, 'bg-white': open }"
+    class="relative bg-transparent overflow-hidden max-h-0 transition-all duration-500 ease-in-out" 
+    :class="{ 'bg-white': open }"
     style="max-height: 0px;">
     <x-layout.container>
       <div 

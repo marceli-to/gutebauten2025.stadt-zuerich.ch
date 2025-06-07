@@ -87,7 +87,7 @@ function init() {
       iconSize: markerOpts.size,
       iconAnchor: markerOpts.anchor,
       popupAnchor: markerOpts.popupAnchor
-    });
+  });
 
   const markerIcons = {
     default: isMobile ? createIcon('marker-sm.svg') : createIcon('marker.svg'),
