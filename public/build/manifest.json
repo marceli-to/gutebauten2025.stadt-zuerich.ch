@@ -1,6 +1,6 @@
 {
-  "_axios-f70b25c2.js": {
-    "file": "assets/axios-f70b25c2.js"
+  "__plugin-vue_export-helper-2cf56f95.js": {
+    "file": "assets/_plugin-vue_export-helper-2cf56f95.js"
   },
   "node_modules/leaflet/dist/images/layers-2x.png": {
     "file": "assets/layers-2x-066daca8.png",
@@ -15,7 +15,7 @@
     "src": "node_modules/leaflet/dist/images/marker-icon.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-e73b766f.css",
+    "file": "assets/app-a3b29198.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -33,9 +33,9 @@
     "src": "resources/js/app.js"
   },
   "resources/js/interaction.js": {
-    "file": "assets/interaction-bf0fe148.js",
+    "file": "assets/interaction-33e0a682.js",
     "imports": [
-      "_axios-f70b25c2.js"
+      "__plugin-vue_export-helper-2cf56f95.js"
     ],
     "isEntry": true,
     "src": "resources/js/interaction.js"
@@ -53,14 +53,14 @@
     "css": [
       "assets/map-d54fe5b9.css"
     ],
-    "file": "assets/map-24eb6df7.js",
+    "file": "assets/map-eea81a1b.js",
     "isEntry": true,
     "src": "resources/js/map.js"
   },
   "resources/js/spa.js": {
-    "file": "assets/spa-9b7d3521.js",
+    "file": "assets/spa-3d3f6610.js",
     "imports": [
-      "_axios-f70b25c2.js"
+      "__plugin-vue_export-helper-2cf56f95.js"
     ],
     "isEntry": true,
     "src": "resources/js/spa.js"

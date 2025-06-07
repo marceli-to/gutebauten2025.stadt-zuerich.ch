@@ -2,15 +2,15 @@
   <a
     href="#"
     @click.prevent="toggleVote"
-    :class="['btn-vote', has_voted ? 'has-vote' : '']"
-  >
-    {{ has_voted ? 'Stimme entfernen' : 'Abstimmen' }}
+    :class="['btn-vote', has_voted ? 'has-vote' : '']">
+    <VoteIcon :class="has_voted ? 'text-lumora' : 'text-white'" />
   </a>
 </template>
 
 <script setup>
 import { ref, watch } from 'vue'
 import axios from 'axios'
+import VoteIcon from '../icons/Vote.vue'
 
 const props = defineProps({
   slug: String,
