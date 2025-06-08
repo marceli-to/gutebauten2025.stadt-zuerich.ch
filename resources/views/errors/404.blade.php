@@ -9,7 +9,7 @@
 
 @section('content')
   <x-layout.container class="p-20 xl:p-30">
-    <x-layout.article>
+    <x-layout.article class="flex justify-center items-center">
       <p>
         Die gewünschte Seite konnte nicht gefunden werden.
       </p>
