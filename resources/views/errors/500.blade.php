@@ -1,15 +1,15 @@
 @extends('layout.guest')
-@section('seo_title', '404 – Seite nicht gefunden')
+@section('seo_title', '500 – Serverfehler')
 
 @section('header')
-<x-headings.h1>404 – Seite nicht gefunden</x-headings.h1>
+<x-headings.h1>500 – Serverfehler</x-headings.h1>
 @endsection
 
 @section('content')
 <x-layout.container class="p-20 xl:p-30">
   <x-layout.article>
     <p>
-      Die gewünschte Seite konnte nicht gefunden werden.
+      Leider ist ein Fehler aufgetreten.
     </p>
     <p>
       <a 

@@ -55,3 +55,17 @@ article.building-description a {
 .leaflet-popup-content {
   @apply !m-0 !text-sm !leading-[1.2];
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: fade 1.5s ease both;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

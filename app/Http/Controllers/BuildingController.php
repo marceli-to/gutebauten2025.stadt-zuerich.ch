@@ -9,10 +9,9 @@ class BuildingController extends Controller
 {
   public function index(Building $building, UserStore $store): View
   {
-    $hasVote = $store->hasVote($building->id);
     return view('pages.building', [
       'building' => $building,
-      'hasVote' => $hasVote,
+      'hasVote' => $store->hasVote($building->id),
     ]);
   }
 }
