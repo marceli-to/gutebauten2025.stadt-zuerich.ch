@@ -1,8 +1,7 @@
 <template>
   <a
     href="#"
-    @click.prevent="toggleVote"
-    :class="['btn-vote', has_voted ? 'has-vote' : '']">
+    @click.prevent="toggleVote">
     <VoteIcon :class="has_voted ? 'text-lumora' : 'text-white'" />
   </a>
 </template>

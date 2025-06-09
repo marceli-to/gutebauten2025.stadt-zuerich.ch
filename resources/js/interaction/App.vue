@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex gap-x-10 xl:gap-x-20">
     <Vote
       :slug="slug"
       :hash="hash"
@@ -7,11 +7,17 @@
       @voted="onVoted"
       @unvoted="onUnvoted"
     />
+    
+    <Share 
+      :share-url="url" 
+      :share-title="title" 
+      :is-open="currentlyOpen === 'share'"
+      @toggle="() => setOpen('share')" />
 
-    <!-- 
-    <Comment :building-id="buildingId" />
-    <Share :share-url="url" :share-title="title" />
-    -->
+    <Comment 
+      :slug="slug" 
+      :is-open="currentlyOpen === 'comment'" 
+      @toggle="() => setOpen('comment')" />
   </div>
 </template>
 
@@ -33,6 +39,12 @@ const slug = ref(props.slug)
 const url = ref(props.url)
 const hash = ref(null)
 const has_vote = ref(props.has_vote)
+
+const currentlyOpen = ref(null) // 'vote', 'comment', 'share', or null
+
+function setOpen(componentName) {
+  currentlyOpen.value = currentlyOpen.value === componentName ? null : componentName
+}
 
 onMounted(async () => {
   const stored = localStorage.getItem('voter_hash')

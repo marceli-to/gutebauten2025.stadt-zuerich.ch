@@ -21,8 +21,5 @@
 <link rel="manifest" href="/site.webmanifest" />
 @vite('resources/css/app.css')
 @livewireStyles
-<script>
-  console.log('View Transition supported:', 'startViewTransition' in document);
-</script>
 </head>
 <body class="antialiased font-sans @if (!request()->routeIs('page.dashboard')) bg-lumora @else bg-white @endif text-sm md:text-md xl:text-lg text-black flex flex-col min-h-screen">
