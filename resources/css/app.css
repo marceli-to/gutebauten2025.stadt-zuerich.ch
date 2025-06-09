@@ -12,6 +12,10 @@
   font-variant-ligatures: none;
 }
 
+[x-cloak] {
+  @apply hidden;
+}
+
 p:not(:last-child),
 ul:not(:last-child) {
   @apply mb-20 xl:mb-30;
