@@ -72,10 +72,10 @@ onMounted(async () => {
 })
 
 function onVoted() {
-  console.log('Voted for building', slug.value)
+  // console.log('Voted for building', slug.value)
 }
 
 function onUnvoted() {
-  console.log('Removed vote for building', slug.value)
+  // console.log('Removed vote for building', slug.value)
 }
 </script>
