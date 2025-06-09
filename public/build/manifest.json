@@ -33,7 +33,7 @@
     "src": "resources/js/app.js"
   },
   "resources/js/interaction.js": {
-    "file": "assets/interaction-0c848311.js",
+    "file": "assets/interaction-748da98e.js",
     "imports": [
       "__plugin-vue_export-helper-6ab15a9e.js"
     ],

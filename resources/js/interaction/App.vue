@@ -103,6 +103,7 @@ async function getDeviceHash(visitorData) {
 
   // Step 3: Convert to JSON string
   const jsonString = JSON.stringify(sorted);
+  console.log(jsonString)
 
   // Step 4: Hash the string using SHA-256
   const encoder = new TextEncoder();
