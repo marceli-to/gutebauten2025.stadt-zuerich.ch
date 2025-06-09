@@ -47,7 +47,7 @@
           </li>
           <li>
             <a 
-              :href="`https://www.linkedin.com/sharing/share-offsite/?url=${url}`" 
+              :href="`https://www.linkedin.com/shareArticle?url=${url}`" 
               target="_blank"
               rel="noopener"
               class="no-underline underline-offset-4 decoration-1 xl:decoration-2 hover:underline">
@@ -71,7 +71,6 @@
               Link kopieren
             </a>
           </li>
-
         </ul>
       </div>
     </div>

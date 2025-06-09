@@ -1,13 +1,13 @@
 <template>
   <div class="flex gap-x-10 xl:gap-x-20">
+    
     <Vote
       :slug="slug"
       :hash="hash"
       :has_vote="has_vote"
       @voted="onVoted"
-      @unvoted="onUnvoted"
-    />
-    
+      @unvoted="onUnvoted" />
+
     <Share 
       :share-url="url" 
       :share-title="title" 
@@ -18,6 +18,7 @@
       :slug="slug" 
       :is-open="currentlyOpen === 'comment'" 
       @toggle="() => setOpen('comment')" />
+
   </div>
 </template>
 
