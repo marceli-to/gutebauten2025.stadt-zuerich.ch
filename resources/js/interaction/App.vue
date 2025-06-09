@@ -63,9 +63,7 @@ onMounted(async () => {
   const fp = await FingerprintJS.load()
   const result = await fp.get()
 
-  console.log(result.components);
-
-  deviceHash.value = await getDeviceHash(result.visitorData);
+  deviceHash.value = await getDeviceHash(result.components);
   console.log(deviceHash.value)
 
   const stored = localStorage.getItem('voter_hash')
