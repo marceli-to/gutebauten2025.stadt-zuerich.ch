@@ -15,7 +15,7 @@ export default {
     extend: {
 
       screens: {
-        'xs': '440px',
+        'xs': '414px',
       },
 
       maxWidth: {
@@ -60,9 +60,9 @@ export default {
         'md': ['1.5625rem', { lineHeight: '1.2' }],    // 25px/30px
         'lg': ['1.875rem', { lineHeight: '1.333' }],   // 30px/40px
         'xl': ['2.1875rem', { lineHeight: '1.15' }],   // 35px
-        '2xl': '2.5rem',    // 40px
-        '3xl': '2.8125rem', // 45px
-        '4xl': '3.75rem',   // 60px
+        '2xl': ['2.5rem', { lineHeight: '1.125'}],    // 40px/45px
+        '3xl': ['2.8125rem', { lineHeight: '1.15' }], // 45px/55px
+        '4xl': ['3.75rem', { lineHeight: '1.15' }],   // 60px/70px
       },
     },
 
