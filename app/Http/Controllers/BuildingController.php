@@ -10,7 +10,7 @@ class BuildingController extends Controller
   public function index(Building $building, UserStore $store): View
   {
     return view('pages.building', [
-      'building' => $building,
+      'building' => $building->load('comments'),
       'hasVote' => $store->hasVote($building->id),
     ]);
   }

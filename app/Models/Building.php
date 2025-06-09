@@ -17,7 +17,7 @@ class Building extends Model
 
   public function comments()
   {
-    return $this->hasMany(Comment::class);
+    return $this->hasMany(Comment::class)->where('published', true)->orderBy('created_at', 'desc');
   }
 
   public function voters()
