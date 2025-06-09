@@ -107,12 +107,16 @@ function init() {
       href="/${b.slug}" 
       title="${b.title}" 
       class="w-full border-3 xl:border-4 border-black font-sans bg-lumora block text-black leading-none group">
-      <img 
-        src="/media/${b.slug}/map-${b.slug}.jpg" 
-        alt="${b.title}" 
-        width="260"
-        height="162"
-        class="w-full h-auto block aspect-[16/10] object-cover" />
+      <picture>
+        <source srcset="/media/${b.slug}/${b.slug}-map.avif" type="image/avif">
+        <img 
+          src="/media/${b.slug}/${b.slug}-map.jpg" 
+          alt="${b.title}" 
+          width="260"
+          height="162"
+          class="w-full h-auto block aspect-[16/10] object-cover"
+          loading="lazy" />
+      </picture>
       <span class="block bg-lumora relative p-10 md:pb-50">
         <h2 class="text-sm xl:text-md !text-black pr-14 md:pr-18">${b.title}</h2>
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute size-14 md:size-18 right-10 bottom-10 xl:right-12 xl:bottom-12 group-hover:rotate-45 transition-all duration-200">

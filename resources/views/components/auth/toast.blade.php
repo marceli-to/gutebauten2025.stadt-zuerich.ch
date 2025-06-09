@@ -12,9 +12,9 @@
   <div
     @class([
       'p-8',
-      'bg-green-500' => $type == 'success',
+      'bg-mintara' => $type == 'success',
       'bg-red-500' => $type == 'error',
-      'bg-blue-500' => $type == 'info',
+      'bg-steelor' => $type == 'info',
     ])>
     {{ $status }}
   </div>

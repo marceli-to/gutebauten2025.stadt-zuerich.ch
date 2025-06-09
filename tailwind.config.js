@@ -35,6 +35,9 @@ export default {
 
       colors: {
         'lumora': '#FFFF00',
+        'crimora': '#F8333C',
+        'mintara': '#59A96A',
+        'steelor': '#456990',
       },
 
       zIndex: {

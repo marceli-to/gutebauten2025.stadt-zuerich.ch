@@ -6,9 +6,9 @@
       href="javascript:;" 
       :class="[
         'py-8 px-12 mb-4 flex items-center justify-center',
-        { '!bg-green-500': toast.type === 'success' },
-        { '!bg-red-500': toast.type === 'error' },
-        { '!bg-blue-500': toast.type === 'info' },
+        { '!bg-mintara': toast.type === 'success' },
+        { '!bg-crimora': toast.type === 'error' },
+        { '!bg-steelor': toast.type === 'info' },
       ]"
       @click="removeToast(toast.id)"
       title="Meldung verbergen"

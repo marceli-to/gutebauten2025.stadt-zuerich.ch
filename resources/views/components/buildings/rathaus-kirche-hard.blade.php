@@ -48,6 +48,7 @@
 
   <x-accordion.item index="2" title="Kommentare">
     <x-layout.article>
+      <x-buildings.comments :comments="$building->comments" />
     </x-layout.article>
   </x-accordion.item>
 

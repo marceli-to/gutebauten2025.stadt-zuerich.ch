@@ -17,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
       Blade::directive('seo_description', function () {
         return "<?php echo View::hasSection('seo_description') ? trim(View::getSection('seo_description')) : config('seo.description'); ?>";
       });
+
+      Blade::directive('seo_image', function () {
+        return "<?php echo View::hasSection('seo_image') ? View::getSection('seo_image') : config('seo.image'); ?>";
+      });
     }
 
     /**
