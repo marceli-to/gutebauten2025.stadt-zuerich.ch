@@ -6,16 +6,7 @@
   <x-slideshow.slide number="5" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="933" height="700" />
 </x-slideshow.wrapper>
 
-<div id="interaction-app">
-  <interaction
-    slug="{{ $building->slug }}"
-    title="{{ $building->title }}"
-    url="{{ route('page.building', $building->slug) }}"
-    :has_vote="@json((bool) $hasVote)"
-  ></interaction>
-</div>
-
-<x-buildings.container>
+<x-buildings.container :building="$building" hasVote="{{ $hasVote }}">
   <x-layout.article>
     <p>Lang bevor die Themen Stadtklima und Schwammstadt in den Fokus der Öffentlichkeit rückten, erprobte ein kooperatives Verfahren im Hochhausgebiet Leutschenbach die klimaangepasste Stadtplanung. Der Freiraum zwischen den drei Wohnhochhäusern und dem Messeturm erlaubt eine öffentliche Wegverbindung auf privatem Grund, die dem Quartier zugutekommt. Freizeitnutzungen in den Erdgeschossen beleben die Plätze, während die Wohnhöfe diversen Lebensmodellen Raum bieten. Die Pflanzen und Wasserflächen tragen zur sommerlichen Kühlung bei; bewässert werden sie nach dem Schwammstadt-Prinzip mit Regenwasser, das auf den gestuften Dachflächen gesammelt wird.</p>
   </x-layout.article>

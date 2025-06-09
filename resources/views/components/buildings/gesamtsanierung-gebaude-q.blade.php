@@ -6,16 +6,7 @@
   <x-slideshow.slide number="5" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="1049" height="700" />
 </x-slideshow.wrapper>
 
-<div id="interaction-app">
-  <interaction
-    slug="{{ $building->slug }}"
-    title="{{ $building->title }}"
-    url="{{ route('page.building', $building->slug) }}"
-    :has_vote="@json((bool) $hasVote)"
-  ></interaction>
-</div>
-
-<x-buildings.container>
+<x-buildings.container :building="$building" hasVote="{{ $hasVote }}">
   <x-layout.article>
     <p>Auf dem Areal der ehemaligen SBB-Werkstätten in Altstetten soll sich eine nachhaltige Mischung aus urbaner Produktion, Gewerbe, Dienstleistungs- und Freizeitangebot etablieren – so das Ziel des Projekts Werkstadt Zürich. Das Gebäude Q bildet die erste Etappe dieser Transformation. Die Halle wurde denkmalpflegerisch saniert und mit Respekt für die historischen Qualitäten mit einfachen, rückbaubaren Einbauten versehen. Parallel zu den Planungen wurden in temporär verfügbaren Räumen Pioniernutzungen angeregt, die sich langfristig auf dem Areal etablieren und mitwachsen können. Dienstleistungsangebote im Erdgeschoss aktivieren auch die Aussenräume.</ 
   </x-layout.article>

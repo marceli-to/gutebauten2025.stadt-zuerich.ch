@@ -5,16 +5,7 @@
   <x-slideshow.slide number="4" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="875" height="700" />
 </x-slideshow.wrapper>
 
-<div id="interaction-app">
-  <interaction
-    slug="{{ $building->slug }}"
-    title="{{ $building->title }}"
-    url="{{ route('page.building', $building->slug) }}"
-    :has_vote="@json((bool) $hasVote)"
-  ></interaction>
-</div>
-
-<x-buildings.container>
+<x-buildings.container :building="$building" hasVote="{{ $hasVote }}">
   <x-layout.article>
     <p>Wo einst Gewerbe die Klopstockstrasse in der Enge prägte, steht ein neues Wohnhaus, das den bestehenden Blockrand fortsetzt und als Spitze endet. Der Ort ist privilegiert: Mächtige Eschen säumen die Strasse, dann fällt die Klopstockwiese zur Sihl ab – ein Grünraum, der dank Loggien und hohen Verglasungen in die Wohnräume zu fliessen scheint, während die Schlafzimmer am ruhigen Hof liegen. Auch das Erdgeschoss nutzt die Lage geschickt: Ein Niveausprung in den Wohnungen schafft ein strassenseitiges Hochparterre und einen überhohen Raum zum Hof. In der Spitze profitiert das Café von der dreiseitigen Orientierung.</p>
   </x-layout.article>

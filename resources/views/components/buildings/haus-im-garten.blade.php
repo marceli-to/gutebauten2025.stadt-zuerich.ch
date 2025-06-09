@@ -6,16 +6,7 @@
   <x-slideshow.slide number="5" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="525" height="700" />
 </x-slideshow.wrapper>
 
-<div id="interaction-app">
-  <interaction
-    slug="{{ $building->slug }}"
-    title="{{ $building->title }}"
-    url="{{ route('page.building', $building->slug) }}"
-    :has_vote="@json((bool) $hasVote)"
-  ></interaction>
-</div>
-
-<x-buildings.container>
+<x-buildings.container :building="$building" hasVote="{{ $hasVote }}">
   <x-layout.article>
     <p>In ländlicher Umgebung am Stadtrand erbaut, erinnert das neue Wohnhaus mit seinem Volumen und seinen Vordächern an landwirtschaftliche Nutzbauten. Innen dagegen ist es höchst unkonventionell. Die 14 Wohnungen können als einziges Raumkontinuum genutzt oder durch Schiebewände in mehrere Zimmer unterteilt werden, auch ungewöhnliche Kombinationen sind dabei möglich. Im Erdgeschoss teilen sich die Bewohnenden eine grosse gemeinsame Küche samt Ess- und Kaminbereich sowie einen Waschsalon, und auch der Garten ist gemeinschaftlich. Dank Solarmodulen auf dem Dach für Strom und Warmwasser produziert das Haus mehr Energie, als es verbraucht.</p>
   </x-layout.article>

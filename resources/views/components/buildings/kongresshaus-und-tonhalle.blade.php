@@ -6,16 +6,7 @@
   <x-slideshow.slide number="5" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="933" height="700" />
 </x-slideshow.wrapper>
 
-<div id="interaction-app">
-  <interaction
-    slug="{{ $building->slug }}"
-    title="{{ $building->title }}"
-    url="{{ route('page.building', $building->slug) }}"
-    :has_vote="@json((bool) $hasVote)"
-  ></interaction>
-</div>
-
-<x-buildings.container>
+<x-buildings.container :building="$building" hasVote="{{ $hasVote }}">
   <x-layout.article>
     <p>Hell, heiter und festlich wirkte das Kongresshaus zu seiner Bauzeit 1939. Das hohe Foyer durchmass die ganze Tiefe des Gebäudes; wer es durchschritt, erblickte die Seepromenade, Gärten und Terrassen, Treppen und Raumfluchten; von der Terrasse sah man den See und die Alpen. Viele Qualitäten dieses einmaligen Baus wurden verunklärt, nun sind sie wieder erlebbar. Die Erneuerung umfasste eine mutige Raumrochade, eine Erweiterung des Gartensaaltrakts, den Rückbau des Panoramasaals aus den 1980er-Jahren und Ertüchtigungsmassnahmen. Alte und neue Elemente – das älteste, die Tonhalle, stammt von 1895 – fügen sich wieder zu einem harmonischen Ganzen.</p>
   </x-layout.article>

@@ -6,16 +6,7 @@
   <x-slideshow.slide number="5" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="500" height="700" />
 </x-slideshow.wrapper>
 
-<div id="interaction-app">
-  <interaction
-    slug="{{ $building->slug }}"
-    title="{{ $building->title }}"
-    url="{{ route('page.building', $building->slug) }}"
-    :has_vote="@json((bool) $hasVote)"
-  ></interaction>
-</div>
-
-<x-buildings.container>
+<x-buildings.container :building="$building" hasVote="{{ $hasVote }}">
   <x-layout.article>
     <p>Dreizehn Wohnungen statt zwei Reihenhäuser – auf der fast gleichen Grundfläche: Der Neubau in Oerlikon steht beispielhaft für eine verträgliche Verdichtung des Arbeiterquartiers. Eine schlanke, rückbaubar verschraubte Tragkonstruktion aus Stahl beidseits der mittleren Brandmauer bildet das Skelett des Gebäudes, ausgefacht mit Verbunddecken und nichttragenden Innenwänden. Die sichtbare Stahlkonstruktion mit ihren Stützen und Trägern erzeugt eine lebendige Raumstimmung und schneidet, weil alle Materialien effizient eingesetzt sind, auch ökologisch gut ab. Raffinierte Grundrisse und spannende Blickbezüge werten auch die kleineren Wohnungen auf.</p>
   </x-layout.article>

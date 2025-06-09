@@ -6,16 +6,7 @@
   <x-slideshow.slide number="5" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="525" height="700" />
 </x-slideshow.wrapper>
 
-<div id="interaction-app">
-  <interaction
-    slug="{{ $building->slug }}"
-    title="{{ $building->title }}"
-    url="{{ route('page.building', $building->slug) }}"
-    :has_vote="@json((bool) $hasVote)"
-  ></interaction>
-</div>
-
-<x-buildings.container>
+<x-buildings.container :building="$building" hasVote="{{ $hasVote }}">
   <x-layout.article>
     <p>«Design for Disassembly» ist der Grundsatz für den Entwurf der provisorischen Sportbauten, die der Kanton Zürich an mehreren Standorten benötigt: Die Konstruktion aus Holzmodul- und Holzelementbauteilen erlaubt einen einfachen Transport, einen zügigen Auf- und Abbau und eine mehrfache Wiederverwendung. Damit dies in unterschiedlichen Umgebungen gut funktioniert, sowohl städtebaulich als auch in Bezug auf die Bedürfnisse der einzelnen Schulen, können die Volumen nach Bedarf kombiniert und angeordnet werden. Während die Innenräume immer gleich materialisiert sind, reagiert die Farbe der Fassaden auf die jeweiligen Schulbauten und deren Freiräume.</p>
   </x-layout.article>

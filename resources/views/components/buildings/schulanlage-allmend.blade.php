@@ -6,16 +6,7 @@
   <x-slideshow.slide number="5" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="467" height="700" />
 </x-slideshow.wrapper>
 
-<div id="interaction-app">
-  <interaction
-    slug="{{ $building->slug }}"
-    title="{{ $building->title }}"
-    url="{{ route('page.building', $building->slug) }}"
-    :has_vote="@json((bool) $hasVote)"
-  ></interaction>
-</div>
-
-<x-buildings.container>
+<x-buildings.container :building="$building" hasVote="{{ $hasVote }}">
   <x-layout.article>
     <p>Das Quartier «Greencity» liegt an den Auen der Sihl, ist aber zweiseitig von Bahnlinie und Autobahn begrenzt und besteht mehrheitlich aus massigen Neubauten. Als einziges öffentliches Gebäude auf dem Areal hebt sich das neue Schulhaus durch seine feine Gliederung, seine Materialisierung, seine flexible Holzstruktur und seinen heiteren Ausdruck von der Umgebung ab. Es wirkt als identitätsstiftendes Zentrum, nicht zuletzt auch deshalb, weil das Dach ausserhalb der Schulzeiten über Spindeltreppen zugänglich ist: So können die von einer Photovoltaik-Pergola verschatteten Sportplätze als öffentliche Piazza in luftiger Höhe genutzt werden.</p>
   </x-layout.article>

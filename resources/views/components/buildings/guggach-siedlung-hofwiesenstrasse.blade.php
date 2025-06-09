@@ -6,16 +6,7 @@
   <x-slideshow.slide number="5" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="933" height="700" />
 </x-slideshow.wrapper>
 
-<div id="interaction-app">
-  <interaction
-    slug="{{ $building->slug }}"
-    title="{{ $building->title }}"
-    url="{{ route('page.building', $building->slug) }}"
-    :has_vote="@json((bool) $hasVote)"
-  ></interaction>
-</div>
-
-<x-buildings.container>
+<x-buildings.container :building="$building" hasVote="{{ $hasVote }}">
   <x-layout.article>
     <p>Eher klein sind die Wohnungen der Stiftung Einfach Wohnen in den achtgeschossigen Scheibenhäusern; dennoch wirken sie grosszügig. Sorgfältig gestaltete Schwellenräume, etwa in den Laubengängen, laden zur Begegnung ein; diverse Freiräume ermöglichen Gemeinschaft, Erholung, Sport, Spiel und Naturerlebnis. Mit der Kombination aus Wohnen, Park, Kindergarten, Gewerbe und Ateliers beleben die Neubauten die Gegend rund um das ehemalige Radiostudio. Sie schaffen günstige Wohnungen an zentraler Lage, sichern die Quartierversorgung, geben der Stadtentwicklung neue Impulse und sind – beispielsweise dank Photovoltaik – ökologisch im Betrieb.</p>
   </x-layout.article>

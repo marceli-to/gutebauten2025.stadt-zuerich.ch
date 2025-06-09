@@ -6,16 +6,7 @@
   <x-slideshow.slide number="5" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="933" height="700" />
 </x-slideshow.wrapper>
 
-<div id="interaction-app">
-  <interaction
-    slug="{{ $building->slug }}"
-    title="{{ $building->title }}"
-    url="{{ route('page.building', $building->slug) }}"
-    :has_vote="@json((bool) $hasVote)"
-  ></interaction>
-</div>
-
-<x-buildings.container>
+<x-buildings.container :building="$building" hasVote="{{ $hasVote }}">
   <x-layout.article>
     <p>Wer von Westen in die Stadt hineinfährt, kennt die 1965 eröffnete Betriebszentrale Migros Herdern: Das denkmalgeschützte Ensemble aus Scheibenhochhaus, Flachbau und Spiralrampe setzt einen städtebaulichen Akzent im Industriequartier. So soll es auch in Zukunft sein: Das Hochhaus wurde statisch und energetisch ertüchtigt, die Haustechnik erneuert und die Backsteinfassaden wurden aufgedoppelt und rekonstruiert, sodass die Proportionen und das Erscheinungsbild erhalten blieben. Im Inneren gibt es zeitgemässe Bürogeschosse sowie ein Restaurant und Läden. Vor dem Gebäude lädt ein Platz mit wasserdurchlässigem Bodenbelag und grossen Bäumen zum Verweilen ein.</p>
   </x-layout.article>

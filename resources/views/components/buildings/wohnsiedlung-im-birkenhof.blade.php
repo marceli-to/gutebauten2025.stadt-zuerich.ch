@@ -6,16 +6,7 @@
   <x-slideshow.slide number="5" slug="{{ $building->slug }}" alt="{{ $building->title }}" width="525" height="700" />
 </x-slideshow.wrapper>
 
-<div id="interaction-app">
-  <interaction
-    slug="{{ $building->slug }}"
-    title="{{ $building->title }}"
-    url="{{ route('page.building', $building->slug) }}"
-    :has_vote="@json((bool) $hasVote)"
-  ></interaction>
-</div>
-
-<x-buildings.container>
+<x-buildings.container :building="$building" hasVote="{{ $hasVote }}">
   <x-layout.article>
     <p>Nach 100 Jahren und diversen Umbauten hatte die denkmalgeschützte städtische Siedlung «Im Birkenhof» viel von ihrer ursprünglichen Qualität eingebüsst. Die Sanierung stellte diese wieder her, sei es durch Reparatur, Ergänzung oder Neuinterpretation alter Elemente. Die Wohnungen erfüllen nun heutige Bedürfnisse; der grosszügige gemeinschaftliche Freiraum wurde in seinem Charakter gestärkt und zu einem Ort mit hoher Biodiversität gestaltet. Dabei gelang es nicht nur, günstigen Wohnraum zu erhalten und zu revitalisieren; dank einer Etappierung konnten die Mieter*innen nach der Instandstellung in ihre Wohnungen zurückkehren.</p>
   </x-layout.article>

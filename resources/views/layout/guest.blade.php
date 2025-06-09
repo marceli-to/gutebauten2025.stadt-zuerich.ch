@@ -1,6 +1,6 @@
 <x-layout.head />
 
-@if (!request()->routeIs('auth.*'))
+@if (!request()->routeIs('auth.*') && !request()->routeIs('page.home'))
 <x-layout.header>
   @hasSection('header')
     @yield('header')
