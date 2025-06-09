@@ -7,7 +7,7 @@
       :has_vote="has_vote"
       @voted="onVoted"
       @unvoted="onUnvoted" />
-
+    
     <Share 
       :share-url="url" 
       :share-title="title" 
@@ -47,7 +47,18 @@ function setOpen(componentName) {
   currentlyOpen.value = currentlyOpen.value === componentName ? null : componentName
 }
 
+function handleKeydown(e) {
+  if (e.key === 'Escape') {
+    if (currentlyOpen.value === 'share' || currentlyOpen.value === 'comment') {
+      currentlyOpen.value = null
+    }
+  }
+}
+
+
 onMounted(async () => {
+  document.addEventListener('keydown', handleKeydown)
+
   const stored = localStorage.getItem('voter_hash')
   if (stored) {
     hash.value = stored
