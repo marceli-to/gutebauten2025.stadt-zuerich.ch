@@ -85,7 +85,6 @@ async function getDeviceHash(visitorData) {
     platform: visitorData.platform,
     deviceMemory: visitorData.deviceMemory,
     hardwareConcurrency: visitorData.hardwareConcurrency,
-    screenResolution: [visitorData.screenResolution.width, visitorData.screenResolution.height],
     timezone: visitorData.timezone,
     language: visitorData.languages?.[0], // Use primary language
     touchSupport: visitorData.touchSupport,
