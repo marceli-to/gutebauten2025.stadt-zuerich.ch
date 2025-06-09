@@ -59,15 +59,21 @@ function handleKeydown(e) {
 onMounted(async () => {
   document.addEventListener('keydown', handleKeydown)
 
+  const fp = await FingerprintJS.load()
+  const result = await fp.get()
+  console.log(result)
+  console.log(result.visitorId)
+
   const stored = localStorage.getItem('voter_hash')
   if (stored) {
     hash.value = stored
   } 
   else {
-    const fp = await FingerprintJS.load()
-    const result = await fp.get()
-    hash.value = result.visitorId
-    localStorage.setItem('voter_hash', hash.value)
+    // const fp = await FingerprintJS.load()
+    // const result = await fp.get()
+    // console.log(result)
+    // hash.value = result.visitorId
+    // localStorage.setItem('voter_hash', hash.value)
   }
 })
 
