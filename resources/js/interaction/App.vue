@@ -88,7 +88,6 @@ async function getDeviceHash(visitorData) {
     timezone: visitorData.timezone,
     language: visitorData.languages?.[0], // Use primary language
     touchSupport: visitorData.touchSupport,
-    colorDepth: visitorData.colorDepth,
     webGLRenderer: visitorData.webGLRenderer,
   };
 
