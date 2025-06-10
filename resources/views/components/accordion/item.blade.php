@@ -28,7 +28,7 @@
   <button 
     type="button"
     id="{{ $buttonId }}"
-    class="w-full block transition-colors duration-500 ease-in-out"
+    class="w-full block hover:bg-white transition-colors duration-300 ease-in-out"
     :class="{ 'bg-white': open, 'bg-lumora': !open }"
     @click="toggle()"
     :aria-expanded="open.toString()"
@@ -51,7 +51,7 @@
     x-ref="container"
     role="region"
     aria-labelledby="{{ $buttonId }}"
-    class="relative bg-transparent overflow-hidden max-h-0 transition-all duration-500 ease-in-out" 
+    class="relative bg-transparent overflow-hidden max-h-0 transition-all duration-300 ease-in-out" 
     :class="{ 'bg-white': open }"
     style="max-height: 0px;">
     <x-layout.container>

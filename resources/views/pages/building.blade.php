@@ -6,6 +6,7 @@
 @section('header')
 <x-headings.h1>
   {{ $building->title }}
+  <x-buildings.browse :browse="$browse" />
 </x-headings.h1>
 @endsection
 

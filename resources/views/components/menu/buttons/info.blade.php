@@ -1,7 +1,7 @@
 <a 
   href="{{ route('page.info') }}"  
   title="Info zum Voting" 
-  class="relative shrink-0 flex justify-center items-center aspect-[353/350] md:aspect-square max-w-[280px] xs:max-w-[330px] md:max-w-[400px] xl:max-w-[500px] w-full text-white hover:text-lumora transition-all">
+  class="relative shrink-0 flex justify-center items-center aspect-[353/350] md:aspect-square max-w-[280px] xs:max-w-[330px] md:max-w-[400px] xl:max-w-[500px] w-full text-white hover:text-lumora transition-color duration-300">
   
   <svg width="353" height="350" viewBox="0 0 353 350" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute block w-full h-full z-10 md:hidden">
     <path d="M207.164 86.2969L208.219 87.0547L209.341 86.3984L351 3.4873V347.5H2V85.5381L90.5498 2.58301L207.164 86.2969Z" fill="currentColor" stroke="black" stroke-width="4"/>
