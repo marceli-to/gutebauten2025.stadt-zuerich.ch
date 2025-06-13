@@ -64,7 +64,7 @@ function init() {
     color: 'Basiskarte_Zuerich_Raster',
   };
 
-  L.tileLayer(`https://www.ogd.stadt-zuerich.ch/mapproxy/wmts/1.0.0/${mapTypes.color}/default/ktzh/{z}/{y}/{x}.png`, {
+  L.tileLayer(`https://www.ogd.stadt-zuerich.ch/mapproxy/wmts/1.0.0/${mapTypes.gray}/default/ktzh/{z}/{y}/{x}.png`, {
     maxZoom: 8,
     minZoom: 1,
     tileSize: 512
