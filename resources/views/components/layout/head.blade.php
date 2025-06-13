@@ -10,6 +10,10 @@
 <meta property="og:url" content="{{ url()->current() }}">
 <meta property="og:site_name" content="@seo_title">
 <meta property="og:image" content="{{ url('/') }}@seo_image">
+<meta name="twitter:card" content="{{ url('/') }}@seo_image">
+<meta name="twitter:title" content="@seo_title">
+<meta name="twitter:description" content="@seo_description">
+<meta name="twitter:image" content="summary_large_image">
 <meta name="view-transition" content="same-origin" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
