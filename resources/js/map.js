@@ -62,6 +62,7 @@ function init() {
   const mapTypes = {
     gray: 'Basiskarte_Zuerich_Raster_Grau',
     color: 'Basiskarte_Zuerich_Raster',
+    simple: 'basiskarte_zuerich_schlicht'
   };
 
   L.tileLayer(`https://www.ogd.stadt-zuerich.ch/mapproxy/wmts/1.0.0/${mapTypes.gray}/default/ktzh/{z}/{y}/{x}.png`, {
