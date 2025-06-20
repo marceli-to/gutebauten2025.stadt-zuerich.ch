@@ -270,10 +270,14 @@ export default class ImageSlider {
   }
 
   getSlideOffset(slide) {
-    const trackRect = this.track.getBoundingClientRect();
-    const slideRect = slide.getBoundingClientRect();
-    return slideRect.left - trackRect.left + this.track.scrollLeft;
+    return slide.offsetLeft;
   }
+
+  // getSlideOffset(slide) {
+  //   const trackRect = this.track.getBoundingClientRect();
+  //   const slideRect = slide.getBoundingClientRect();
+  //   return slideRect.left - trackRect.left + this.track.scrollLeft;
+  // }
 
   logState() {
     console.log({
