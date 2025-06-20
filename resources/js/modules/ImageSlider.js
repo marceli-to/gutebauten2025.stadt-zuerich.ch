@@ -12,13 +12,12 @@ export default class ImageSlider {
     this.isTransitioning = false;
     this.lastTime = null;
     this.isPaused = false;
-
     this.lastContainerWidth = this.container.clientWidth;
+    this.hasInitialized = false; // ✅ Flag to prevent initial fade
   }
 
   init() {
-    // Set base transform properties
-    gsap.set(this.track, { 
+    gsap.set(this.track, {
       transform: 'translate3d(0, 0, 0)',
       transformOrigin: "0% 0%",
       backfaceVisibility: "hidden",
@@ -36,8 +35,12 @@ export default class ImageSlider {
     const targetSlide = this.slides[this.actualIndex];
     const offset = this.getSlideOffset(targetSlide);
     this.x = offset;
-    gsap.set(this.track, { x: -Math.round(this.x) });
 
+    gsap.set(this.track, {
+      transform: `translate3d(${-this.x}px, 0, 0)`
+    });
+
+    this.hasInitialized = true; // ✅ Set flag after init
     requestAnimationFrame((t) => this.animate(t));
   }
 
@@ -59,13 +62,15 @@ export default class ImageSlider {
 
   setupResizeObserver() {
     let resizeTimeout;
-    
+
     const resizeObserver = new ResizeObserver(() => {
+      if (!this.hasInitialized) return; // ✅ Skip first call on load
+
       clearTimeout(resizeTimeout);
       this.isPaused = true;
 
       gsap.to(this.container, { opacity: 0, duration: 0.2 });
-      
+
       resizeTimeout = setTimeout(() => {
         this.rebuildSlider();
       }, 150);
@@ -80,7 +85,6 @@ export default class ImageSlider {
     this.isTransitioning = false;
 
     this.track.innerHTML = '';
-
     this.originalSlides.forEach(slide => {
       this.track.appendChild(slide);
     });
@@ -94,7 +98,7 @@ export default class ImageSlider {
     if (targetSlide) {
       const offset = this.getSlideOffset(targetSlide) - (this.container.clientWidth - targetSlide.clientWidth) / 2;
       this.x = offset;
-      gsap.set(this.track, { 
+      gsap.set(this.track, {
         transform: `translate3d(${-this.x}px, 0, 0)`,
         transformOrigin: "0% 0%"
       });
@@ -105,20 +109,6 @@ export default class ImageSlider {
     this.isPaused = false;
 
     gsap.to(this.container, { opacity: 1, duration: 0.3 });
-
-    this.debugResize();
-  }
-
-  debugResize() {
-    console.log('=== RESIZE REBUILD DEBUG ===');
-    console.log('Container width:', this.container.clientWidth);
-    console.log('Track width:', this.track.scrollWidth);
-    console.log('Total calculated width:', this.totalWidth);
-    console.log('Section width:', this.sectionWidth);
-    console.log('Current x:', this.x);
-    console.log('Actual index:', this.actualIndex);
-    console.log('Slide widths:', this.slideWidths);
-    console.log('Slides count:', this.slides.length);
   }
 
   setup() {
@@ -194,7 +184,7 @@ export default class ImageSlider {
         roundProps: 'val',
         onUpdate: () => {
           this.x = proxy.val;
-          gsap.set(this.track, { 
+          gsap.set(this.track, {
             transform: `translate3d(${-this.x}px, 0, 0)`,
             transformOrigin: "0% 0%"
           });
@@ -206,7 +196,7 @@ export default class ImageSlider {
       });
     } else {
       this.x = offset;
-      gsap.set(this.track, { 
+      gsap.set(this.track, {
         transform: `translate3d(${-this.x}px, 0, 0)`,
         transformOrigin: "0% 0%"
       });
@@ -228,7 +218,7 @@ export default class ImageSlider {
     const target = this.slides[index];
     const offset = this.getSlideOffset(target) - (this.container.clientWidth - target.clientWidth) / 2;
     this.x = offset;
-    gsap.set(this.track, { 
+    gsap.set(this.track, {
       transform: `translate3d(${-this.x}px, 0, 0)`,
       transformOrigin: "0% 0%"
     });
@@ -261,7 +251,7 @@ export default class ImageSlider {
       if (this.x < 0) this.x += this.sectionWidth;
     }
 
-    gsap.set(this.track, { 
+    gsap.set(this.track, {
       transform: `translate3d(${-this.x}px, 0, 0)`,
       transformOrigin: "0% 0%"
     });
@@ -271,19 +261,5 @@ export default class ImageSlider {
 
   getSlideOffset(slide) {
     return slide.offsetLeft;
-  }
-
-  // getSlideOffset(slide) {
-  //   const trackRect = this.track.getBoundingClientRect();
-  //   const slideRect = slide.getBoundingClientRect();
-  //   return slideRect.left - trackRect.left + this.track.scrollLeft;
-  // }
-
-  logState() {
-    console.log({
-      actualIndex: this.actualIndex,
-      x: this.x,
-      centeredIndex: this.getCurrentCenteredSlideIndex(),
-    });
   }
 }
