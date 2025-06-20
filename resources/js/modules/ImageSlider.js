@@ -52,18 +52,26 @@ export default class ImageSlider {
   setupResizeObserver() {
     const resizeObserver = new ResizeObserver(() => {
       this.isPaused = true;
-
+  
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
+          // Force all slides to recalculate their dimensions
+          this.slides.forEach(slide => {
+            slide.style.width = '';
+            slide.offsetHeight; // Force reflow
+          });
+          
           this.measureSlides();
           this.track.offsetHeight; // Force layout flush
+          
+          // Ensure positioning is pixel-perfect
           this.repositionToSlide(this.actualIndex);
           this.lastContainerWidth = this.container.clientWidth;
           this.isPaused = false;
         });
       });
     });
-
+  
     resizeObserver.observe(this.container);
   }
 
