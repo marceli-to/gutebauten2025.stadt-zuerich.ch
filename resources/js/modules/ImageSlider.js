@@ -280,11 +280,13 @@ export default class ImageSlider {
     }
 
     // Use transform3d for better performance
-    gsap.set(this.track, { 
-      x: -Math.round(this.x), 
-      force3D: true,
-      transformOrigin: "0% 0%"
-    });
+    // gsap.set(this.track, { 
+    //   x: -Math.round(this.x), 
+    //   force3D: true,
+    //   transformOrigin: "0% 0%"
+    // });
+
+    this.track.style.transform = `translate3d(${-Math.round(this.x)}px, 0, 0)`;
 
     requestAnimationFrame((t) => this.animate(t));
   }
