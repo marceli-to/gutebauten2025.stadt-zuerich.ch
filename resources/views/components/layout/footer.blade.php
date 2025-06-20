@@ -1,3 +1,4 @@
+@if (request()->routeIs('page.home'))
 <footer class="bg-black">
   <x-layout.container class="py-30 md:py-15 xl:py-20 text-white text-xs md:flex md:justify-between">
     <div class="mb-10 md:mb-0">
@@ -49,6 +50,7 @@
     </nav>
   </x-layout.container>
 </footer>
+@endif
 @vite('resources/js/app.js')
 @if (request()->routeIs('page.building'))
 @vite('resources/js/interaction.js')

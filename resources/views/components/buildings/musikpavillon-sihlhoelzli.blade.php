@@ -33,7 +33,7 @@
       </p>
       <p>
         Bauträgerschaft<br>
-        Immobilien Stadt Zürich c / o Amt für Hochbauten
+        Immobilien Stadt Zürich c/o Amt für Hochbauten
       </p>
       <p>
         Architektur<br>
