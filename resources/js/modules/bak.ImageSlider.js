@@ -13,7 +13,9 @@ export default class ImageSlider {
     this.lastTime = null;
     this.isPaused = false;
 
-    // Removed old resize logic
+    // Resize control
+    this.isResizing = false;
+    this.resizeTimer = null;
     this.lastContainerWidth = this.container.clientWidth;
   }
 
@@ -21,7 +23,7 @@ export default class ImageSlider {
     this.cloneSlides();
     this.measureSlides();
     this.setup();
-    this.setupResizeObserver();
+    this.setupResizeHandler();
     this.setupTouch();
     this.setupAccessibility();
 
@@ -50,26 +52,27 @@ export default class ImageSlider {
     this.sectionWidth = this.totalWidth / 3;
   }
 
-  setupResizeObserver() {
-    const resizeObserver = new ResizeObserver(() => {
-      this.isPaused = true;
+  setupResizeHandler() {
+    window.addEventListener('resize', () => {
+      if (!this.isResizing) {
+        this.isResizing = true;
+        this.isPaused = true;
+      }
 
-      // Let layout settle before recalculating
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
+      clearTimeout(this.resizeTimer);
+      this.resizeTimer = setTimeout(() => {
+        const newWidth = this.container.clientWidth;
+
+        if (newWidth !== this.lastContainerWidth) {
           this.measureSlides();
-
-          // Force reflow for Safari
-          this.track.offsetHeight;
-
           this.repositionToSlide(this.actualIndex);
-          this.lastContainerWidth = this.container.clientWidth;
-          this.isPaused = false;
-        });
-      });
-    });
+          this.lastContainerWidth = newWidth;
+        }
 
-    resizeObserver.observe(this.container);
+        this.isResizing = false;
+        this.isPaused = false;
+      }, 300);
+    });
   }
 
   setup() {
@@ -218,7 +221,7 @@ export default class ImageSlider {
     const delta = timestamp - this.lastTime;
     this.lastTime = timestamp;
 
-    if (!this.isTransitioning && !this.isPaused) {
+    if (!this.isTransitioning && !this.isPaused && !this.isResizing) {
       this.x += (this.speed * delta / 1000);
       if (this.x >= this.sectionWidth * 2) this.x -= this.sectionWidth;
       if (this.x < 0) this.x += this.sectionWidth;
