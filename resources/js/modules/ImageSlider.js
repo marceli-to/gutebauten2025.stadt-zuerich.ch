@@ -13,6 +13,9 @@ export default class ImageSlider {
     this.lastTime = null;
     this.isPaused = false;
 
+    // Resize control
+    this.isResizing = false;
+    this.resizeTimer = null;
     this.lastContainerWidth = this.container.clientWidth;
   }
 
@@ -20,15 +23,15 @@ export default class ImageSlider {
     this.cloneSlides();
     this.measureSlides();
     this.setup();
-    this.setupResizeObserver();
+    this.setupResizeHandler();
     this.setupTouch();
     this.setupAccessibility();
 
     this.actualIndex = this.originalSlides.length;
     const targetSlide = this.slides[this.actualIndex];
-    const offset = this.getSlideOffset(targetSlide);
+    const offset = targetSlide.offsetLeft;
     this.x = offset;
-    gsap.set(this.track, { x: -Math.round(this.x) });
+    gsap.set(this.track, { x: -this.x });
 
     requestAnimationFrame((t) => this.animate(t));
   }
@@ -49,22 +52,29 @@ export default class ImageSlider {
     this.sectionWidth = this.totalWidth / 3;
   }
 
-  setupResizeObserver() {
-    const resizeObserver = new ResizeObserver(() => {
-      this.isPaused = true;
+  setupResizeHandler() {
+    window.addEventListener('resize', () => {
+      if (!this.isResizing) {
+        this.isResizing = true;
+        this.isPaused = true;
+        this.container.style.opacity = '0.8'; // Dim the container
+      }
 
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
+      clearTimeout(this.resizeTimer);
+      this.resizeTimer = setTimeout(() => {
+        const newWidth = this.container.clientWidth;
+
+        if (newWidth !== this.lastContainerWidth) {
           this.measureSlides();
-          this.track.offsetHeight; // Force layout flush
           this.repositionToSlide(this.actualIndex);
-          this.lastContainerWidth = this.container.clientWidth;
-          this.isPaused = false;
-        });
-      });
-    });
+          this.lastContainerWidth = newWidth;
+        }
 
-    resizeObserver.observe(this.container);
+        this.isResizing = false;
+        this.isPaused = false;
+        this.container.style.opacity = '1'; // Restore full opacity
+      }, 300);
+    });
   }
 
   setup() {
@@ -125,7 +135,7 @@ export default class ImageSlider {
     const targetSlide = this.slides[slideIndex];
     if (!targetSlide) return;
 
-    let offset = this.getSlideOffset(targetSlide);
+    let offset = targetSlide.offsetLeft;
     if (center) {
       offset -= (this.container.clientWidth - targetSlide.clientWidth) / 2;
     }
@@ -137,10 +147,9 @@ export default class ImageSlider {
         val: offset,
         duration: 1,
         ease: 'power1.inOut',
-        roundProps: 'val',
         onUpdate: () => {
           this.x = proxy.val;
-          gsap.set(this.track, { x: -Math.round(this.x) });
+          gsap.set(this.track, { x: -this.x });
           this.updateHighlight();
         },
         onComplete: () => {
@@ -151,7 +160,7 @@ export default class ImageSlider {
       });
     } else {
       this.x = offset;
-      gsap.set(this.track, { x: -Math.round(this.x) });
+      gsap.set(this.track, { x: -this.x });
       this.updateHighlight();
     }
   }
@@ -169,9 +178,9 @@ export default class ImageSlider {
 
   repositionToSlide(index) {
     const target = this.slides[index];
-    const offset = this.getSlideOffset(target) - (this.container.clientWidth - target.clientWidth) / 2;
+    const offset = target.offsetLeft - (this.container.clientWidth - target.clientWidth) / 2;
     this.x = offset;
-    gsap.set(this.track, { x: -Math.round(this.x) });
+    gsap.set(this.track, { x: -this.x });
     this.updateHighlight();
   }
 
@@ -214,22 +223,16 @@ export default class ImageSlider {
     const delta = timestamp - this.lastTime;
     this.lastTime = timestamp;
 
-    if (!this.isTransitioning && !this.isPaused) {
+    if (!this.isTransitioning && !this.isPaused && !this.isResizing) {
       this.x += (this.speed * delta / 1000);
       if (this.x >= this.sectionWidth * 2) this.x -= this.sectionWidth;
       if (this.x < 0) this.x += this.sectionWidth;
     }
 
-    gsap.set(this.track, { x: -Math.round(this.x) });
+    gsap.set(this.track, { x: -this.x });
     this.updateHighlight();
 
     requestAnimationFrame((t) => this.animate(t));
-  }
-
-  getSlideOffset(slide) {
-    const trackRect = this.track.getBoundingClientRect();
-    const slideRect = slide.getBoundingClientRect();
-    return slideRect.left - trackRect.left + this.track.scrollLeft;
   }
 
   logState() {
