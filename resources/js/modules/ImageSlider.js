@@ -57,7 +57,7 @@ export default class ImageSlider {
       this.isPaused = true;
       
       // Hide container during resize
-      gsap.to(this.container, { opacity: 0, duration: 0.1 });
+      gsap.to(this.container, { opacity: 0, duration: 0.2 });
       
       resizeTimeout = setTimeout(() => {
         this.rebuildSlider();
@@ -95,7 +95,6 @@ export default class ImageSlider {
       const offset = this.getSlideOffset(targetSlide) - (this.container.clientWidth - targetSlide.clientWidth) / 2;
       this.x = offset;
       gsap.set(this.track, { x: -Math.round(this.x) });
-      this.updateHighlight();
     }
     
     // Update speed based on new container width
@@ -104,7 +103,7 @@ export default class ImageSlider {
     this.isPaused = false;
     
     // Show container again after rebuild is complete
-    gsap.to(this.container, { opacity: 1, duration: 0.2 });
+    gsap.to(this.container, { opacity: 1, duration: 0.3 });
     
     // Debug output
     this.debugResize();
@@ -196,18 +195,15 @@ export default class ImageSlider {
         onUpdate: () => {
           this.x = proxy.val;
           gsap.set(this.track, { x: -Math.round(this.x) });
-          this.updateHighlight();
         },
         onComplete: () => {
           this.checkAndReposition();
           this.isTransitioning = false;
-          this.updateHighlight();
         }
       });
     } else {
       this.x = offset;
       gsap.set(this.track, { x: -Math.round(this.x) });
-      this.updateHighlight();
     }
   }
 
@@ -227,26 +223,9 @@ export default class ImageSlider {
     const offset = this.getSlideOffset(target) - (this.container.clientWidth - target.clientWidth) / 2;
     this.x = offset;
     gsap.set(this.track, { x: -Math.round(this.x) });
-    this.updateHighlight();
   }
 
-  updateHighlight() {
-    const containerRect = this.container.getBoundingClientRect();
-    let activeSlide = null;
 
-    this.slides.forEach(slide => {
-      const rect = slide.getBoundingClientRect();
-      const visibleWidth = Math.max(0, Math.min(rect.right, containerRect.right) - Math.max(rect.left, containerRect.left));
-      const visibilityRatio = visibleWidth / rect.width;
-
-      if (visibilityRatio >= 0.8 && !activeSlide) {
-        activeSlide = slide;
-      }
-    });
-
-    this.slides.forEach(slide => slide.classList.remove('highlight'));
-    if (activeSlide) activeSlide.classList.add('highlight');
-  }
 
   getCurrentCenteredSlideIndex() {
     const containerRect = this.container.getBoundingClientRect();
@@ -276,7 +255,6 @@ export default class ImageSlider {
     }
 
     gsap.set(this.track, { x: -Math.round(this.x) });
-    this.updateHighlight();
 
     requestAnimationFrame((t) => this.animate(t));
   }
