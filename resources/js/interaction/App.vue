@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-x-10 xl:gap-x-20">
+  <div class="flex">
     
     <Vote
       :slug="slug"

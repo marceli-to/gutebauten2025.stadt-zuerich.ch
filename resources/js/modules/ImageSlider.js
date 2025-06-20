@@ -17,9 +17,9 @@ export default class ImageSlider {
   }
 
   init() {
-    // Force hardware acceleration for smoother animations
+    // Set base transform properties
     gsap.set(this.track, { 
-      force3D: true,
+      transform: 'translate3d(0, 0, 0)',
       transformOrigin: "0% 0%",
       backfaceVisibility: "hidden",
       perspective: 1000
@@ -36,7 +36,7 @@ export default class ImageSlider {
     const targetSlide = this.slides[this.actualIndex];
     const offset = this.getSlideOffset(targetSlide);
     this.x = offset;
-    gsap.set(this.track, { x: -Math.round(this.x), force3D: true });
+    gsap.set(this.track, { x: -Math.round(this.x) });
 
     requestAnimationFrame((t) => this.animate(t));
   }
@@ -63,8 +63,7 @@ export default class ImageSlider {
     const resizeObserver = new ResizeObserver(() => {
       clearTimeout(resizeTimeout);
       this.isPaused = true;
-      
-      // Hide container during resize
+
       gsap.to(this.container, { opacity: 0, duration: 0.2 });
       
       resizeTimeout = setTimeout(() => {
@@ -76,48 +75,37 @@ export default class ImageSlider {
   }
 
   rebuildSlider() {
-    // Store current state - find which original slide we're closest to
     const currentIndex = this.actualIndex - this.originalSlides.length;
-    
-    // Stop everything
     gsap.killTweensOf(this.track);
     this.isTransitioning = false;
-    
-    // Clear the track completely
+
     this.track.innerHTML = '';
-    
-    // Rebuild from original slides
+
     this.originalSlides.forEach(slide => {
       this.track.appendChild(slide);
     });
-    
-    // Reinitialize everything from scratch
+
     this.cloneSlides();
     this.measureSlides();
-    
-    // Position to the same relative slide in the middle section
+
     this.actualIndex = this.originalSlides.length + Math.max(0, Math.min(currentIndex, this.originalSlides.length - 1));
     const targetSlide = this.slides[this.actualIndex];
-    
+
     if (targetSlide) {
       const offset = this.getSlideOffset(targetSlide) - (this.container.clientWidth - targetSlide.clientWidth) / 2;
       this.x = offset;
       gsap.set(this.track, { 
-        x: -Math.round(this.x), 
-        force3D: true,
+        transform: `translate3d(${-this.x}px, 0, 0)`,
         transformOrigin: "0% 0%"
       });
     }
-    
-    // Update speed based on new container width
+
     this.speed = this.container.clientWidth * 0.04;
     this.lastContainerWidth = this.container.clientWidth;
     this.isPaused = false;
-    
-    // Show container again after rebuild is complete
+
     gsap.to(this.container, { opacity: 1, duration: 0.3 });
-    
-    // Debug output
+
     this.debugResize();
   }
 
@@ -204,12 +192,10 @@ export default class ImageSlider {
         duration: 1,
         ease: 'power1.inOut',
         roundProps: 'val',
-        force3D: true,
         onUpdate: () => {
           this.x = proxy.val;
           gsap.set(this.track, { 
-            x: -Math.round(this.x), 
-            force3D: true,
+            transform: `translate3d(${-this.x}px, 0, 0)`,
             transformOrigin: "0% 0%"
           });
         },
@@ -221,8 +207,7 @@ export default class ImageSlider {
     } else {
       this.x = offset;
       gsap.set(this.track, { 
-        x: -Math.round(this.x), 
-        force3D: true,
+        transform: `translate3d(${-this.x}px, 0, 0)`,
         transformOrigin: "0% 0%"
       });
     }
@@ -244,13 +229,10 @@ export default class ImageSlider {
     const offset = this.getSlideOffset(target) - (this.container.clientWidth - target.clientWidth) / 2;
     this.x = offset;
     gsap.set(this.track, { 
-      x: -Math.round(this.x), 
-      force3D: true,
+      transform: `translate3d(${-this.x}px, 0, 0)`,
       transformOrigin: "0% 0%"
     });
   }
-
-
 
   getCurrentCenteredSlideIndex() {
     const containerRect = this.container.getBoundingClientRect();
@@ -279,10 +261,8 @@ export default class ImageSlider {
       if (this.x < 0) this.x += this.sectionWidth;
     }
 
-    // Use transform3d for better performance
     gsap.set(this.track, { 
-      x: -Math.round(this.x), 
-      force3D: true,
+      transform: `translate3d(${-this.x}px, 0, 0)`,
       transformOrigin: "0% 0%"
     });
 

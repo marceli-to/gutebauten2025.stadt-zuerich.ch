@@ -24,6 +24,8 @@
     },
     "dependencies": {
         "@fingerprintjs/fingerprintjs": "^4.1.0",
+        "@splidejs/splide": "^4.1.4",
+        "@splidejs/splide-extension-auto-scroll": "^0.5.3",
         "@vitejs/plugin-vue": "^4.6.2",
         "alpinejs": "^3.13.0",
         "gsap": "^3.13.0",

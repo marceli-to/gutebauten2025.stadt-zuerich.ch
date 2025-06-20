@@ -1,11 +1,11 @@
 <template>
-  <div class="relative">
+  <div class="relative ml-10 mr-12 xl:ml-16 xl:mr-20">
     <a 
       href="#" 
       @click.prevent="emit('toggle')"
       class="group"
       v-if="!props.isOpen">
-      <ShareIcon class="text-white group-hover:text-lumora transition-all" />
+      <ShareIcon class="text-white group-hover:text-lumora transition-all w-27 md:w-26 xl:w-34" />
     </a>
     <div  
       class="absolute top-34 md:top-33 xl:top-43 -translate-y-full left-0 w-210 xl:w-[240px] h-auto z-20"
