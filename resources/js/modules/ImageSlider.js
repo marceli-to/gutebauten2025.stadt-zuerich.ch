@@ -13,7 +13,6 @@ export default class ImageSlider {
     this.lastTime = null;
     this.isPaused = false;
 
-    // Removed old resize logic
     this.lastContainerWidth = this.container.clientWidth;
   }
 
@@ -27,9 +26,9 @@ export default class ImageSlider {
 
     this.actualIndex = this.originalSlides.length;
     const targetSlide = this.slides[this.actualIndex];
-    const offset = targetSlide.offsetLeft;
+    const offset = this.getSlideOffset(targetSlide);
     this.x = offset;
-    gsap.set(this.track, { x: -this.x });
+    gsap.set(this.track, { x: -Math.round(this.x) });
 
     requestAnimationFrame((t) => this.animate(t));
   }
@@ -54,14 +53,10 @@ export default class ImageSlider {
     const resizeObserver = new ResizeObserver(() => {
       this.isPaused = true;
 
-      // Let layout settle before recalculating
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           this.measureSlides();
-
-          // Force reflow for Safari
-          this.track.offsetHeight;
-
+          this.track.offsetHeight; // Force layout flush
           this.repositionToSlide(this.actualIndex);
           this.lastContainerWidth = this.container.clientWidth;
           this.isPaused = false;
@@ -130,7 +125,7 @@ export default class ImageSlider {
     const targetSlide = this.slides[slideIndex];
     if (!targetSlide) return;
 
-    let offset = targetSlide.offsetLeft;
+    let offset = this.getSlideOffset(targetSlide);
     if (center) {
       offset -= (this.container.clientWidth - targetSlide.clientWidth) / 2;
     }
@@ -142,9 +137,10 @@ export default class ImageSlider {
         val: offset,
         duration: 1,
         ease: 'power1.inOut',
+        roundProps: 'val',
         onUpdate: () => {
           this.x = proxy.val;
-          gsap.set(this.track, { x: -this.x });
+          gsap.set(this.track, { x: -Math.round(this.x) });
           this.updateHighlight();
         },
         onComplete: () => {
@@ -155,7 +151,7 @@ export default class ImageSlider {
       });
     } else {
       this.x = offset;
-      gsap.set(this.track, { x: -this.x });
+      gsap.set(this.track, { x: -Math.round(this.x) });
       this.updateHighlight();
     }
   }
@@ -173,9 +169,9 @@ export default class ImageSlider {
 
   repositionToSlide(index) {
     const target = this.slides[index];
-    const offset = target.offsetLeft - (this.container.clientWidth - target.clientWidth) / 2;
+    const offset = this.getSlideOffset(target) - (this.container.clientWidth - target.clientWidth) / 2;
     this.x = offset;
-    gsap.set(this.track, { x: -this.x });
+    gsap.set(this.track, { x: -Math.round(this.x) });
     this.updateHighlight();
   }
 
@@ -224,10 +220,16 @@ export default class ImageSlider {
       if (this.x < 0) this.x += this.sectionWidth;
     }
 
-    gsap.set(this.track, { x: -this.x });
+    gsap.set(this.track, { x: -Math.round(this.x) });
     this.updateHighlight();
 
     requestAnimationFrame((t) => this.animate(t));
+  }
+
+  getSlideOffset(slide) {
+    const trackRect = this.track.getBoundingClientRect();
+    const slideRect = slide.getBoundingClientRect();
+    return slideRect.left - trackRect.left + this.track.scrollLeft;
   }
 
   logState() {
