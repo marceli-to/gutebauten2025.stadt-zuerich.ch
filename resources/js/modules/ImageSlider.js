@@ -57,7 +57,7 @@ export default class ImageSlider {
       this.isPaused = true;
       
       // Hide container during resize
-      gsap.to(this.container, { opacity: 0.1, duration: 0.2 });
+      gsap.to(this.container, { opacity: 0, duration: 0.2 });
       
       resizeTimeout = setTimeout(() => {
         this.rebuildSlider();
