@@ -50,29 +50,70 @@ export default class ImageSlider {
   }
 
   setupResizeObserver() {
+    let resizeTimeout;
+    
     const resizeObserver = new ResizeObserver(() => {
+      clearTimeout(resizeTimeout);
       this.isPaused = true;
-  
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          // Force all slides to recalculate their dimensions
-          this.slides.forEach(slide => {
-            slide.style.width = '';
-            slide.offsetHeight; // Force reflow
-          });
-          
-          this.measureSlides();
-          this.track.offsetHeight; // Force layout flush
-          
-          // Ensure positioning is pixel-perfect
-          this.repositionToSlide(this.actualIndex);
-          this.lastContainerWidth = this.container.clientWidth;
-          this.isPaused = false;
-        });
-      });
+      
+      resizeTimeout = setTimeout(() => {
+        this.rebuildSlider();
+      }, 150);
     });
-  
+
     resizeObserver.observe(this.container);
+  }
+
+  rebuildSlider() {
+    // Store current state - find which original slide we're closest to
+    const currentIndex = this.actualIndex - this.originalSlides.length;
+    
+    // Stop everything
+    gsap.killTweensOf(this.track);
+    this.isTransitioning = false;
+    
+    // Clear the track completely
+    this.track.innerHTML = '';
+    
+    // Rebuild from original slides
+    this.originalSlides.forEach(slide => {
+      this.track.appendChild(slide);
+    });
+    
+    // Reinitialize everything from scratch
+    this.cloneSlides();
+    this.measureSlides();
+    
+    // Position to the same relative slide in the middle section
+    this.actualIndex = this.originalSlides.length + Math.max(0, Math.min(currentIndex, this.originalSlides.length - 1));
+    const targetSlide = this.slides[this.actualIndex];
+    
+    if (targetSlide) {
+      const offset = this.getSlideOffset(targetSlide) - (this.container.clientWidth - targetSlide.clientWidth) / 2;
+      this.x = offset;
+      gsap.set(this.track, { x: -Math.round(this.x) });
+      this.updateHighlight();
+    }
+    
+    // Update speed based on new container width
+    this.speed = this.container.clientWidth * 0.04;
+    this.lastContainerWidth = this.container.clientWidth;
+    this.isPaused = false;
+    
+    // Debug output
+    this.debugResize();
+  }
+
+  debugResize() {
+    console.log('=== RESIZE REBUILD DEBUG ===');
+    console.log('Container width:', this.container.clientWidth);
+    console.log('Track width:', this.track.scrollWidth);
+    console.log('Total calculated width:', this.totalWidth);
+    console.log('Section width:', this.sectionWidth);
+    console.log('Current x:', this.x);
+    console.log('Actual index:', this.actualIndex);
+    console.log('Slide widths:', this.slideWidths);
+    console.log('Slides count:', this.slides.length);
   }
 
   setup() {
