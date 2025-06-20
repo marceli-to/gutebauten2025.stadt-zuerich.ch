@@ -13,7 +13,7 @@ export default class ImageSlider {
     this.lastTime = null;
     this.isPaused = false;
     this.lastContainerWidth = this.container.clientWidth;
-    this.hasInitialized = false; // ✅ Flag to prevent initial fade
+    this.hasInitialized = false;
   }
 
   init() {
@@ -64,7 +64,7 @@ export default class ImageSlider {
     let resizeTimeout;
 
     const resizeObserver = new ResizeObserver(() => {
-      if (!this.hasInitialized) return; // ✅ Skip first call on load
+      if (!this.hasInitialized) return;
 
       clearTimeout(resizeTimeout);
       this.isPaused = true;
