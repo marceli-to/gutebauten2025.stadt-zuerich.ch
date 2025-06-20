@@ -33,8 +33,8 @@
     @click="toggle()"
     :aria-expanded="open.toString()"
     aria-controls="{{ $panelId }}">
-    <x-layout.container class="w-full flex items-center justify-between py-10 md:py-15 xl:py-20">
-      <x-headings.h2 class="!leading-none">
+    <x-layout.container class="w-full flex items-center justify-between min-h-52 md:min-h-60 xl:min-h-72">
+      <x-headings.h2 class="text-left pb-5 pt-2 md:py-0">
         {{ $title }}
       </x-headings.h2>
 

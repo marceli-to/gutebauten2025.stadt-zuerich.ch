@@ -113,11 +113,11 @@
       <x-layout.article>
         <p>
           Gesamtredaktion: Amt für Städtebau<br>
-          Kontakt: afs-kommunikation@zuerich.ch<br>
+          Kontakt: <a href="mailto:afs-kommunikation@zuerich.ch" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" title="afs-kommunikation@zuerich.ch">afs-kommunikation@zuerich.ch</a><br>
           Projekttexte: Judit Solt<br>
-          Gesamtkonzept: Vieceli & Cremers, viecelicremers.com, Zürich<br>
-          Gestaltung Webseite: Nadine Ochsner, nostudio.ch, Zürich in Zusammenarbeit mit Vieceli & Cremers<br>
-          Programmierung: Marcel Stadelmann, marceli.to, Zürich<br>
+          Gesamtkonzept: Vieceli & Cremers, <a href="https://viecelicremers.com" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" title="viecelicremers.com" target="_blank">viecelicremers.com</a>, Zürich<br>
+          Gestaltung Webseite: Nadine Ochsner, <a href="https://nostudio.ch" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" title="nostudio.ch" target="_blank">nostudio.ch</a>, Zürich in Zusammenarbeit mit Vieceli & Cremers<br>
+          Programmierung: Marcel Stadelmann, <a href="https://marceli.to" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" title="marceli.to" target="_blank">marceli.to</a>, Zürich<br>
           © 2025, bei den Autorinnen und Autoren
       </x-layout.article>
     </x-accordion.item>

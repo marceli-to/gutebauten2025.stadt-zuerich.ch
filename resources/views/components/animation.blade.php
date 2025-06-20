@@ -1,4 +1,4 @@
-<div class="">
+<div class="{{ $class ?? '' }}">
   <lottie-player
     id="lottiePlayer"
     class="w-full hidden md:block"
