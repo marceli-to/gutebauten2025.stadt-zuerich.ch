@@ -17,14 +17,6 @@ export default class ImageSlider {
   }
 
   init() {
-    // Force hardware acceleration for smoother animations
-    gsap.set(this.track, { 
-      force3D: true,
-      transformOrigin: "0% 0%",
-      backfaceVisibility: "hidden",
-      perspective: 1000
-    });
-
     this.cloneSlides();
     this.measureSlides();
     this.setup();
@@ -36,7 +28,7 @@ export default class ImageSlider {
     const targetSlide = this.slides[this.actualIndex];
     const offset = this.getSlideOffset(targetSlide);
     this.x = offset;
-    gsap.set(this.track, { x: -Math.round(this.x), force3D: true });
+    gsap.set(this.track, { x: -Math.round(this.x) });
 
     requestAnimationFrame((t) => this.animate(t));
   }
@@ -102,11 +94,7 @@ export default class ImageSlider {
     if (targetSlide) {
       const offset = this.getSlideOffset(targetSlide) - (this.container.clientWidth - targetSlide.clientWidth) / 2;
       this.x = offset;
-      gsap.set(this.track, { 
-        x: -Math.round(this.x), 
-        force3D: true,
-        transformOrigin: "0% 0%"
-      });
+      gsap.set(this.track, { x: -Math.round(this.x) });
     }
     
     // Update speed based on new container width
@@ -204,14 +192,9 @@ export default class ImageSlider {
         duration: 1,
         ease: 'power1.inOut',
         roundProps: 'val',
-        force3D: true,
         onUpdate: () => {
           this.x = proxy.val;
-          gsap.set(this.track, { 
-            x: -Math.round(this.x), 
-            force3D: true,
-            transformOrigin: "0% 0%"
-          });
+          gsap.set(this.track, { x: -Math.round(this.x) });
         },
         onComplete: () => {
           this.checkAndReposition();
@@ -220,11 +203,7 @@ export default class ImageSlider {
       });
     } else {
       this.x = offset;
-      gsap.set(this.track, { 
-        x: -Math.round(this.x), 
-        force3D: true,
-        transformOrigin: "0% 0%"
-      });
+      gsap.set(this.track, { x: -Math.round(this.x) });
     }
   }
 
@@ -243,11 +222,7 @@ export default class ImageSlider {
     const target = this.slides[index];
     const offset = this.getSlideOffset(target) - (this.container.clientWidth - target.clientWidth) / 2;
     this.x = offset;
-    gsap.set(this.track, { 
-      x: -Math.round(this.x), 
-      force3D: true,
-      transformOrigin: "0% 0%"
-    });
+    gsap.set(this.track, { x: -Math.round(this.x) });
   }
 
 
@@ -279,12 +254,7 @@ export default class ImageSlider {
       if (this.x < 0) this.x += this.sectionWidth;
     }
 
-    // Use transform3d for better performance
-    gsap.set(this.track, { 
-      x: -Math.round(this.x), 
-      force3D: true,
-      transformOrigin: "0% 0%"
-    });
+    gsap.set(this.track, { x: -Math.round(this.x) });
 
     requestAnimationFrame((t) => this.animate(t));
   }

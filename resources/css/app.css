@@ -38,18 +38,15 @@ article.building-description a {
   @apply underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline;
 }
 
-/* [data-slider-track] {
-  display: flex;
-  gap: 0;
+[data-slider-track] {
+  will-change: transform;
+  transform-style: preserve-3d;
 }
 
 [data-slider-track] > * {
-  flex-shrink: 0;
-  margin: 0;
-  padding: 0;
-  border: none;
-  outline: none;
-} */
+  will-change: auto;
+  backface-visibility: hidden;
+}
 
 /* Leaflet */
 .leaflet-control-container {
