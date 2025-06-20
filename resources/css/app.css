@@ -37,6 +37,13 @@ article.building-description {
 article.building-description a {
   @apply underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline;
 }
+
+/* Slideshow */
+[data-slider-track] > * {
+  flex: 0 0 auto;
+  width: 100%; /* or exact fixed px width to match container */
+  box-sizing: border-box;
+}
   
 
 /* Leaflet */
