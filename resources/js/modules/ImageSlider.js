@@ -114,6 +114,7 @@ export default class ImageSlider {
   setup() {
     this.container.querySelector('#nextBtn').addEventListener('click', () => this.next());
     this.container.querySelector('#prevBtn').addEventListener('click', () => this.prev());
+    this.container.querySelector('#scrollBtn').addEventListener('click', () => this.scroll());
 
     this.container.setAttribute('tabindex', 0);
     this.container.addEventListener('keydown', (e) => {
@@ -261,5 +262,13 @@ export default class ImageSlider {
 
   getSlideOffset(slide) {
     return slide.offsetLeft;
+  }
+
+  scroll() {
+    // scroll to the bottom of the screen
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
   }
 }
