@@ -265,7 +265,6 @@ export default class ImageSlider {
   }
 
   scroll() {
-    // scroll to the bottom of the screen
     window.scrollTo({
       top: document.body.scrollHeight,
       behavior: 'smooth'
