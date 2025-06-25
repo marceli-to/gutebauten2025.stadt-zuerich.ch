@@ -68,3 +68,17 @@ article.building-description a {
 .leaflet-popup-content {
   @apply !m-0 !text-sm !leading-[1.2];
 }
+
+
+/**
+ * Handle touch/non-touch stuff
+ */
+
+/* Slideshow buttons */
+.is-touch [data-slider-button] {
+  @apply !hidden;
+}
+
+/* Teaser "Jetzt abstimmen" */
+
+/* Teaser cards */

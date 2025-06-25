@@ -2,7 +2,8 @@
   href="{{ route('page.building', $building->slug) }}"
   title="{{ $building->title }}"
   aria-label="{{ $building->title }}"
-  class="relative block group">
+  class="relative block group"
+  data-teaser-card>
   <figure>
     <picture>
       <source srcset="/media/{{ $building->slug }}/{{ $building->slug }}-start.avif" type="image/avif">
