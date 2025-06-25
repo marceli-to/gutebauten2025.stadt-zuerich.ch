@@ -62,21 +62,21 @@ export default class ImageSlider {
 
   setupResizeObserver() {
     let resizeTimeout;
-
-    const resizeObserver = new ResizeObserver(() => {
+  
+    const handleResize = () => {
       if (!this.hasInitialized) return;
-
+  
       clearTimeout(resizeTimeout);
       this.isPaused = true;
-
+  
       gsap.to(this.container, { opacity: 0, duration: 0.2 });
-
+  
       resizeTimeout = setTimeout(() => {
         this.rebuildSlider();
-      }, 150);
-    });
-
-    resizeObserver.observe(this.container);
+      }, 300);
+    };
+  
+    window.addEventListener('resize', handleResize);
   }
 
   rebuildSlider() {
