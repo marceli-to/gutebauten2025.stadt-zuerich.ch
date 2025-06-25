@@ -60,11 +60,41 @@ export default class ImageSlider {
     this.sectionWidth = this.totalWidth / 3;
   }
 
+  setContainerHeight() {
+    const viewportHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
+    
+    let offset = 0;
+    
+    // Match Tailwind breakpoints
+    if (windowWidth >= 1280) { // xl
+      offset = 72;
+    } else if (windowWidth >= 1024) { // lg
+      offset = 60;
+    } else {
+      // For smaller screens, you might want different logic
+      // or just use 100% height
+      this.container.style.height = '100vh';
+      return;
+    }
+    
+    const calculatedHeight = viewportHeight - offset;
+    this.container.style.height = `${calculatedHeight}px`;
+  }
+
   setupResizeObserver() {
     let resizeTimeout;
+    let lastWidth = window.innerWidth;
 
-    const resizeObserver = new ResizeObserver(() => {
+    const handleResize = () => {
       if (!this.hasInitialized) return;
+
+      const currentWidth = window.innerWidth;
+      
+      // Only process if width actually changed (not just height from scrolling)
+      if (currentWidth === lastWidth) return;
+      
+      lastWidth = currentWidth;
 
       clearTimeout(resizeTimeout);
       this.isPaused = true;
@@ -72,11 +102,22 @@ export default class ImageSlider {
       gsap.to(this.container, { opacity: 0, duration: 0.2 });
 
       resizeTimeout = setTimeout(() => {
+        // Recalculate height for new viewport
+        this.setContainerHeight();
         this.rebuildSlider();
-      }, 500);
-    });
+      }, 300);
+    };
 
-    resizeObserver.observe(this.container);
+    // Only listen to resize events
+    window.addEventListener('resize', handleResize);
+    
+    // Optionally, also listen for orientation changes
+    window.addEventListener('orientationchange', () => {
+      setTimeout(() => {
+        this.setContainerHeight();
+        handleResize();
+      }, 100);
+    });
   }
 
   rebuildSlider() {

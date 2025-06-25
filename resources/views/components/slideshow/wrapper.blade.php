@@ -1,6 +1,5 @@
 <div 
   class="relative w-full aspect-[4/3] xl:aspect-auto lg:h-[calc(100dvh_-_60px)] xl:h-[calc(100dvh_-_72px)] overflow-hidden bg-white"
-  style="container-type: inline-size;"
   data-slider>
 
   <button 
