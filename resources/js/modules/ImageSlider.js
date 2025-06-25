@@ -70,6 +70,8 @@ export default class ImageSlider {
   
       const currentWidth = this.container.clientWidth;
       const currentHeight = this.container.clientHeight;
+
+      alert(currentWidth + ' ' + currentHeight);
   
       // Only trigger if dimensions actually changed
       if (currentWidth === lastWidth && currentHeight === lastHeight) {
