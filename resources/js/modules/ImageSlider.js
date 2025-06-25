@@ -84,17 +84,9 @@ export default class ImageSlider {
 
   setupResizeObserver() {
     let resizeTimeout;
-    let lastWidth = window.innerWidth;
 
-    const handleResize = () => {
+    const resizeObserver = new ResizeObserver(() => {
       if (!this.hasInitialized) return;
-
-      const currentWidth = window.innerWidth;
-      
-      // Only process if width actually changed (not just height from scrolling)
-      if (currentWidth === lastWidth) return;
-      
-      lastWidth = currentWidth;
 
       clearTimeout(resizeTimeout);
       this.isPaused = true;
@@ -102,22 +94,11 @@ export default class ImageSlider {
       gsap.to(this.container, { opacity: 0, duration: 0.2 });
 
       resizeTimeout = setTimeout(() => {
-        // Recalculate height for new viewport
-        this.setContainerHeight();
         this.rebuildSlider();
-      }, 300);
-    };
-
-    // Only listen to resize events
-    window.addEventListener('resize', handleResize);
-    
-    // Optionally, also listen for orientation changes
-    window.addEventListener('orientationchange', () => {
-      setTimeout(() => {
-        this.setContainerHeight();
-        handleResize();
-      }, 100);
+      }, 500);
     });
+
+    resizeObserver.observe(this.container);
   }
 
   rebuildSlider() {
