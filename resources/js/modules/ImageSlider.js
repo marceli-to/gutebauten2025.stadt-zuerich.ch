@@ -64,6 +64,8 @@ export default class ImageSlider {
     let resizeTimeout;
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const debounceTime = isMobile ? 500 : 150; // Longer debounce on mobile
+
+    alert(isMobile);
   
     const resizeObserver = new ResizeObserver(() => {
       if (!this.hasInitialized) return;
