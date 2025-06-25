@@ -62,35 +62,23 @@ export default class ImageSlider {
 
   setupResizeObserver() {
     let resizeTimeout;
-    let lastContainerWidth = this.container.clientWidth;
-  
-    const handleResize = () => {
+
+    const resizeObserver = new ResizeObserver(() => {
       if (!this.hasInitialized) return;
-  
-      // Only rebuild if container width actually changed
-      const currentContainerWidth = this.container.clientWidth;
-      if (currentContainerWidth === lastContainerWidth) return;
-      
-      lastContainerWidth = currentContainerWidth;
-  
+
       clearTimeout(resizeTimeout);
       this.isPaused = true;
-  
+
       gsap.to(this.container, { opacity: 0, duration: 0.2 });
-  
+
       resizeTimeout = setTimeout(() => {
         this.rebuildSlider();
-      }, 300);
-    };
-  
-    // Listen for orientation changes specifically
-    const orientationMQ = window.matchMedia('(orientation: portrait)');
-    orientationMQ.addEventListener('change', handleResize);
-    
-    // Still listen to resize but with width check
-    window.addEventListener('resize', handleResize);
+      }, 500);
+    });
+
+    resizeObserver.observe(this.container);
   }
-  
+
   rebuildSlider() {
     const currentIndex = this.actualIndex - this.originalSlides.length;
     gsap.killTweensOf(this.track);
