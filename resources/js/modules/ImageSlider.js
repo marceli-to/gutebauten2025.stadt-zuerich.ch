@@ -62,36 +62,20 @@ export default class ImageSlider {
 
   setupResizeObserver() {
     let resizeTimeout;
-    let lastWidth = this.container.clientWidth;
-    let lastHeight = this.container.clientHeight;
-    const threshold = 30; // Only trigger if change is > 10px
 
-    alert(threshold);
-  
     const resizeObserver = new ResizeObserver(() => {
       if (!this.hasInitialized) return;
-  
-      const currentWidth = this.container.clientWidth;
-      const currentHeight = this.container.clientHeight;
-      
-      // Only trigger if dimensions actually changed beyond threshold
-      if (Math.abs(currentWidth - lastWidth) < threshold && Math.abs(currentHeight - lastHeight) < threshold) {
-        return;
-      }
-  
-      lastWidth = currentWidth;
-      lastHeight = currentHeight;
-  
+
       clearTimeout(resizeTimeout);
       this.isPaused = true;
-  
+
       gsap.to(this.container, { opacity: 0, duration: 0.2 });
-  
+
       resizeTimeout = setTimeout(() => {
         this.rebuildSlider();
       }, 150);
     });
-  
+
     resizeObserver.observe(this.container);
   }
 
