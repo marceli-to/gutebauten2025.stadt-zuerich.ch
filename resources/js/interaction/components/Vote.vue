@@ -48,10 +48,12 @@ async function toggleVote() {
     if (has_voted.value) {
       await axios.put('/api/vote', { hash: props.hash, slug: props.slug })
       has_voted.value = false
+      alert('unvoted')
       emit('unvoted')
     } else {
       await axios.post('/api/vote', { hash: props.hash, slug: props.slug })
       has_voted.value = true
+      alert('voted')
       emit('voted')
     }
   } catch (e) {
