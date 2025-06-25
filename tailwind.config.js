@@ -16,6 +16,7 @@ export default {
 
       screens: {
         'xs': '400px',
+        '3xl': '1640px',
       },
 
       maxWidth: {
