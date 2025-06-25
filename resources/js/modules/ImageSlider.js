@@ -17,6 +17,8 @@ export default class ImageSlider {
   }
 
   init() {
+
+    this.setContainerHeight();
     gsap.set(this.track, {
       transform: 'translate3d(0, 0, 0)',
       transformOrigin: "0% 0%",
@@ -30,7 +32,6 @@ export default class ImageSlider {
     this.setupResizeObserver();
     this.setupTouch();
     this.setupAccessibility();
-    this.setContainerHeight();
 
     this.actualIndex = this.originalSlides.length;
     const targetSlide = this.slides[this.actualIndex];
