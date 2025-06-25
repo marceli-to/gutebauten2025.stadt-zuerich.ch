@@ -21,50 +21,90 @@
 
 <div class="border-t-3 xl:border-t-4 border-black">
 
-  <x-layout.container class="border-b-3 border-black md:border-b-0 h-70 md:h-60 xl:h-70 flex items-end md:items-center">
+  <x-layout.container class="border-b-3 border-black md:border-b-0 mt-15 md:mt-0 min-h-52 pb-5 pt-2 md:py-0 md:min-h-60 xl:min-h-72 flex items-center">
     <x-menu.buttons.open />
     <x-menu.wrapper />
   </x-layout.container>
 
-  <x-layout.container class="py-30">
-    <div class="hidden xl:grid xl:grid-cols-12 xl:gap-x-4 ">
+  <x-layout.container class="py-30 lg:py-40">
+
+    <div class="flex flex-col gap-y-4 md:hidden">
+      <x-buildings.buttons.vote />
+      <x-buildings.teaser.card :building="$buildings[0]" />
+      <x-buildings.teaser.card :building="$buildings[1]" />
+      <x-buildings.teaser.card :building="$buildings[2]" />
+      <x-buildings.teaser.card :building="$buildings[3]" />
+      <x-buildings.teaser.card :building="$buildings[4]" />
+      <x-buildings.teaser.card :building="$buildings[5]" />
+      <x-buildings.teaser.card :building="$buildings[6]" />
+      <x-buildings.teaser.card :building="$buildings[7]" />
+      <x-buildings.teaser.card :building="$buildings[8]" />
+      <x-buildings.teaser.card :building="$buildings[9]" />
+      <x-buildings.teaser.card :building="$buildings[10]" />
+      <x-buildings.teaser.card :building="$buildings[11]" />
+      <x-buildings.teaser.card :building="$buildings[12]" />
+      <x-buildings.teaser.card :building="$buildings[13]" />
+      <x-buildings.teaser.card :building="$buildings[14]" />
+      <x-buildings.teaser.card :building="$buildings[15]" />
+    </div>
+
+    <div class="hidden md:grid md:grid-cols-12 md:gap-x-4 xl:hidden">
+      <div class="md:col-span-4 flex flex-col gap-y-4">
+        <x-buildings.teaser.card :building="$buildings[0]" />
+        <x-buildings.teaser.card :building="$buildings[1]" />
+        <x-buildings.teaser.card :building="$buildings[2]" />
+        <x-buildings.teaser.card :building="$buildings[3]" />
+        <x-buildings.teaser.card :building="$buildings[4]" />
+        <x-buildings.teaser.card :building="$buildings[5]" />
+      </div>
+    
+      <div class="md:col-span-4 flex flex-col gap-y-4">
+        <x-buildings.buttons.vote />
+        <x-buildings.teaser.card :building="$buildings[6]" />
+        <x-buildings.buttons.info />
+        <x-buildings.teaser.card :building="$buildings[7]" />
+        <x-buildings.teaser.card :building="$buildings[8]" />
+        <x-buildings.teaser.card :building="$buildings[9]" />
+      </div>
+    
+      <div class="md:col-span-4 flex flex-col gap-y-4">
+        <x-buildings.teaser.card :building="$buildings[10]" />
+        <x-buildings.buttons.map />
+        <x-buildings.teaser.card :building="$buildings[11]" />
+        <x-buildings.teaser.card :building="$buildings[12]" />
+        <x-buildings.teaser.card :building="$buildings[13]" />
+        <x-buildings.teaser.card :building="$buildings[14]" />
+        <x-buildings.teaser.card :building="$buildings[15]" />
+      </div>
+    </div>
+    
+    <div class="hidden xl:grid xl:grid-cols-12 xl:gap-x-4">
       <div class="xl:col-span-3 xl:flex xl:flex-col xl:gap-y-4">
-        <x-buildings.teaser slug="buero-und-gewerbehaus-binzstrasse" />
-        <x-buildings.teaser slug="hochhausensemble-wolkenwerk" />
-        <x-buildings.teaser slug="kongresshaus-und-tonhalle" />
-        <x-buildings.teaser slug="sanierung-hochhaus-herdern" />
-        <x-buildings.teaser slug="provisorische-sportbauten" />
+        <x-buildings.teaser.card :building="$buildings[0]" />
+        <x-buildings.teaser.card :building="$buildings[1]" />
+        <x-buildings.teaser.card :building="$buildings[2]" />
+        <x-buildings.teaser.card :building="$buildings[3]" />
+        <x-buildings.teaser.card :building="$buildings[4]" />
       </div>
-      <div class="xl:col-span-3 flex flex-col gap-y-4">
-
-        <div class="relative aspect-square flex flex-col justify-center items-center group">
-          <x-icons.vote.bubble class="w-full h-auto absolute inset-0 z-10" />
-          <span class="relative z-20 group-hover:hidden text-2xl">Jetzt<br>abstimmen</span>
-          <span class="relative z-20 hidden group-hover:block p-30 text-sm xl:text-md text-center">
-            <x-icons.vote.filled class="mx-auto mb-20" />
-            Zur Stimmabgabe aufs Herz klicken. Mit einem weiteren Klick kann die Stimme wieder entfernt werden.<br><br>Pro Projekt kann eine Stimme abgegeben werden.
-          </span>
-        </div>
-
-
-        <x-buildings.teaser slug="rathaus-kirche-hard" />
-        <x-buttons.info />
-        <x-buildings.teaser slug="neubau-universitaets-kinderspital" />
-        <x-buildings.teaser slug="wohnueberbauung-klopstock" />
+      <div class="xl:col-span-3 xl:flex xl:flex-col xl:gap-y-4">
+        <x-buildings.buttons.vote />
+        <x-buildings.teaser.card :building="$buildings[5]" />
+        <x-buildings.buttons.info />
+        <x-buildings.teaser.card :building="$buildings[6]" />
+        <x-buildings.teaser.card :building="$buildings[7]" />
       </div>
-      <div class="lg:col-span-3 flex flex-col gap-y-4">
-        <x-buildings.teaser slug="gesamtsanierung-hauptbahnhof-suedtrakt" />
-        <x-buttons.map />
-        <x-buildings.teaser slug="guggach-siedlung-hofwiesenstrasse" />
-        <x-buildings.teaser slug="haus-im-garten" />
-        <x-buildings.teaser slug="gesamtsanierung-gebaeude-q" />
-
+      <div class="lg:col-span-3 xl:flex xl:flex-col xl:gap-y-4">
+        <x-buildings.teaser.card :building="$buildings[8]" />
+        <x-buildings.buttons.map />
+        <x-buildings.teaser.card :building="$buildings[9]" />
+        <x-buildings.teaser.card :building="$buildings[10]" />
+        <x-buildings.teaser.card :building="$buildings[11]" />
       </div>
-      <div class="lg:col-span-3 flex flex-col gap-y-4">
-        <x-buildings.teaser slug="schulanlage-allmend" />
-        <x-buildings.teaser slug="wohnsiedlung-im-birkenhof" />
-        <x-buildings.teaser slug="kreislaufhaus-herbstweg" />
-        <x-buildings.teaser slug="musikpavillon-sihlhoelzli" />
+      <div class="lg:col-span-3 xl:flex xl:flex-col xl:gap-y-4">
+        <x-buildings.teaser.card :building="$buildings[12]" />
+        <x-buildings.teaser.card :building="$buildings[13]" />
+        <x-buildings.teaser.card :building="$buildings[14]" />
+        <x-buildings.teaser.card :building="$buildings[15]" />
       </div>
     </div>
   </x-layout.container>

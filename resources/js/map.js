@@ -51,8 +51,7 @@ function init() {
     maxBounds: bounds.padded,
     maxBoundsViscosity: 0.5,
     maxZoom: 8,
-    // TODO: use 1 for mobile, 2 for desktop
-    minZoom: 2 // REMOVE if calculatedMinZoom is working
+    minZoom: isMobile ? 1 : 2
   });
 
   /** IMPORTANT: Removed as it was not working properly, minZoom is set to 2 */
