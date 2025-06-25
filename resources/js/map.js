@@ -76,9 +76,9 @@ function init() {
 
   // ─── Marker Icons ──────────────────────────────────────────────
   const markerOpts = {
-    size: [30, 30],
-    anchor: [10, 20],
-    popupAnchor: [0, -10]
+    size: isMobile ? [25, 25] : [30, 30],
+    anchor: isMobile ? [8, 17] : [10, 20],
+    popupAnchor: isMobile ? [0, -8] : [0, -10]
   };
 
   const createIcon = (file) =>
