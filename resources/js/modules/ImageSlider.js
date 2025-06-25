@@ -62,25 +62,16 @@ export default class ImageSlider {
 
   setupResizeObserver() {
     let resizeTimeout;
-    let lastWidth = window.innerWidth;
-    let lastHeight = window.innerHeight;
+    let lastContainerWidth = this.container.clientWidth;
   
     const handleResize = () => {
       if (!this.hasInitialized) return;
   
-      // Only respond to actual size changes, not just viewport shifts
-      const currentWidth = window.innerWidth;
-      const currentHeight = window.innerHeight;
+      // Only rebuild if container width actually changed
+      const currentContainerWidth = this.container.clientWidth;
+      if (currentContainerWidth === lastContainerWidth) return;
       
-      // Check if only height changed by a small amount (likely address bar)
-      const widthChanged = Math.abs(currentWidth - lastWidth) > 0;
-      const heightDiff = Math.abs(currentHeight - lastHeight);
-      const isLikelyAddressBar = !widthChanged && heightDiff < 100;
-      
-      if (isLikelyAddressBar) return;
-      
-      lastWidth = currentWidth;
-      lastHeight = currentHeight;
+      lastContainerWidth = currentContainerWidth;
   
       clearTimeout(resizeTimeout);
       this.isPaused = true;
@@ -92,9 +83,14 @@ export default class ImageSlider {
       }, 300);
     };
   
+    // Listen for orientation changes specifically
+    const orientationMQ = window.matchMedia('(orientation: portrait)');
+    orientationMQ.addEventListener('change', handleResize);
+    
+    // Still listen to resize but with width check
     window.addEventListener('resize', handleResize);
   }
-
+  
   rebuildSlider() {
     const currentIndex = this.actualIndex - this.originalSlides.length;
     gsap.killTweensOf(this.track);
