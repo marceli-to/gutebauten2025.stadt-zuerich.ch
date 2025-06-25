@@ -15,9 +15,17 @@
     "src": "node_modules/leaflet/dist/images/marker-icon.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-6ebee563.css",
+    "file": "assets/app-77a8e7fc.css",
     "isEntry": true,
     "src": "resources/css/app.css"
+  },
+  "resources/fonts/HelveticaNeue-Medium.woff": {
+    "file": "assets/HelveticaNeue-Medium-58ced146.woff",
+    "src": "resources/fonts/HelveticaNeue-Medium.woff"
+  },
+  "resources/fonts/HelveticaNeue-Medium.woff2": {
+    "file": "assets/HelveticaNeue-Medium-5e67a2dd.woff2",
+    "src": "resources/fonts/HelveticaNeue-Medium.woff2"
   },
   "resources/fonts/HelveticaNeue.woff": {
     "file": "assets/HelveticaNeue-c890f674.woff",
@@ -28,7 +36,7 @@
     "src": "resources/fonts/HelveticaNeue.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-1d07e7d4.js",
+    "file": "assets/app-0219f2bb.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },

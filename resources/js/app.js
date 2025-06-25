@@ -1,7 +1,7 @@
 import './bootstrap';
-import ImageSlider from './modules/ImageSlider';
-import './modules/detectTouch';
+import './modules/touch';
 
+import ImageSlider from './modules/ImageSlider';
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('[data-slider]');
   if (container) {

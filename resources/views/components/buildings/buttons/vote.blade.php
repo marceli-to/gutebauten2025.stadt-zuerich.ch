@@ -1,4 +1,6 @@
-<div class="relative aspect-[353/359] md:aspect-square flex flex-col justify-center items-center group">
+<div 
+  class="relative aspect-[353/359] md:aspect-square flex flex-col justify-center items-center group"
+  data-touch>
 
   <div class="w-full h-auto absolute inset-0 z-10 text-white">
 
@@ -16,11 +18,11 @@
     
   </div>
 
-  <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 group-hover:opacity-0 text-2xl transition-opacity duration-100">
+  <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 group-hover:opacity-0 group-[.has-touch]:opacity-0 text-2xl transition-opacity duration-100">
     Jetzt<br>abstimmen
   </span>
 
-  <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-20 opacity-0 group-hover:opacity-100 px-60 md:px-40 text-sm md:text-xs 2xl:text-sm 3xl:text-md text-center transition-opacity duration-100">
+  <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-20 opacity-0 group-hover:opacity-100 group-[.has-touch]:opacity-100 px-60 md:px-40 text-sm md:text-xs 2xl:text-sm 3xl:text-md text-center transition-opacity duration-100">
     <x-icons.vote.filled class="w-56 xl:w-68 h-auto mx-auto mb-20 2xl:mb-40" />
     Zur Stimmabgabe aufs Herz klicken. Mit einem weiteren Klick kann die Stimme wieder entfernt werden.<br><br>Pro Projekt kann eine Stimme abgegeben werden.
   </span>

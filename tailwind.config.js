@@ -51,6 +51,7 @@ export default {
 
       fontFamily: {
         'sans': ['Helvetica-Neue', ...defaultTheme.fontFamily.sans],
+        'sans-medium': ['Helvetica-Neue-Medium', ...defaultTheme.fontFamily.sans],
       },
 
       fontSize: {
