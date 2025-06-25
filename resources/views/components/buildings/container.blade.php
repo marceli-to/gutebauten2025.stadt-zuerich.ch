@@ -4,7 +4,7 @@
     {{-- Interaction App --}}
     <div 
       id="interaction-app"
-      class="mb-10 lg:mb-0 lg:absolute lg:-top-70 lg:left-20 xl:-top-100 xl:left-30">
+      class="mb-10 lg:mb-0 lg:absolute lg:-top-70 lg:left-20 xl:-top-100 xl:left-30 lg:z-50">
       <interaction
         slug="{{ $building->slug }}"
         title="{{ $building->title }}"

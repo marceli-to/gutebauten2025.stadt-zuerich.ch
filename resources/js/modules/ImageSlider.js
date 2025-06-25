@@ -81,12 +81,14 @@ export default class ImageSlider {
       const calculatedHeight = viewportHeight - offset;
       this.container.style.height = `${calculatedHeight}px`;
       this.container.style.aspectRatio = ''; // Clear aspect ratio
-    } else if (windowWidth >= 1024) { // lg
+    } 
+    else if (windowWidth >= 1024) { // lg
       offset = 60;
       const calculatedHeight = viewportHeight - offset;
       this.container.style.height = `${calculatedHeight}px`;
       this.container.style.aspectRatio = ''; // Clear aspect ratio
-    } else if (windowWidth >= 700) {
+    } 
+    else if (windowWidth >= 700) {
       // For smaller screens and tablets, use aspect ratio
       this.container.style.height = ''; // Clear fixed height
       this.container.style.aspectRatio = '16 / 9';

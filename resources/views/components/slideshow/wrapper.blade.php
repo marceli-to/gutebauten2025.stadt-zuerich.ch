@@ -4,9 +4,9 @@
 
   <button 
     id="prevBtn" 
-    class="absolute top-1/2 -translate-y-1/2 left-0 z-10 p-20 xl:p-30 group"
+    class="absolute top-0 left-0 w-1/2 h-full z-10 p-20 xl:p-30 flex flex-col items-start justify-center group"
     data-slider-button>
-    <x-icons.chevron.left class="text-white group-hover:text-black transition-all" />
+    <x-icons.chevron.left class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-100" />
   </button>
 
   <div class="w-full h-full">
@@ -17,9 +17,9 @@
 
   <button 
     id="nextBtn" 
-    class="absolute top-1/2 -translate-y-1/2 right-0 z-10 p-20 xl:p-30 group"
+    class="absolute top-0 right-0 w-1/2 h-full z-10 p-20 xl:p-30 flex flex-col items-end justify-center group"
     data-slider-button>
-    <x-icons.chevron.right class="text-white group-hover:text-black transition-all" />
+    <x-icons.chevron.right class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-100" />
   </button>
 
   <button id="scrollBtn" class="absolute bottom-20 2xl:bottom-30 right-20 z-10 group hidden lg:block">
