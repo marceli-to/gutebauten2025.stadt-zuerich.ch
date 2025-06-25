@@ -111,22 +111,3 @@
    
 </div>
 @endsection
-
-{{-- 
-buero-und-gewerbehaus-binzstrasse
-gesamtsanierung-gebaeude-q
-gesamtsanierung-hauptbahnhof-suedtrakt
-guggach-siedlung-hofwiesenstrasse
-haus-im-garten
-hochhausensemble-wolkenwerk
-kongresshaus-und-tonhalle
-kreislaufhaus-herbstweg
-musikpavillon-sihlhoelzli
-neubau-universitaets-kinderspital
-provisorische-sportbauten
-rathaus-kirche-hard
-sanierung-hochhaus-herdern
-schulanlage-allmend
-wohnsiedlung-im-birkenhof
-wohnueberbauung-klopstock 
---}}
