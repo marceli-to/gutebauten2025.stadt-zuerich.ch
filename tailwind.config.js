@@ -15,7 +15,7 @@ export default {
     extend: {
 
       screens: {
-        'xs': '414px',
+        'xs': '400px',
       },
 
       maxWidth: {

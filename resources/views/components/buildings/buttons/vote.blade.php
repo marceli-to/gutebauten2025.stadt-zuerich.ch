@@ -20,10 +20,9 @@
     Jetzt<br>abstimmen
   </span>
 
-  <span class="relative z-20 hidden group-hover:block px-50 md:px-40 text-xs lg:md:text-sm 2xl:text-md text-center">
-    <x-icons.vote.filled class="w-40 xl:w-68 h-auto mx-auto mb-20 2xl:mb-40" />
-    Zur Stimmabgabe aufs Herz klicken. Mit einem weiteren Klick kann die Stimme wieder entfernt werden.<br><br>
-    <span class="_md:hidden lg:block">Pro Projekt kann eine Stimme abgegeben werden.</span>
+  <span class="relative z-20 hidden group-hover:block px-50 md:px-40 text-sm md:text-xs lg:md:text-sm 2xl:text-md text-center">
+    <x-icons.vote.filled class="w-56 md:w-40 xl:w-68 h-auto mx-auto mb-20 2xl:mb-40" />
+    Zur Stimmabgabe aufs Herz klicken. Mit einem weiteren Klick kann die Stimme wieder entfernt werden.<br><br>Pro Projekt kann eine Stimme abgegeben werden.
   </span>
 
 </div>
