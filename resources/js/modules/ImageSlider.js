@@ -62,33 +62,22 @@ export default class ImageSlider {
 
   setupResizeObserver() {
     let resizeTimeout;
-    let lastWidth = this.container.clientWidth;
-    let lastHeight = this.container.clientHeight;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const debounceTime = isMobile ? 500 : 150; // Longer debounce on mobile
   
     const resizeObserver = new ResizeObserver(() => {
       if (!this.hasInitialized) return;
   
-      const currentWidth = this.container.clientWidth;
-      const currentHeight = this.container.clientHeight;
-
-      alert(currentWidth + ' ' + currentHeight);
-  
-      // Only trigger if dimensions actually changed
-      if (currentWidth === lastWidth && currentHeight === lastHeight) {
-        return;
-      }
-  
-      lastWidth = currentWidth;
-      lastHeight = currentHeight;
-  
       clearTimeout(resizeTimeout);
       this.isPaused = true;
   
-      gsap.to(this.container, { opacity: 0, duration: 0.2 });
+      if (!isMobile) {
+        gsap.to(this.container, { opacity: 0, duration: 0.2 });
+      }
   
       resizeTimeout = setTimeout(() => {
         this.rebuildSlider();
-      }, 150);
+      }, debounceTime);
     });
   
     resizeObserver.observe(this.container);
