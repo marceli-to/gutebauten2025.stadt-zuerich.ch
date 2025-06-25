@@ -62,34 +62,20 @@ export default class ImageSlider {
 
   setupResizeObserver() {
     let resizeTimeout;
-    let lastWidth = 0;
-  
-    const resizeObserver = new ResizeObserver((entries) => {
+
+    const resizeObserver = new ResizeObserver(() => {
       if (!this.hasInitialized) return;
-  
-      const entry = entries[0];
-      const currentWidth = entry.contentRect.width;
-      
-      // Only respond to width changes, completely ignore height
-      if (lastWidth === 0) {
-        lastWidth = currentWidth;
-        return;
-      }
-      
-      if (Math.abs(currentWidth - lastWidth) < 1) return;
-      
-      lastWidth = currentWidth;
-  
+
       clearTimeout(resizeTimeout);
       this.isPaused = true;
-  
+
       gsap.to(this.container, { opacity: 0, duration: 0.2 });
-  
+
       resizeTimeout = setTimeout(() => {
         this.rebuildSlider();
-      }, 150);
+      }, 500);
     });
-  
+
     resizeObserver.observe(this.container);
   }
 
