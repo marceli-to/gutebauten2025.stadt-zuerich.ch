@@ -64,61 +64,69 @@ export default class ImageSlider {
 
   setContainerHeight() {
     const viewportHeight = window.innerHeight;
+    const viewportWidth = window.innerWidth;
     const windowWidth = window.innerWidth;
+    
+    // Check if device is in portrait mode
+    const isPortrait = viewportHeight > viewportWidth;
+    
+    // Check if it's likely a tablet (you can adjust these thresholds)
+    const isTablet = windowWidth >= 768 && windowWidth < 1024;
     
     let offset = 0;
     
     // Match Tailwind breakpoints
     if (windowWidth >= 1280) { // xl
       offset = 72;
+      const calculatedHeight = viewportHeight - offset;
+      this.container.style.height = `${calculatedHeight}px`;
+      this.container.style.aspectRatio = ''; // Clear aspect ratio
     } else if (windowWidth >= 1024) { // lg
       offset = 60;
+      const calculatedHeight = viewportHeight - offset;
+      this.container.style.height = `${calculatedHeight}px`;
+      this.container.style.aspectRatio = ''; // Clear aspect ratio
     } else {
-      // For smaller screens, you might want different logic
-      // or just use 100% height
-      this.container.style.height = '100vh';
-      return;
+      // For smaller screens and tablets, use aspect ratio
+      this.container.style.height = ''; // Clear fixed height
+      this.container.style.aspectRatio = '4 / 3';
+      
+      // Optionally set max-height to prevent overflow
+      this.container.style.maxHeight = '100vh';
     }
-    
-    const calculatedHeight = viewportHeight - offset;
-    this.container.style.height = `${calculatedHeight}px`;
   }
-
+  
   setupResizeObserver() {
     let resizeTimeout;
     let lastWidth = window.innerWidth;
-
+    let lastOrientation = window.innerHeight > window.innerWidth;
+  
     const handleResize = () => {
       if (!this.hasInitialized) return;
-
+  
       const currentWidth = window.innerWidth;
+      const currentOrientation = window.innerHeight > window.innerWidth;
       
-      // Only process if width actually changed (not just height from scrolling)
-      if (currentWidth === lastWidth) return;
+      // Check if width or orientation changed
+      if (currentWidth === lastWidth && currentOrientation === lastOrientation) return;
       
       lastWidth = currentWidth;
-
+      lastOrientation = currentOrientation;
+  
       clearTimeout(resizeTimeout);
       this.isPaused = true;
-
+  
       gsap.to(this.container, { opacity: 0, duration: 0.2 });
-
+  
       resizeTimeout = setTimeout(() => {
-        // Recalculate height for new viewport
         this.setContainerHeight();
         this.rebuildSlider();
       }, 300);
     };
-
-    // Only listen to resize events
+  
     window.addEventListener('resize', handleResize);
-    
-    // Optionally, also listen for orientation changes
     window.addEventListener('orientationchange', () => {
-      setTimeout(() => {
-        this.setContainerHeight();
-        handleResize();
-      }, 100);
+      setTimeout(handleResize, 100);
     });
   }
 
