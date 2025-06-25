@@ -22,8 +22,8 @@
     Jetzt<br>abstimmen
   </span>
 
-  <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-20 opacity-0 group-hover:opacity-100 group-[.has-touch]:opacity-100 px-60 md:px-40 text-sm md:text-xs 2xl:text-sm 3xl:text-md text-center transition-opacity duration-100">
-    <x-icons.vote.filled class="w-56 xl:w-68 h-auto mx-auto mb-20 2xl:mb-40" />
+  <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-20 opacity-0 group-hover:opacity-100 group-[.has-touch]:opacity-100 px-60 md:px-20 xl:px-20 text-sm md:text-xs 2xl:text-sm 3xl:text-md text-center transition-opacity duration-100">
+    <x-icons.vote.filled class="w-56 xl:w-68 h-auto mx-auto mb-30 2xl:mb-20" />
     Zur Stimmabgabe aufs Herz klicken. Mit einem weiteren Klick kann die Stimme wieder entfernt werden.<br><br>Pro Projekt kann eine Stimme abgegeben werden.
   </span>
 
