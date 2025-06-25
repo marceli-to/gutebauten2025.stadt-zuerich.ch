@@ -15,7 +15,7 @@
     "src": "node_modules/leaflet/dist/images/marker-icon.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-dee6b0b7.css",
+    "file": "assets/app-d735c3af.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -36,7 +36,7 @@
     "src": "resources/fonts/HelveticaNeue.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-4b10f8dc.js",
+    "file": "assets/app-d3c3cf2e.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
