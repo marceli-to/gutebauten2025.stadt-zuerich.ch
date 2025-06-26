@@ -1,7 +1,7 @@
 @extends('layout.guest')
 @section('seo_description', 'Auszeichnung für gute Bauten der Stadt Zürich 2021–2024')
 @section('content')
-<div class="w-full flex flex-col pt-30 md:pt-20 lg:pt-25 xl:pt-30">
+<div class="w-full flex flex-col md:pt-20 lg:pt-25 xl:pt-30">
     
   <x-animation class="order-1 md:order-2" />
 
