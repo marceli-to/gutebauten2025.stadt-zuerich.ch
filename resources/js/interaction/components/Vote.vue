@@ -1,8 +1,12 @@
 <template>
   <a
     href="#"
-    @click.prevent="toggleVote">
-    <VoteIcon :class="has_voted ? '!text-lumora w-31 xl:w-41' : 'text-white w-31 xl:w-41'" />
+    @click.prevent="toggleVote"
+    :class="vote_successfull ? 'group is-success' : 'group'">
+    <VoteIcon :class="[
+      has_voted ? '!text-lumora w-31 xl:w-41' : 'text-white w-31 xl:w-41',
+      'group-[.is-success]:animate-vote transition-transform duration-300 ease-in-out'
+    ]" />
   </a>
 </template>
 
@@ -20,6 +24,7 @@ const props = defineProps({
 const emit = defineEmits(['voted', 'unvoted'])
 
 const has_voted = ref(props.has_vote ?? false)
+const vote_successfull = ref(false)
 const hasChecked = ref(false)
 
 watch(
@@ -48,10 +53,12 @@ async function toggleVote() {
     if (has_voted.value) {
       await axios.put('/api/vote', { hash: props.hash, slug: props.slug })
       has_voted.value = false
+      vote_successfull.value = false
       emit('unvoted')
     } else {
       await axios.post('/api/vote', { hash: props.hash, slug: props.slug })
       has_voted.value = true
+      vote_successfull.value = true
       emit('voted')
     }
   } catch (e) {

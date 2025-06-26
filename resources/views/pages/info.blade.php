@@ -12,9 +12,9 @@
   <div class="bg-white border-b-3 xl:border-b-4 border-black">
     <x-layout.container class="py-30 lg:py-40 xl:py-70 flex flex-col gap-y-45 lg:gap-y-40">
 
-      <x-layout.article class="flex items-start gap-x-20 xl:gap-x-30">
+      <x-layout.article class="flex items-start gap-x-20 xl:gap-x-30 group">
         <div class="min-w-75 md:min-w-57 lg:min-w-69 xl:min-w-92 shrink-0 mt-5">
-          <x-icons.vote.info class="text-white w-75 md:w-57 lg:w-69 xl:w-92 h-auto" />
+          <x-icons.vote.info class="text-white w-75 md:w-57 lg:w-69 xl:w-92 h-auto group-hover:animate-vote-xs group-hover:text-lumora transition-all duration-300 ease-in-out" />
         </div>
         <div>
           <x-headings.h2 class="mb-4 md:mb-8 xl:mb-12">
@@ -36,9 +36,9 @@
         </div>
       </x-layout.article>
 
-      <x-layout.article class="flex items-start gap-x-20 xl:gap-x-30">
+      <x-layout.article class="flex items-start gap-x-20 xl:gap-x-30 group">
         <div class="min-w-75 md:min-w-57 lg:min-w-69 xl:min-w-92 shrink-0 mt-5">
-          <x-icons.share.info class="text-white w-73 md:w-50 lg:w-57 xl:w-74 h-auto" />
+          <x-icons.share.info class="text-white w-73 md:w-50 lg:w-57 xl:w-74 h-auto group-hover:animate-share group-hover:text-lumora transition-transform duration-300 ease-in-out" />
         </div>
         <div>
           <x-headings.h2 class="mb-4 md:mb-8 xl:mb-12">

@@ -14,6 +14,32 @@ export default {
   theme: {
     extend: {
 
+      keyframes: {
+        'vote-xs': {
+          '0%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.2)' },
+          '100%': { transform: 'scale(1)' },
+        },
+        'vote': {
+          '0%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.4)' },
+          '100%': { transform: 'scale(1)' },
+        },
+        share: {
+          '0%': { transform: 'rotate(0deg)' },
+          '25%': { transform: 'rotate(-5deg)' },
+          '50%': { transform: 'rotate(5deg)' },
+          '75%': { transform: 'rotate(-3deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
+      },
+
+      animation: {
+        'vote': 'vote 0.6s ease-in-out',
+        'vote-xs': 'vote-xs 0.6s ease-in-out',
+        'share': 'share 1.4s ease',
+      },
+
       screens: {
         'xs': '400px',
         '3xl': '1640px',

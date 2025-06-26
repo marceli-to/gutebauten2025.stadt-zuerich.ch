@@ -5,7 +5,7 @@
       @click.prevent="emit('toggle')"
       class="group"
       v-if="!props.isOpen">
-      <ShareIcon class="text-white group-hover:text-lumora transition-all w-27 md:w-26 xl:w-34" />
+      <ShareIcon class="text-white group-hover:animate-share group-hover:text-lumora transition-transform duration-300 ease-in-out w-27 md:w-26 xl:w-34" />
     </a>
     <div  
       class="absolute top-34 md:top-33 xl:top-43 -translate-y-full left-0 w-210 xl:w-[240px] h-auto z-20"
