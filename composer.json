@@ -11,7 +11,6 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.5",
-        "opcodesio/log-viewer": "^3.14",
         "spatie/laravel-ray": "^1.33"
     },
     "require-dev": {
