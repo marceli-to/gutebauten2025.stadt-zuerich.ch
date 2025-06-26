@@ -5,11 +5,3 @@
   font-style: normal;
   font-display: swap;
 }
-
-@font-face {
-  font-family: 'Helvetica-Neue-Medium';
-  src: url('fonts/HelveticaNeue-Medium.woff2') format('woff2'), url('fonts/HelveticaNeue-Medium.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}

@@ -7,7 +7,6 @@ class Building extends Model
   protected $fillable = [
     'slug',
     'title',
-    'short_title',
     'short_description',
     'year',
     'lat',

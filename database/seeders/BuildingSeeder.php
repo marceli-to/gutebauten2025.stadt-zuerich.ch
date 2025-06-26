@@ -40,7 +40,6 @@ class BuildingSeeder extends Seeder
       DB::table('buildings')->insert([
         'slug' => $slug,
         'title' => $title,
-        'short_title' => $shortTitle,
         'lat' => $lat,
         'long' => $long,
         'maps' => $maps,

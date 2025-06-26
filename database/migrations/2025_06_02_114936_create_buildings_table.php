@@ -14,7 +14,6 @@ return new class extends Migration
       $table->id();
       $table->string('slug')->unique();
       $table->string('title');
-      $table->string('short_title');
       $table->decimal('lat', 12, 8);
       $table->decimal('long', 12, 8);
       $table->string('maps');

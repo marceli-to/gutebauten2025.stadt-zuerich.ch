@@ -14,19 +14,19 @@
   </x-layout.container>
 
 
-  <div class="bg-white h-60 lg:h-100 max-w-[90%] md:max-w-[340px] lg:max-w-[520px] xl:max-w-[695px] flex items-start justify-center pt-10 lg:pt-20 mt-20 lg:mt-40 order-3">
-    <x-icons.logo class="w-120 lg:w-[228px] xl:w-[245px]" />
+  <div class="bg-white max-w-[90%] md:max-w-[340px] lg:max-w-[520px] xl:max-w-[695px] flex items-center justify-start pl-20 xl:pl-30 min-h-52 md:min-h-60 xl:min-h-72 mt-20 xl:mt-0 order-3">
+    <x-icons.logo class="w-120 md:w-140 xl:w-180" />
   </div>
 </div>
 
 <div class="border-t-3 xl:border-t-4 border-black">
 
-  <x-layout.container class="border-b-3 border-black md:border-b-0 mt-15 md:mt-0 min-h-52 pb-5 pt-2 md:py-0 md:min-h-60 xl:min-h-72 flex items-center">
+  <x-layout.container class="bg-lumora border-b-3 border-black md:border-b-0 min-h-52 md:min-h-60 xl:min-h-72 flex items-center sticky top-0 z-30 md:relative">
     <x-menu.buttons.open />
     <x-menu.wrapper />
   </x-layout.container>
 
-  <x-layout.container class="py-30 lg:py-40">
+  <x-layout.container class="py-20 lg:py-40">
 
     <div class="flex flex-col gap-y-4 md:hidden">
       <x-buildings.buttons.vote />

@@ -1,6 +1,6 @@
 @if (request()->routeIs('page.home'))
 <footer class="bg-black">
-  <x-layout.container class="py-30 md:py-15 xl:py-20 text-white text-xs md:flex md:justify-between">
+  <x-layout.container class="py-30 md:py-0 min-h-52 md:min-h-60 xl:min-h-72 text-white text-xs md:flex md:justify-between md:items-center">
     <div class="mb-10 md:mb-0">
       &copy; 2025 Stadt Zürich
     </div>
