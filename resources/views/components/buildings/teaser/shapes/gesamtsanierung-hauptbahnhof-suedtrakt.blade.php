@@ -1,0 +1,4 @@
+<svg width="356" height="476" viewBox="0 0 356 476" fill="none" xmlns="http://www.w3.org/2000/svg" class="{{ $class }}">
+  <path d="M178 1.5C222.166 1.5 265.817 19.9271 301.177 53.5625L302.854 55.1758C334.765 86.1915 354.5 126.127 354.5 159.2V474.5H1.5V159.2C1.5 126.644 20.6229 87.4374 51.6582 56.6357L53.1455 55.1758C88.7975 20.5169 133.133 1.5 178 1.5Z" fill="white" stroke="black" stroke-width="3" vector-effect="non-scaling-stroke" class="hidden md:block xl:hidden"/>
+  <path d="M178 1.5C222.166 1.5 265.817 19.9271 301.177 53.5625L302.854 55.1758C334.765 86.1915 354.5 126.127 354.5 159.2V474.5H1.5V159.2C1.5 126.644 20.6229 87.4374 51.6582 56.6357L53.1455 55.1758C88.7975 20.5169 133.133 1.5 178 1.5Z" fill="white" stroke="black" stroke-width="4" vector-effect="non-scaling-stroke" class="hidden xl:block"/>
+</svg>

@@ -21,7 +21,7 @@
 
 <div class="border-t-3 xl:border-t-4 border-black">
 
-  <x-layout.container class="bg-lumora border-b-3 border-black md:border-b-0 min-h-52 md:min-h-60 xl:min-h-72 flex items-center sticky top-0 z-30">
+  <x-layout.container class="bg-lumora min-h-52 pb-2 md:pb-0 md:min-h-60 xl:min-h-72 flex items-center sticky top-0 z-30">
     <x-menu.buttons.open />
     <x-menu.wrapper />
   </x-layout.container>
