@@ -12,7 +12,7 @@
     <path d="M180 2C278.304 2 358 81.8725 358 180.182V358H2V180.182C2.0002 81.8725 81.6961 2 180 2Z" fill="currentColor" stroke="black" stroke-width="4" vector-effect="non-scaling-stroke" />
   </svg>
 
-  <span class="block text-black text-2xl relative z-20">
+  <span class="block text-black text-xl xl:text-2xl relative z-20">
     Karte
   </span>
 </a>

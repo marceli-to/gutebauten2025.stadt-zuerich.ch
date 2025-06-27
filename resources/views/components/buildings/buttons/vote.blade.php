@@ -1,11 +1,11 @@
 <div 
-  class="relative aspect-[353/359] md:aspect-square flex flex-col justify-center items-center group"
+  class="relative aspect-square flex flex-col justify-center items-center group"
   data-touch>
 
   <div class="w-full h-auto absolute inset-0 z-10 text-white">
 
-    <svg width="353" height="359" viewBox="0 0 353 359" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto md:hidden">
-      <path d="M351.5 1.5V357.5H1.5V200.788L89.4951 1.5H351.5Z" fill="currentColor" stroke="black" stroke-width="3" vector-effect="non-scaling-stroke" />
+    <svg width="361" height="360" viewBox="0 0 361 360" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto md:hidden">
+      <path d="M245.335 1.5L359 74.5V358.5H2V1.5H245.335Z" fill="white" stroke="black" stroke-width="3" vector-effect="non-scaling-stroke"/>
     </svg>
 
     <svg width="233" height="234" viewBox="0 0 233 234" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto hidden md:block xl:hidden">
@@ -18,13 +18,17 @@
     
   </div>
 
-  <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 group-hover:opacity-0 text-2xl text-center">
+  <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 md:opacity-100 group-hover:opacity-0 md:text-xl xl:text-2xl text-center">
     Jetzt<br>abstimmen!
   </span>
 
-  <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-20 opacity-0 group-hover:opacity-100 group-[.has-touch]:opacity-100 px-60 md:px-20 xl:px-20 text-sm md:text-xs 2xl:text-sm 3xl:text-md text-center">
-    <x-icons.vote.filled class="w-56 xl:w-68 h-auto mx-auto mb-30 2xl:mb-20" />
-    Zur Stimmabgabe aufs Herz klicken. Mit einem weiteren Klick kann die Stimme wieder entfernt werden.<br><br>Pro Projekt kann eine Stimme abgegeben werden.
+  <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full z-20 md:opacity-0 group-hover:md:opacity-100 group-[.has-touch]:opacity-100 px-20 xl:px-20 text-sm md:text-xs lg:text-sm 2xl:text-md text-center">
+    <x-icons.vote.filled class="w-56 xl:w-68 h-auto mx-auto mb-15 md:mb-30" />
+    <span class="text-lg text-center block md:hidden mb-15">
+      Jetzt abstimmen!
+    </span>
+  
+    Zur Stimmabgabe aufs Herz klicken. Mit einem weiteren Klick kann die Stimme wieder entfernt werden. Pro Projekt kann eine Stimme abgegeben werden.
   </span>
 
 </div>

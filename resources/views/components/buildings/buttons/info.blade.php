@@ -12,7 +12,7 @@
     <circle cx="180" cy="180" r="178" fill="currentColor" stroke="black" stroke-width="4" vector-effect="non-scaling-stroke" />
   </svg>
 
-  <span class="block text-black text-2xl relative z-20">
+  <span class="block text-black text-xl xl:text-2xl relative z-20">
     Info
   </span>
 </a>
