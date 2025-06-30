@@ -25,7 +25,7 @@
       <p>
         Adresse<br>
         <a 
-          href="https://www.google.com/maps/place/Pfingstweidstrasse+101" 
+          href="{{ $building->maps }}" 
           target="_blank"
           rel="noopener noreferrer">
           Pfingstweidstrasse 101

@@ -25,7 +25,7 @@
       <p>
         Adresse<br>
         <a 
-          href="https://www.google.com/maps/place/Maneggstrasse+51" 
+          href="{{ $building->maps }}" 
           target="_blank"
           rel="noopener noreferrer">
           Maneggstrasse 51

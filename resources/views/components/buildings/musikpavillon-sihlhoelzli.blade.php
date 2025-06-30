@@ -25,7 +25,7 @@
       <p>
         Adresse<br>
         <a 
-          href="https://www.google.com/maps/place/Manessestrasse+19" 
+          href="{{ $building->maps }}" 
           target="_blank"
           rel="noopener noreferrer">
           Manessestrasse 19

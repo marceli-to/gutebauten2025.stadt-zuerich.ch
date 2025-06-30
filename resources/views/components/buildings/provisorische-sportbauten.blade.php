@@ -25,7 +25,7 @@
       <p>
         Adresse<br>
         <a 
-          href="https://www.google.com/maps/place/Brandschenkenstrasse+129" 
+          href="{{ $building->maps }}" 
           target="_blank"
           rel="noopener noreferrer">
           Brandschenkenstrasse 129

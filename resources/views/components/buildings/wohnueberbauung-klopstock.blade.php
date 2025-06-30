@@ -24,7 +24,7 @@
       <p>
         Adresse<br>
         <a 
-          href="https://www.google.com/maps/place/Klopstockstrasse+19" 
+          href="{{ $building->maps }}" 
           target="_blank"
           rel="noopener noreferrer">
           Klopstockstrasse 19
