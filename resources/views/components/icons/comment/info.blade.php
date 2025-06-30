@@ -13,4 +13,3 @@
 <svg width="76" height="84" viewBox="0 0 76 84" fill="none" xmlns="http://www.w3.org/2000/svg" {{ $attributes->merge(['class' => 'hidden xl:block']) }}>
   <path d="M2 2V59.2202V79L23.3861 59.2202H74V2H2Z" fill="currentColor" stroke="black" stroke-width="4" />
 </svg>
-  
