@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BuildingController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\InfoController;
+use App\Http\Controllers\DownloadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,8 @@ Route::get('/dashboard/{any?}', function () {
 Route::get('/error/{any?}', function () {
   return view('pages.dashboard');
 })->where('any', '.*')->middleware(['auth', 'verified'])->name('page.dashboard');
+
+Route::middleware('auth', 'verified')->group(function() {
+  Route::get('/export/comments', [DownloadController::class, 'comments']);
+  Route::get('/export/votes', [DownloadController::class, 'votes']);
+});

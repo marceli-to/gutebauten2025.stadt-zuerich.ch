@@ -15,7 +15,7 @@
     "src": "node_modules/leaflet/dist/images/marker-icon.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-515cbaba.css",
+    "file": "assets/app-4095f14c.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -58,7 +58,7 @@
     "src": "resources/js/map.js"
   },
   "resources/js/spa.js": {
-    "file": "assets/spa-1f59d71c.js",
+    "file": "assets/spa-9db58e73.js",
     "imports": [
       "__plugin-vue_export-helper-6ab15a9e.js"
     ],
