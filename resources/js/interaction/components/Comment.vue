@@ -5,7 +5,7 @@
       @click.prevent="toggleForm"
       class="group"
       v-if="!props.isOpen">
-      <CommentIcon class="text-white group-hover:text-lumora transition-all w-27 xl:w-34" />
+      <CommentIcon class="text-white group-hover:text-lumora transition-all w-26 xl:w-34" />
     </a>
   
     <div 

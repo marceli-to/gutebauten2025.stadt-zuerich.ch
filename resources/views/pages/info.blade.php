@@ -24,9 +24,9 @@
         </div>
       </x-layout.article>
 
-      <x-layout.article class="flex items-start gap-x-20 xl:gap-x-30">
+      <x-layout.article class="flex items-start gap-x-20 xl:gap-x-30 group">
         <div class="min-w-75 md:min-w-57 lg:min-w-69 xl:min-w-92 shrink-0 mt-5">
-          <x-icons.comment.info class="text-white w-74 md:w-51 lg:w-58 xl:w-76 h-auto" />
+          <x-icons.comment.info class="text-white w-74 md:w-51 lg:w-58 xl:w-76 h-auto group-hover:text-lumora transition-all duration-300 ease-in-out" />
         </div>      
         <div>
           <x-headings.h2 class="mb-4 md:mb-8 xl:mb-12">
@@ -38,7 +38,7 @@
 
       <x-layout.article class="flex items-start gap-x-20 xl:gap-x-30 group">
         <div class="min-w-75 md:min-w-57 lg:min-w-69 xl:min-w-92 shrink-0 mt-5">
-          <x-icons.share.info class="text-white w-73 md:w-50 lg:w-57 xl:w-74 h-auto group-hover:animate-share group-hover:text-lumora transition-transform duration-300 ease-in-out" />
+          <x-icons.share.info class="text-white w-73 md:w-50 lg:w-57 xl:w-74 h-auto group-hover:text-lumora transition-transform duration-300 ease-in-out" />
         </div>
         <div>
           <x-headings.h2 class="mb-4 md:mb-8 xl:mb-12">
