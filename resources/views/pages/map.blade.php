@@ -1,7 +1,7 @@
 @extends('layout.guest')
 @section('seo_title', 'Karte')
-@section('seo_description', '')
-
+@section('seo_description', 'Interaktive Karte zur «Auszeichnung für gute Bauten» der Stadt Zürich: Entdecken Sie alle Bauten und Freiräume aus den Jahren 2021 bis 2024 auf einen Blick.')
+@section('seo_image', '/media/opengraph.png')
 @section('header')
 <x-headings.h1>
   Übersichtskarte
