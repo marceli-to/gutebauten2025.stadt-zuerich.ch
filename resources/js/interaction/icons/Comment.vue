@@ -8,7 +8,7 @@
   </svg>
 
   <svg width="39" height="43" viewBox="0 0 39 43" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden xl:block" v-bind="$attrs" :class="$attrs.class">
-    <path d="M2 2V29.4954V39L12.2765 29.4954H36.5974V2H2Z" fill="currentColor" stroke="black" stroke-width="3"/>
+    <path d="M2 2V29.4954V39L12.2765 29.4954H36.5974V2H2Z" fill="currentColor" stroke="black" stroke-width="4"/>
     <path d="M9 11H29.326" stroke="black" stroke-width="3" class="line line1" />
     <path d="M9 16H29.326" stroke="black" stroke-width="3" class="line line2" />
     <path d="M9 21H25.0013" stroke="black" stroke-width="3" class="line line3" />
