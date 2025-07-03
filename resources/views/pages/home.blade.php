@@ -3,7 +3,7 @@
 @section('content')
 <div class="w-full flex flex-col md:pt-20 lg:pt-25 xl:pt-30">
     
-  <x-animation class="order-1 md:order-2" />
+  <x-animation class="p-20 md:p-0 order-1 md:order-2" />
 
   <x-layout.container class="relative order-2 md:order-1">
     <div class="md:absolute md:top-10 md:right-20 xl:right-30 z-10">
