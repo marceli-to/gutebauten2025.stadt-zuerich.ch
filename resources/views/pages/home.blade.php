@@ -1,5 +1,5 @@
 @extends('layout.guest')
-@section('seo_description', 'Auszeichnung für gute Bauten der Stadt Zürich 2021–2024')
+@section('seo_description', 'Gutes Bauen hat in Zürich Tradition. Die Stadt zeichnet seit rund 80 Jahren regelmässig die besten Bauwerke und Freiräume aus')
 @section('seo_image', '/media/opengraph.png')
 @section('content')
 <div class="w-full flex flex-col md:pt-20 lg:pt-25 xl:pt-30">

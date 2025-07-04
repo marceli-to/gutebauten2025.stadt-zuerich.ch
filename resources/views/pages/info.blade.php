@@ -1,6 +1,6 @@
 @extends('layout.guest')
 @section('seo_title', 'Info')
-@section('seo_description', 'Die Stadt Zürich führt 2025 die 19. «Auszeichnung für gute Bauten» durch. Prämiert werden herausragende Bauten und Freiräume, die zwischen 2021 und 2024 realisiert wurden – ein Beitrag zur langfristigen Baukultur der Stadt.')
+@section('seo_description', 'Gutes Bauen hat in Zürich Tradition. Die Stadt zeichnet seit rund 80 Jahren regelmässig die besten Bauwerke und Freiräume aus.')
 @section('seo_image', '/media/opengraph.png')
 @section('header')
   <x-headings.h1>
