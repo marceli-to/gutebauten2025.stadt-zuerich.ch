@@ -5,6 +5,7 @@
   <button 
     id="prevBtn" 
     class="absolute top-0 left-0 w-1/2 h-full z-10 p-20 xl:p-30 flex flex-col items-start justify-center group"
+    aria-label="Vorheriges Bild"
     data-slider-button>
     <x-icons.chevron.left class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-100" />
   </button>
@@ -16,7 +17,8 @@
   </div>
 
   <button 
-    id="nextBtn" 
+    id="nextBtn"
+    aria-label="Nächstes Bild"
     class="absolute top-0 right-0 w-1/2 h-full z-10 p-20 xl:p-30 flex flex-col items-end justify-center group"
     data-slider-button>
     <x-icons.chevron.right class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-100" />

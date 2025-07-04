@@ -2,6 +2,7 @@
   <a
     href="#"
     @click.prevent="toggleVote"
+    aria-label="Abstimmen"
     :class="vote_successfull ? 'group is-success' : 'group'">
     <VoteIcon :class="[
       has_voted ? '!text-lumora w-31 xl:w-41' : 'text-white w-31 xl:w-41',

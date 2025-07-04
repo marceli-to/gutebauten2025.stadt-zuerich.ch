@@ -4,6 +4,7 @@
       href="#" 
       @click.prevent="emit('toggle')"
       class="group"
+      aria-label="Teilen"
       v-if="!props.isOpen">
       <ShareIcon class="text-white group-hover:animate-share group-hover:text-lumora transition-transform duration-300 ease-in-out w-27 md:w-26 xl:w-34" />
     </a>

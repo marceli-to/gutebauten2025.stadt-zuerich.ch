@@ -4,6 +4,7 @@
       href="#"
       @click.prevent="toggleForm"
       class="group"
+      aria-label="Kommentar hinzufügen"
       v-if="!props.isOpen">
       <CommentIcon class="text-white group-hover:text-lumora transition-all w-26 xl:w-34" />
     </a>

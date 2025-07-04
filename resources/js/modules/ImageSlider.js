@@ -203,7 +203,6 @@ export default class ImageSlider {
   setupAccessibility() {
     this.track.setAttribute('aria-live', 'polite');
     this.slides.forEach((slide, index) => {
-      slide.setAttribute('role', 'group');
       slide.setAttribute('aria-label', `Slide ${index + 1}`);
     });
   }
