@@ -17,6 +17,7 @@
     width="{{ $width ?? '900' }}" 
     height="{{ $height ?? '600' }}" 
     alt="{{ $alt }}" 
-    loading="{{ $lazy ? 'lazy' : 'eager' }}" 
+    loading="eager"
+    fetchpriority="high"
     {{ $attributes->merge(['class' => 'h-full w-auto object-cover shrink-0']) }}>
 </picture>
