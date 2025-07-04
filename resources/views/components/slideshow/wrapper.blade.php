@@ -24,7 +24,10 @@
     <x-icons.chevron.right class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-100" />
   </button>
 
-  <button id="scrollBtn" class="absolute bottom-20 2xl:bottom-30 right-20 z-10 group hidden lg:block">
+  <button 
+    id="scrollBtn" 
+    aria-label="Scrollen"
+    class="absolute bottom-20 2xl:bottom-30 right-20 z-10 group hidden lg:block">
     <x-icons.chevron.down class="text-white group-hover:text-black transition-all" />
   </button>
 </div>
