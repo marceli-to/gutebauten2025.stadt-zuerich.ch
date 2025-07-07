@@ -9,8 +9,8 @@ export default class ImageSlider {
     this.actualIndex = 0;
     this.x = 0;
     // this.speed = this.container.clientWidth * 0.04;
-    this.speed = window.innerWidth < 768 ? 40 : 60;
     // this.speed = 40;
+    this.speed = window.innerWidth < 768 ? 40 : 60;
     this.isTransitioning = false;
     this.lastTime = null;
     this.isPaused = false;
@@ -161,8 +161,8 @@ export default class ImageSlider {
     }
 
     // this.speed = this.container.clientWidth * 0.04;
-    this.speed = window.innerWidth < 768 ? 40 : 60;
     // this.speed = 40;
+    this.speed = window.innerWidth < 768 ? 40 : 60;
     this.lastContainerWidth = this.container.clientWidth;
     this.isPaused = false;
     gsap.to(this.container, { opacity: 1, duration: 0.3 });
