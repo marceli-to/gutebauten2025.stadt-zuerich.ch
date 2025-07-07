@@ -14,7 +14,7 @@ class CommentsByBuildingSheet implements FromCollection, WithTitle, WithHeadings
 {
   private $building;
 
-  public function __construct(Building $building)
+  public function __construct(?Building $building)
   {
     $this->building = $building;
   }
@@ -24,6 +24,11 @@ class CommentsByBuildingSheet implements FromCollection, WithTitle, WithHeadings
    */
   public function collection()
   {
+    // If no building provided, return empty collection
+    if (!$this->building) {
+      return collect([]);
+    }
+    
     $comments = Comment::where('building_id', '=', $this->building->id)->withTrashed()->orderBy('created_at', 'desc')->get();
     $data = [];
     foreach($comments as $c)
@@ -50,7 +55,7 @@ class CommentsByBuildingSheet implements FromCollection, WithTitle, WithHeadings
 
   public function title(): string
   {
-    return $this->building->title;
+    return $this->building ? $this->building->title : 'Keine Kommentare';
   }
 
   public function styles(Worksheet $sheet)

@@ -24,6 +24,12 @@ class CommentsExport implements WithMultipleSheets
         $sheets[] = new CommentsByBuildingSheet($building);
       }
     }
+    
+    // If no buildings have comments, create a default empty sheet
+    if (empty($sheets)) {
+      $sheets[] = new CommentsByBuildingSheet(null);
+    }
+    
     return $sheets;
   }
 
