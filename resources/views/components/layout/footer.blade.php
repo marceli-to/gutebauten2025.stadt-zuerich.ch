@@ -58,8 +58,6 @@
 @auth
 @vite('resources/js/spa.js')
 @endauth
-@vite('resources/js/map.js')
-@endif
 </body>
 </html>
 <!-- made with ❤ by everyedition.ch & nostudio.ch & marceli.to -->
