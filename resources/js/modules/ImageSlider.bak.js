@@ -182,31 +182,10 @@ export default class ImageSlider {
 
   setupTouch() {
     let startX = 0;
-    let startY = 0;
-    let isHorizontalSwipe = false;
 
     this.container.addEventListener('touchstart', e => {
       startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-      isHorizontalSwipe = false;
     });
-
-    this.container.addEventListener('touchmove', e => {
-      const currentX = e.touches[0].clientX;
-      const currentY = e.touches[0].clientY;
-      const dx = Math.abs(currentX - startX);
-      const dy = Math.abs(currentY - startY);
-
-      // Determine if this is a horizontal swipe
-      if (dx > dy && dx > 10) {
-        isHorizontalSwipe = true;
-      }
-
-      // Prevent vertical scrolling during horizontal swipes
-      if (isHorizontalSwipe) {
-        e.preventDefault();
-      }
-    }, { passive: false });
 
     this.container.addEventListener('touchend', e => {
       const endX = e.changedTouches[0].clientX;
