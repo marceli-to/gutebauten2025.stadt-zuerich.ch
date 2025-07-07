@@ -9,7 +9,7 @@ export default class ImageSlider {
     this.actualIndex = 0;
     this.x = 0;
     //this.speed = this.container.clientWidth * 0.04;
-    this.speed = window.innerWidth < 768 ? 30 : 40;
+    this.speed = window.innerWidth < 768 ? 60 : 40;
     this.isTransitioning = false;
     this.lastTime = null;
     this.isPaused = false;
@@ -67,12 +67,6 @@ export default class ImageSlider {
     const viewportHeight = window.innerHeight;
     const viewportWidth = window.innerWidth;
     const windowWidth = window.innerWidth;
-    
-    // Check if device is in portrait mode
-    const isPortrait = viewportHeight > viewportWidth;
-    
-    // Check if it's likely a tablet (you can adjust these thresholds)
-    const isTablet = windowWidth >= 768 && windowWidth < 1024;
     
     let offset = 0;
     
@@ -166,7 +160,7 @@ export default class ImageSlider {
     }
 
     //this.speed = this.container.clientWidth * 0.04;
-    this.speed = window.innerWidth < 768 ? 30 : 40;
+    this.speed = window.innerWidth < 768 ? 60 : 40;
     this.lastContainerWidth = this.container.clientWidth;
     this.isPaused = false;
     gsap.to(this.container, { opacity: 1, duration: 0.3 });
