@@ -58,9 +58,6 @@
 @auth
 @vite('resources/js/spa.js')
 @endauth
-@if (app()->environment('production'))
-<script src="https://www.integ.stadt-zuerich.ch/etc/clientlibs/stzh/analytics/294297d554c0/068a31a4609c/launch-92ad5f87cc3b-staging.min.js"></script>
-@endif
 @vite('resources/js/map.js')
 @endif
 </body>
