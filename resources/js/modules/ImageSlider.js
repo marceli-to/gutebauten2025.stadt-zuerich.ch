@@ -164,11 +164,9 @@ export default class ImageSlider {
       });
     }
 
-    // this.speed = this.container.clientWidth * 0.04;
-    this.speed = window.innerWidth < 768 ? 60 : 40;
+    this.speed = this.container.clientWidth * 0.04;
     this.lastContainerWidth = this.container.clientWidth;
     this.isPaused = false;
-
     gsap.to(this.container, { opacity: 1, duration: 0.3 });
   }
 
