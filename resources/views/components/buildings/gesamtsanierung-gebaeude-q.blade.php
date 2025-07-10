@@ -40,8 +40,8 @@
         baubüro in situ ag
       </p>
       <p>
-        Landschaftsarchitektur<br>
-        Studio Vulkan Landschaftsarchitektur GmbH
+        Nutzungstransformation<br>
+        denkstatt sàrl
       </p>
       <p>
         Fotografie<br>
