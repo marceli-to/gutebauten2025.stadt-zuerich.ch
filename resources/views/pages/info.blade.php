@@ -61,7 +61,7 @@
     
     <x-accordion.item index="2" title="Publikumspreis">
       <x-layout.article>
-        <p>Neben den Preisen der Fachjury wird auch ein Publikumspreis verliehen. Auf dieser Webseite kann jede interessierte Person mitmachen und ihre Stimme abgeben. Man kann mehreren Projekten seine Stimme geben. Pro Projekt ist aber nur eine Stimme zulässig. Das Projekt mit den meisten Stimmen erhält den Publikumspreis. Abgestimmt werden kann zwischen dem 8. Juli und dem 22. August 2025.</p>
+        <p>Neben den Preisen der Fachjury wird auch ein Publikumspreis verliehen. Das Online-Voting lief vom 8. Juli bis 22. August auf dieser Webseite. Alle interessierten Personen konnten ihre Stimme für eines von 16 beeindruckenden Hochbau- und Freiraumprojekten abgeben. Das Projekt mit den meisten Stimmen erhält den Publikumspreis.</p>
         <p>Die Projekte können auch kommentiert werden. Das Amt für Städtebau behält sich jedoch vor, Beiträge zu kürzen oder nicht zu publizieren. Dies gilt insbesondere für ehrverletzende, rassistische, unsachliche oder themenfremde Kommentare.</p>
       </x-layout.article>  
     </x-accordion.item>
@@ -104,7 +104,7 @@
 
     <x-accordion.item index="5" title="Preisverleihung und Ausstellung">
       <x-layout.article>
-        <p>Die Preisverleihung findet am 2. Oktober 2025 statt. Die ausgezeichneten Bauten werden zudem in einer Ausstellung im ZAZ BELLERIVE Zentrum Architektur Zürich vom 3. Oktober bis 9. November 2025 präsentiert.</p>
+        <p>Die Preisverleihung findet am 2. Oktober 2025 statt. Die ausgezeichneten Bauten werden zudem in einer Ausstellung im <a href="https://www.stadt-zuerich.ch/de/aktuell/veranstaltungen/planen-und-bauen/ausstellung-auszeichnung-fuer-gute-bauten.html" target="_blank" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" aria-label="Podiums" rel="noopener noreferrer">ZAZ BELLERIVE</a> Zentrum Architektur Zürich vom 3. Oktober bis 9. November 2025 präsentiert. Am 5. November 2025 findet in der Ausstellung zusätzlich ein <a href="https://www.stadt-zuerich.ch/de/aktuell/veranstaltungen/planen-und-bauen/podiumsdiskussion-auszeichnung-fuer-gute-bauten.html" target="_blank" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" aria-label="Podiums" rel="noopener noreferrer">Podium</a> statt.</p>
       </x-layout.article>
     </x-accordion.item>
 

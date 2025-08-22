@@ -8,8 +8,8 @@ use App\Http\Controllers\Api\Dashboard\VoteController as DashboardVoteController
 use App\Http\Controllers\Api\Dashboard\CommentController as DashboardCommentController;
 
 // Frontend
-use App\Http\Controllers\Api\VoteController;
-use App\Http\Controllers\Api\CommentController;
+// use App\Http\Controllers\Api\VoteController;
+// use App\Http\Controllers\Api\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 // Frontend
-Route::post('voter/check', [VoteController::class, 'check']);
-Route::post('vote', [VoteController::class, 'store']);
-Route::put('vote', [VoteController::class, 'remove']);
-Route::post('comment', [CommentController::class, 'store']);
+// Route::post('voter/check', [VoteController::class, 'check']);
+// Route::post('vote', [VoteController::class, 'store']);
+// Route::put('vote', [VoteController::class, 'remove']);
+// Route::post('comment', [CommentController::class, 'store']);

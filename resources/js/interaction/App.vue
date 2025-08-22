@@ -1,12 +1,12 @@
 <template>
   <div class="flex">
     
-    <Vote
+    <!-- <Vote
       :slug="slug"
       :hash="hash"
       :has_vote="has_vote"
       @voted="onVoted"
-      @unvoted="onUnvoted" />
+      @unvoted="onUnvoted" /> -->
     
     <Share 
       :share-url="url" 
@@ -14,10 +14,10 @@
       :is-open="currentlyOpen === 'share'"
       @toggle="() => setOpen('share')" />
 
-    <Comment 
+    <!-- <Comment 
       :slug="slug" 
       :is-open="currentlyOpen === 'comment'" 
-      @toggle="() => setOpen('comment')" />
+      @toggle="() => setOpen('comment')" /> -->
 
   </div>
 </template>
@@ -59,16 +59,16 @@ function handleKeydown(e) {
 onMounted(async () => {
   document.addEventListener('keydown', handleKeydown)
 
-  const stored = localStorage.getItem('voter_hash')
-  if (stored) {
-    hash.value = stored
-  } 
-  else {
-    const fp = await FingerprintJS.load()
-    const result = await fp.get()
-    hash.value = result.visitorId
-    localStorage.setItem('voter_hash', hash.value)
-  }
+  // const stored = localStorage.getItem('voter_hash')
+  // if (stored) {
+  //   hash.value = stored
+  // } 
+  // else {
+  //   const fp = await FingerprintJS.load()
+  //   const result = await fp.get()
+  //   hash.value = result.visitorId
+  //   localStorage.setItem('voter_hash', hash.value)
+  // }
 })
 
 function onVoted() {
