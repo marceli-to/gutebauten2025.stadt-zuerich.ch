@@ -62,7 +62,7 @@
     <x-accordion.item index="2" title="Publikumspreis">
       <x-layout.article>
         <p>Neben den Preisen der Fachjury wird auch ein Publikumspreis verliehen. Das Online-Voting lief vom 8. Juli bis 22. August auf dieser Webseite. Alle interessierten Personen konnten ihre Stimme für eines von 16 beeindruckenden Hochbau- und Freiraumprojekten abgeben. Das Projekt mit den meisten Stimmen erhält den Publikumspreis.</p>
-        <p>Die Projekte können auch kommentiert werden. Das Amt für Städtebau behält sich jedoch vor, Beiträge zu kürzen oder nicht zu publizieren. Dies gilt insbesondere für ehrverletzende, rassistische, unsachliche oder themenfremde Kommentare.</p>
+        {{-- <p>Die Projekte können auch kommentiert werden. Das Amt für Städtebau behält sich jedoch vor, Beiträge zu kürzen oder nicht zu publizieren. Dies gilt insbesondere für ehrverletzende, rassistische, unsachliche oder themenfremde Kommentare.</p> --}}
       </x-layout.article>  
     </x-accordion.item>
     
