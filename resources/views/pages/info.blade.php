@@ -4,11 +4,11 @@
 @section('seo_image', '/media/opengraph.png')
 @section('header')
   <x-headings.h1>
-    Info zum Voting
+    Info
   </x-headings.h1>
 @endsection
 @section('content')
-  <div class="bg-white border-b-3 xl:border-b-4 border-black">
+  {{-- <div class="bg-white border-b-3 xl:border-b-4 border-black">
     <x-layout.container class="py-30 lg:py-40 xl:py-70 flex flex-col gap-y-45 lg:gap-y-40">
 
       <x-layout.article class="flex items-start gap-x-20 xl:gap-x-30 group">
@@ -47,10 +47,10 @@
         </div>
       </x-layout.article>
     </x-layout.container>
-  </div>
+  </div> --}}
 
   <x-accordion.wrapper>
-    <x-accordion.item index="1" title="Über die Auszeichnung">
+    <x-accordion.item index="1" title="Über die Auszeichnung" :open="true">
       <x-layout.article>
         <p>Gute Bauten und Freiräume prägen das Gesicht der Stadt. Sie haben in Zürich Tradition. Damit dies auch in Zukunft so bleibt, fördert die Stadt Zürich die Diskussion und zeichnet seit rund 80 Jahren regelmässig die besten Objekte und Anlagen aus.</p>
         <p>2025 führt sie zum 19. Mal eine Jurierung für die «Auszeichnung für gute Bauten» durch.</p>

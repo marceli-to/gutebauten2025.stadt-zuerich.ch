@@ -27,7 +27,7 @@ require __DIR__.'/auth.php';
  */
 
 Route::get('/', [HomeController::class, 'index'])->name('page.home');
-Route::get('/info-zum-voting', [InfoController::class, 'index'])->name('page.info');
+Route::get('/info', [InfoController::class, 'index'])->name('page.info');
 Route::get('/uebersichtskarte', [MapController::class, 'index'])->name('page.map');
 Route::get('/{building:slug}', [BuildingController::class, 'index'])->name('page.building');
 

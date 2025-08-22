@@ -21,11 +21,11 @@
 
 
   <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 md:opacity-100 group-hover:opacity-0 w-full px-20 xl:px-30 text-sm md:text-xs lg:text-sm 2xl:text-md text-center">
-    Das Voting endete am 22. August 2025. Vielen Dank an alle, die Ihre Stimme abgegeben haben.
+    Das Voting endete am 22. August 2025. Vielen Dank an alle, die ihre Stimme abgegeben haben.
   </span>
 
   <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full z-20 md:opacity-0 group-hover:md:opacity-100 group-[.has-touch]:opacity-100 px-20 xl:px-30 text-sm md:text-xs lg:text-sm 2xl:text-md text-center">
-    <span class="md:hidden">Das Voting endete am 22. August 2025. Vielen Dank an alle, die Ihre Stimme abgegeben haben.</span>
+    <span class="md:hidden">Das Voting endete am 22. August 2025. Vielen Dank an alle, die ihre Stimme abgegeben haben.</span>
     Der Publikumspreis wird am 2.&nbsp;Oktober verliehen und mit allen Gewinner*innen im <a href="https://www.stadt-zuerich.ch/de/aktuell/veranstaltungen/planen-und-bauen/ausstellung-auszeichnung-fuer-gute-bauten.html" target="_blank" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" aria-label="Podiums" rel="noopener noreferrer">ZAZ Bellerive</a> vom 3.&nbsp;Oktober bis 9.&nbsp;November ausgestellt. Am 5.&nbsp;November findet zudem ein <a href="https://www.stadt-zuerich.ch/de/aktuell/veranstaltungen/planen-und-bauen/podiumsdiskussion-auszeichnung-fuer-gute-bauten.html" target="_blank" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" aria-label="Podiums" rel="noopener noreferrer">Podium</a> statt.
   </span>
 

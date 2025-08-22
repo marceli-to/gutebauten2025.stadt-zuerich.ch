@@ -1,5 +1,5 @@
 @props([
-  'selected' => null
+  'selected' => 1
 ])
 <div 
   x-data="{ selected: {{ $selected ?? 'null' }} }" 
