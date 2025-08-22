@@ -8,6 +8,8 @@
   </x-headings.h1>
 @endsection
 @section('content')
+
+
   {{-- <div class="bg-white border-b-3 xl:border-b-4 border-black">
     <x-layout.container class="py-30 lg:py-40 xl:py-70 flex flex-col gap-y-45 lg:gap-y-40">
 
