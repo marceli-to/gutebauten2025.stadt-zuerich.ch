@@ -12,6 +12,7 @@ class Building extends Model
     'lat',
     'long',
     'maps',
+    'award',
   ];
 
   public function comments()

@@ -32,7 +32,10 @@
         </a>
       </p>
       <p>
-        Bauträgerschaft<br>Reformierte Kirche Zürich
+        Auftraggeber<br>Kanton Zürich, Baudirektion Hochbauamt
+      </p>
+      <p>
+        Eigentümerin<br>Reformierte Kirche Zürich
       </p>
       <p>
         Architektur<br>Ernst Niklaus Fausch Partner AG
