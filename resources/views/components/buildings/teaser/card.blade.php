@@ -14,8 +14,9 @@
         {{ $attributes->merge(['class' => 'w-full h-auto group-hover:md:opacity-0']) }}>
     </picture>
     @include('components.buildings.teaser.shapes.' . $building->slug, ['class' => 'absolute inset-0 w-full h-full z-10 opacity-0 group-hover:opacity-100 group-[.has-touch]:opacity-100'])
-    <figcaption class="text-lumora px-10 md:px-15 hyphens-auto text-xl xl:text-2xl md:text-black text-center absolute inset-0 z-20 flex items-center justify-center text-balance md:opacity-0 group-hover:opacity-100 group-[.has-touch]:opacity-100">
-      {{ $building->title }}<br><br>{{ $building->award }}
+    <figcaption class="text-lumora px-10 md:px-15 hyphens-auto text-xl md:text-md lg:text-lg xl:text-2xl md:text-black text-center absolute inset-0 z-20 flex flex-col items-center justify-center text-balance md:opacity-0 group-hover:opacity-100 group-[.has-touch]:opacity-100">
+      {{ $building->title }}
+      <span class="block mt-20">{{ $building->award }}</span>
     </figcaption>
   </figure>
 </a>
