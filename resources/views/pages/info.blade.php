@@ -54,17 +54,42 @@
   <x-accordion.wrapper>
     <x-accordion.item index="1" title="Über die Auszeichnung" :open="true">
       <x-layout.article>
+
         <p>Gute Bauten und Freiräume prägen das Gesicht der Stadt. Sie haben in Zürich Tradition. Damit dies auch in Zukunft so bleibt, fördert die Stadt Zürich die Diskussion und zeichnet seit rund 80 Jahren regelmässig die besten Objekte und Anlagen aus.</p>
-        <p>2025 führt sie zum 19. Mal eine Jurierung für die «Auszeichnung für gute Bauten» durch.</p>
-        <p>Die Ausschreibung zur Auszeichnung für gute Bauten der Stadt Zürich findet alle fünf Jahre statt und läuft aktuell für Bauten von 2021 bis 2024. Dabei können Architektur- und Landschaftsarchitekturbüros sowie Bauherrschaften teilnehmen, welche in diesem Zeitraum ihre Projekte realisiert und fertiggestellt haben. Eine interdisziplinär zusammengesetzte Jury wählt aus den eingereichten Projekten die besten Gebäude und gestalteten Freiräume und zeichnet diese aus.</p>
+        <p>2025 führte sie zum 19. Mal eine Jurierung für die «Auszeichnung für gute Bauten» durch für Bauten, die im Zeitraum von 2021 bis 2024 realisiert und fertiggestellt wurden. Die Ausschreibung zur Auszeichnung für gute Bauten der Stadt Zürich findet alle fünf Jahre statt.</p>
+        <p>Eine interdisziplinär zusammengesetzte Jury wählt jeweils aus den eingereichten Projekten die besten Gebäude und gestalteten Freiräume und zeichnet diese aus.</p>
         <p>Weitere Informationen zur <a href="https://www.stadt-zuerich.ch/de/stadtleben/kultur/kultur-leben/gute-bauten.html" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" target="_blank">Auszeichnung für gute Bauten</a>.</p>
       </x-layout.article>
     </x-accordion.item>
     
-    <x-accordion.item index="2" title="Publikumspreis">
+    <x-accordion.item index="2" title="Preisträger*innen">
       <x-layout.article>
-        <p>Neben den Preisen der Fachjury wird auch ein Publikumspreis verliehen. Das Online-Voting lief vom 8. Juli bis 22. August auf dieser Webseite. Alle interessierten Personen konnten ihre Stimme für eines von 16 beeindruckenden Hochbau- und Freiraumprojekten abgeben. Das Projekt mit den meisten Stimmen erhält den Publikumspreis.</p>
-        {{-- <p>Die Projekte können auch kommentiert werden. Das Amt für Städtebau behält sich jedoch vor, Beiträge zu kürzen oder nicht zu publizieren. Dies gilt insbesondere für ehrverletzende, rassistische, unsachliche oder themenfremde Kommentare.</p> --}}
+        <p>Die Fachjury hat folgende zehn Projekte ausgezeichnet und sechs Projekten eine Anerkennung verliehen. (Liste in alphabetischer, wertfreier Reihenfolge)</p>
+        <div>Auszeichnungen</div>
+        <ul>
+          <li>Büro- und Gewerbehaus Binzstrasse</li>
+          <li>Gesamtinstandsetzung Wohnsiedlung «Im Birkenhof»</li>
+          <li>Gesamtsanierung Hauptbahnhof Zürich Südtrakt</li>
+          <li>Gesamtsanierung Gebäude Q, Werkstadt Areal</li>
+          <li>Haus im Garten, 2023</li>
+          <li>Hochhausensemble WolkenWerk und Messeturm, Weiterführung Innerer Garten</li>
+          <li>Kongresshaus und Tonhalle Zürich - Instandsetzung, Umbau und Erweiterung</li>
+          <li>Neubau Universitäts-Kinderspital Zürich</li>
+          <li>Provisorische Sportbauten</li>
+          <li>Schulanlage Allmend</li>
+        </ul>
+        <div>Anerkennungen</div>
+        <ul>
+          <li>Guggach, Siedlung Hofwiesenstrasse</li>
+          <li>Kreislaufhaus Herbstweg</li>
+          <li>Musikpavillon Sihlhölzli</li>
+          <li>Rathaus Zürich, Provisorium Kirche Hard</li>
+          <li>Sanierung Hochhaus Herdern</li>
+          <li>Wohnüberbauung Klopstock Zürich</li>
+        </ul>
+        <div>Publikumspreis</div>
+        <p>Der Publikumspreis geht an das Projekt «Neubau Universitäts-Kinderspital Zürich», das die meisten Stimmen im Online-Voting erhielt.</p>
+        
       </x-layout.article>  
     </x-accordion.item>
     
@@ -106,7 +131,7 @@
 
     <x-accordion.item index="5" title="Preisverleihung und Ausstellung">
       <x-layout.article>
-        <p>Die Preisverleihung findet am 2. Oktober 2025 statt. Die ausgezeichneten Bauten werden zudem in einer Ausstellung im <a href="https://www.stadt-zuerich.ch/de/aktuell/veranstaltungen/planen-und-bauen/ausstellung-auszeichnung-fuer-gute-bauten.html" target="_blank" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" aria-label="Podiums" rel="noopener noreferrer">ZAZ BELLERIVE</a> Zentrum Architektur Zürich vom 3. Oktober bis 9. November 2025 präsentiert. Am 5. November 2025 findet in der Ausstellung zusätzlich ein <a href="https://www.stadt-zuerich.ch/de/aktuell/veranstaltungen/planen-und-bauen/podiumsdiskussion-auszeichnung-fuer-gute-bauten.html" target="_blank" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" aria-label="Podiums" rel="noopener noreferrer">Podium</a> statt.</p>
+        <p>Die Preisverleihung fand am 2. Oktober 2025 statt. Die ausgezeichneten Bauten werden in einer Ausstellung im <a href="https://www.stadt-zuerich.ch/de/aktuell/veranstaltungen/planen-und-bauen/ausstellung-auszeichnung-fuer-gute-bauten.html" target="_blank" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" aria-label="Podiums" rel="noopener noreferrer">ZAZ BELLERIVE</a> Zentrum Architektur Zürich vom 3. Oktober bis 9. November 2025 präsentiert. Am 5. November 2025 findet in der Ausstellung zusätzlich ein <a href="https://www.stadt-zuerich.ch/de/aktuell/veranstaltungen/planen-und-bauen/podiumsdiskussion-auszeichnung-fuer-gute-bauten.html" target="_blank" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" aria-label="Podiums" rel="noopener noreferrer">Podium</a> statt.</p>
       </x-layout.article>
     </x-accordion.item>
 

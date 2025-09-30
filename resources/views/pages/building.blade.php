@@ -5,7 +5,7 @@
 
 @section('header')
 <x-headings.h1>
-  {{ $building->title }}
+  {{ $building->title }} – {{ $building->award }}
 </x-headings.h1>
 <div class="flex md:gap-x-25">
   <div class="hidden md:block">
