@@ -57,7 +57,7 @@
 
         <p>Gute Bauten und Freiräume prägen das Gesicht der Stadt. Sie haben in Zürich Tradition. Damit dies auch in Zukunft so bleibt, fördert die Stadt Zürich die Diskussion und zeichnet seit rund 80 Jahren regelmässig die besten Objekte und Anlagen aus.</p>
         <p>2025 führte sie zum 19. Mal eine Jurierung für die «Auszeichnung für gute Bauten» durch für Bauten, die im Zeitraum von 2021 bis 2024 realisiert und fertiggestellt wurden.</p>
-        <p>Ausschreibung zur Auszeichnung für gute Bauten der Stadt Zürich findet alle fünf Jahre statt. Eine interdisziplinär zusammengesetzte Jury wählt jeweils aus den eingereichten Projekten die besten Gebäude und gestalteten Freiräume und zeichnet diese aus.</p>
+        <p>Die Ausschreibung zur Auszeichnung für gute Bauten der Stadt Zürich findet alle fünf Jahre statt. Eine interdisziplinär zusammengesetzte Jury wählt jeweils aus den eingereichten Projekten die besten Gebäude und gestalteten Freiräume und zeichnet diese aus.</p>
         <p>Weitere Informationen zur <a href="https://www.stadt-zuerich.ch/de/stadtleben/kultur/kultur-leben/gute-bauten.html" class="underline underline-offset-4 decoration-1 xl:decoration-2 hover:no-underline" target="_blank">Auszeichnung für gute Bauten</a>.</p>
       </x-layout.article>
     </x-accordion.item>
