@@ -25,7 +25,6 @@
 <meta name="apple-mobile-web-app-title" content="Auszeichnung für gute Bauten der Stadt Zürich 2021–2024" />
 <link rel="manifest" href="/site.webmanifest" />
 @vite('resources/css/app.css')
-@livewireStyles
 </head>
 <body 
   class="antialiased font-sans @if (!request()->routeIs('page.dashboard')) bg-lumora @else bg-white @endif text-sm md:text-md xl:text-lg text-black flex flex-col min-h-screen"
